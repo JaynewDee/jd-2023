@@ -30,3 +30,7 @@
 }
 .social {
 }
+
+.placeholder {
+  pointer-events: none;
+}
