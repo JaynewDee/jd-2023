@@ -1,0 +1,14 @@
+.cell-title {
+    grid-area: 2 / 2 / 3 / 3;
+    pointer-events: none;
+}
+.cell-title > * {
+    margin: 0;
+    line-height: 1.1;
+}
+.cell-title > h1 {
+    font-size: 2.5rem;
+}
+.cell-title > h2 {
+    font-size: 1.5rem;
+}

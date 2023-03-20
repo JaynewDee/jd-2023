@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap");
+@import "./components/Grid.css";
+
+#root {
+  max-width: 1280px;
+  height: 95vh;
+  margin: 0 auto;
+  text-align: center;
+  font-family: "Major Mono Display", monospace;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 1rem;
+}
+
+@media screen and (max-width: 720px) {
+  .grid-container {
+    display: flex;
+    flex-flow: column nowrap;
+  }
+}

@@ -1,0 +1,32 @@
+@import "./Cell.css";
+
+.grid-cell {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  border: 1px solid white;
+  border-radius: 3px;
+  transition: all 0.1s;
+}
+
+.grid-cell:hover {
+  box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.808);
+  cursor: pointer;
+  transform: translateY(-3px);
+}
+.nameplate {
+  grid-area: 2 / 2 / 3 / 3;
+  flex-flow: column nowrap;
+  pointer-events: none;
+}
+
+.accolades {
+}
+.message {
+}
+.projects {
+}
+.resume {
+}
+.social {
+}
