@@ -9,11 +9,16 @@
   font-family: "Major Mono Display", monospace;
 }
 
+body {
+  margin: 0;
+}
+
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   gap: 1rem;
+  margin: 1rem;
 }
 
 @media screen and (max-width: 720px) {
