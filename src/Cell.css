@@ -19,3 +19,7 @@
   align-items: center;
   grid-area: 2 / 2 / 3 / 3;
 }
+
+.resume {
+  width: 66vw;
+}

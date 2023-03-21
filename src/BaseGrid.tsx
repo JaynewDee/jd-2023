@@ -29,7 +29,7 @@ const BaseGrid = ({ setDisplay }: { setDisplay: DisplayDispatch }) => {
       <div
         key={id}
         data-category={asData}
-        className={`${asData} grid-cell`}
+        className={`grid-cell`}
         onClick={handleCategorySwitch}
       >
         <h4 className="cell-title">{name}</h4>

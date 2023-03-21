@@ -6,14 +6,24 @@ const Resume: React.FC<CategoryProps> = ({ setDisplay }) => {
   const goBack = () => setDisplay("");
 
   return (
-    <div className="grid-container">
-      <div className="return grid-cell" onClick={goBack}>
-        <h4 className="cell-title">{BsArrow90DegLeft({})}</h4>
+    <>
+      <div className="grid-container">
+        <div className="return grid-cell" onClick={goBack}>
+          <h4 className="cell-title">{BsArrow90DegLeft({})}</h4>
+        </div>
+        <div className="grid-cell">
+          <h4 className="cell-title">Resume</h4>
+        </div>
+        <div className="grid-cell"></div>
+        <div className="resume">
+          <iframe
+            src="src/assets/JoshuaDiehl_Resume.pdf#toolbar=0"
+            width="100%"
+            height="100%"
+          ></iframe>
+        </div>
       </div>
-      <div className="resume grid-cell">
-        <h4 className="cell-title">Resume</h4>
-      </div>
-    </div>
+    </>
   );
 };
 
