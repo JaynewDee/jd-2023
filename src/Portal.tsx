@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import BaseGrid from "./BaseGrid";
+import About from "./components/About";
 import Accolades from "./components/Accolades";
 import Contact from "./components/Contact";
 import Nameplate from "./components/Nameplate";
@@ -17,6 +18,7 @@ const Portal: React.FC = () => {
     projects: <Projects setDisplay={setDisplayState} />,
     resume: <Resume setDisplay={setDisplayState} />,
     social: <Social setDisplay={setDisplayState} />,
+    who: <About setDisplay={setDisplayState} />,
     placeholder: <Placeholder setDisplay={setDisplayState} />,
     "": <BaseGrid setDisplay={setDisplayState} />
   };

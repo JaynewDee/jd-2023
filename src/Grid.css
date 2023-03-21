@@ -10,7 +10,7 @@
   transition: all 0.1s;
 }
 .grid-cell > img {
-  width: 6rem;
+  width: 9rem;
   object-fit: contain;
   transition: all 0.25s;
 }
@@ -20,7 +20,10 @@
   transform: translateY(-3px);
 }
 .grid-cell:hover > .badge-img {
-  width: 9rem;
+  width: 12rem;
+}
+.grid-cell:hover > .cert-img {
+  width: 96%;
 }
 
 .nameplate {

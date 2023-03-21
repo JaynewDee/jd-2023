@@ -18,14 +18,14 @@ const BaseGrid = ({ setDisplay }: { setDisplay: DisplayDispatch }) => {
     [2, "Contact"],
     [4, "Resume"],
     [5, "Placeholder"],
-    [6, "Placeholder"],
+    [6, "Who?"],
     [7, "Placeholder"]
   ];
 
   const Category = (id: number, name: string) => (
     <div
       key={id}
-      data-category={name.toLowerCase()}
+      data-category={name.toLowerCase().replace(/(\?)/, "")}
       className={`grid-cell`}
       onClick={handleCategorySwitch}
     >
