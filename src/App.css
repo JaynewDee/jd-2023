@@ -3,7 +3,6 @@
 
 #root {
   max-width: 1280px;
-
   margin: 0 auto;
   text-align: center;
   font-family: "Major Mono Display", monospace;
@@ -18,8 +17,7 @@ body {
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: auto auto auto;
-  gap: 1rem;
+  grid-auto-rows: 12rem;
   margin: 2rem 1rem 1rem;
 }
 

@@ -22,22 +22,26 @@ const Resume: React.FC<CategoryProps> = ({ setDisplay }) => {
   );
 
   return (
-    <>
-      <div className="grid-container">
-        <BackCell goBack={goBack} />
-        <div className="grid-cell">
-          <Title />
-        </div>
-        <div className="grid-cell"></div>
-        <div className="resume">
-          <iframe
-            src="/JoshuaDiehl_Resume.pdf"
-            width="100%"
-            height="100%"
-          ></iframe>
-        </div>
+    <div
+      className="grid-container"
+      style={{
+        gridTemplateRows: "repeat(9, 12rem)",
+        gridArea: "2 / 1 / 12 / 4"
+      }}
+    >
+      <BackCell goBack={goBack} />
+      <div className="grid-cell">
+        <Title />
       </div>
-    </>
+      <div className="grid-cell"></div>
+      <div className="resume">
+        <iframe
+          src="/JoshuaDiehl_Resume.pdf"
+          width="100%"
+          height="48rem"
+        ></iframe>
+      </div>
+    </div>
   );
 };
 

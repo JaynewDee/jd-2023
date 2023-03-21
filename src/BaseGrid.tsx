@@ -34,7 +34,7 @@ const BaseGrid = ({ setDisplay }: { setDisplay: DisplayDispatch }) => {
   );
 
   return (
-    <div className="grid-container">
+    <div className="grid-container grid-container-main">
       <Nameplate />
       {categories.map((cat) => Category(cat[0], cat[1]))}
     </div>
