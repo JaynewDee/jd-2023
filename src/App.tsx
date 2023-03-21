@@ -4,6 +4,11 @@ import Footnote from "./components/Footnote";
 import { useEffect } from "react";
 
 function App() {
+  useEffect(() => {
+    if (window.screen.width < 450) {
+      console.log(window.screen.width);
+    }
+  }, []);
   return (
     <div className="App">
       <Portal />

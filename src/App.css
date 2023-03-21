@@ -14,25 +14,6 @@ body {
   margin: 0;
 }
 
-.grid-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-auto-rows: 12rem;
-  margin: 2rem 1rem 1rem;
-}
-
-@media screen and (max-width: 720px) {
-  .grid-container {
-    display: flex;
-    flex-flow: column nowrap;
-    padding-bottom: 3rem;
-  }
-  .resume,
-  .resume > iframe {
-    width: 100%;
-  }
-}
-
 .footnote {
   position: relative;
   bottom: 1rem;
