@@ -8,6 +8,7 @@ import {
   BsPencil
 } from "react-icons/bs";
 import { IconType } from "react-icons";
+import BackCell from "./BackCell";
 
 //
 
@@ -43,23 +44,20 @@ const Social: React.FC<CategoryProps> = ({ setDisplay }) => {
     }
   ];
 
-  const Option = (handler: () => void, icon: IconType) => (
-    <div className="social grid-cell" onClick={visitGh}>
-      <span className="social-icon-card" onClick={handler}>
-        {icon({ size: "2rem" })}
-      </span>
+  const Option = (handler: () => void, icon: IconType, id: number) => (
+    <div className="social grid-cell" onClick={handler} key={id}>
+      <span className="social-icon-card">{icon({ size: "2rem" })}</span>
     </div>
   );
 
   return (
     <div className="grid-container">
-      <div className="return grid-cell" onClick={goBack}>
-        <h4 className="cell-title">{BsArrow90DegLeft({ size: "1.66rem" })}</h4>
-      </div>
+      <BackCell goBack={goBack} />
+
       <div className="social grid-cell">
         <h4 className="cell-title">Social</h4>
       </div>
-      {options.map(({ handler, icon }) => Option(handler, icon))}
+      {options.map(({ handler, icon }, idx) => Option(handler, icon, idx))}
     </div>
   );
 };

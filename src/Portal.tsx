@@ -17,10 +17,11 @@ const Portal: React.FC = () => {
     projects: <Projects setDisplay={setDisplayState} />,
     resume: <Resume setDisplay={setDisplayState} />,
     social: <Social setDisplay={setDisplayState} />,
+    placeholder: <Placeholder setDisplay={setDisplayState} />,
     "": <BaseGrid setDisplay={setDisplayState} />
   };
 
-  return displays[displayState];
+  return <>{displays[displayState]}</>;
 };
 
 export default Portal;

@@ -1,7 +1,7 @@
 .cell-title {
-  grid-area: 2 / 2 / 3 / 3;
   pointer-events: none;
 }
+
 .cell-title > * {
   margin: 0;
   line-height: 1.1;
@@ -22,4 +22,10 @@
 
 .resume {
   width: 66vw;
+}
+
+.cell-title > span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

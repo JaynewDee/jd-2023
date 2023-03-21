@@ -2,8 +2,8 @@ import React from "react";
 
 const Nameplate: React.FC = () => {
   return (
-    <div className="nameplate grid-cell">
-      <div className="cell-title">
+    <div data-category={"nameplate"} className="nameplate grid-cell">
+      <div className="name-cell">
         <h2>Joshua</h2>
         <h1>Diehl</h1>
       </div>

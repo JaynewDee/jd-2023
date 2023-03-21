@@ -1,4 +1,3 @@
-import { MouseEvent } from "react";
 import { BsArrow90DegLeft } from "react-icons/bs";
 import { CategoryProps } from "../BaseGrid";
 

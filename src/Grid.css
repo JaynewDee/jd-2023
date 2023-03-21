@@ -1,8 +1,9 @@
 @import "./Cell.css";
 
 .grid-cell {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 12rem;
   border: 1px solid white;
   border-radius: 3px;
@@ -21,6 +22,9 @@
   pointer-events: none;
 }
 
+.name-cell {
+  grid-area: 2 / 2 / 2 / 2;
+}
 .accolades {
 }
 

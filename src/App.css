@@ -3,7 +3,7 @@
 
 #root {
   max-width: 1280px;
-  height: 95vh;
+
   margin: 0 auto;
   text-align: center;
   font-family: "Major Mono Display", monospace;
@@ -34,10 +34,15 @@ body {
 }
 
 .footnote {
-  font-size: 0.66rem;
-  margin-top: 3rem;
+  position: relative;
+  bottom: 1rem;
+  font-size: 0.6rem;
+  margin-top: 6rem;
+  color: rgba(255, 255, 255, 0.77);
+  width: 100%;
 }
 
 .footnote > p {
   margin: 0 auto;
+  line-height: 1.5;
 }

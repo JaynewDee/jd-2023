@@ -1,4 +1,5 @@
 import React, { Dispatch, SetStateAction } from "react";
+import Nameplate from "./components/Nameplate";
 
 type DisplayDispatch = Dispatch<SetStateAction<string>>;
 
@@ -7,10 +8,8 @@ export type CategoryProps = {
 };
 
 const BaseGrid = ({ setDisplay }: { setDisplay: DisplayDispatch }) => {
-  const handleCategorySwitch = (e: any) => {
-    const cat = e.target.dataset.category;
-    setDisplay(cat);
-  };
+  const handleCategorySwitch = (e: any) =>
+    setDisplay(e.target.dataset.category);
 
   const categories: [number, string][] = [
     [3, "Projects"],
@@ -23,28 +22,20 @@ const BaseGrid = ({ setDisplay }: { setDisplay: DisplayDispatch }) => {
     [7, "Placeholder"]
   ];
 
-  const Category = (id: number, name: string) => {
-    const asData = name.toLowerCase();
-    return (
-      <div
-        key={id}
-        data-category={asData}
-        className={`grid-cell`}
-        onClick={handleCategorySwitch}
-      >
-        <h4 className="cell-title">{name}</h4>
-      </div>
-    );
-  };
+  const Category = (id: number, name: string) => (
+    <div
+      key={id}
+      data-category={name.toLowerCase()}
+      className={`grid-cell`}
+      onClick={handleCategorySwitch}
+    >
+      <h4 className="cell-title">{name}</h4>
+    </div>
+  );
 
   return (
     <div className="grid-container">
-      <div data-category={"nameplate"} className="nameplate grid-cell">
-        <div className="cell-title">
-          <h2>Joshua</h2>
-          <h1>Diehl</h1>
-        </div>
-      </div>
+      <Nameplate />
       {categories.map((cat) => Category(cat[0], cat[1]))}
     </div>
   );

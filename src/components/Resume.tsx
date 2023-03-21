@@ -1,23 +1,40 @@
 import React from "react";
-import { BsArrow90DegLeft } from "react-icons/bs";
+import { BsFillJournalBookmarkFill as Journal } from "react-icons/bs";
 import { CategoryProps } from "../BaseGrid";
+import BackCell from "./BackCell";
 
 const Resume: React.FC<CategoryProps> = ({ setDisplay }) => {
   const goBack = () => setDisplay("");
 
+  const Title = () => (
+    <h4 className="cell-title">
+      <span>
+        <Journal className="journal" />
+      </span>
+      <span
+        style={{
+          padding: "0 1rem",
+          fontSize: "1.33rem"
+        }}
+      >
+        Resume
+      </span>
+      <span>
+        <Journal className="journal" />
+      </span>
+    </h4>
+  );
   return (
     <>
       <div className="grid-container">
-        <div className="return grid-cell" onClick={goBack}>
-          <h4 className="cell-title">{BsArrow90DegLeft({})}</h4>
-        </div>
+        <BackCell goBack={goBack} />
         <div className="grid-cell">
-          <h4 className="cell-title">Resume</h4>
+          <Title />
         </div>
         <div className="grid-cell"></div>
         <div className="resume">
           <iframe
-            src="src/assets/JoshuaDiehl_Resume.pdf#toolbar=0"
+            src="/JoshuaDiehl_Resume.pdf"
             width="100%"
             height="100%"
           ></iframe>

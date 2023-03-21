@@ -1,6 +1,6 @@
 import "./App.css";
-import Footnote from "./components/Footnote";
 import Portal from "./Portal";
+import Footnote from "./components/Footnote";
 
 function App() {
   return (
