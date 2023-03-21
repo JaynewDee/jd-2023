@@ -5,28 +5,27 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-auto-rows: 12rem;
 }
+#grid-container-main {
+  /* width: 66%; */
+  grid-auto-rows: 15rem;
+}
 
-.grid-container-main {
-  width: 66%;
-  display: flex;
-  justify-content: center;
-}
-.grid-container-main > .grid-cell {
+#grid-container-main > .grid-cell {
   display: flex;
 }
-.grid-container-main > .grid-cell:nth-child(2) {
+#grid-container-main > .grid-cell:nth-child(2) {
   justify-content: flex-end;
   align-items: flex-end;
 }
-.grid-container-main > .grid-cell:nth-child(4) {
+#grid-container-main > .grid-cell:nth-child(4) {
   justify-content: flex-start;
   align-items: flex-end;
 }
-.grid-container-main > .grid-cell:nth-child(7) {
+#grid-container-main > .grid-cell:nth-child(7) {
   justify-content: flex-end;
   align-items: flex-start;
 }
-.grid-container-main > .grid-cell:nth-child(9) {
+#grid-container-main > .grid-cell:nth-child(9) {
   justify-content: flex-start;
   align-items: flex-start;
 }
@@ -45,16 +44,14 @@
 }
 
 .grid-cell:hover {
-  box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.808);
   cursor: pointer;
   transform: translateY(-3px);
 }
 .grid-cell:hover > .badge-img {
-  width: 12rem;
+  scale: 1.33;
 }
 .grid-cell:hover > .cert-img {
-  width: 18rem;
-  box-shadow: 0px 0px 6px 2px rgba(0, 0, 0, 0.808);
+  scale: 1.33;
 }
 
 .nameplate {
@@ -109,6 +106,17 @@
     display: flex;
     flex-flow: column nowrap;
     padding-bottom: 3rem;
+  }
+  #grid-container-main > .grid-cell {
+    display: block;
+    text-align: center;
+  }
+  .cell-title {
+    justify-content: center;
+    margin: 1rem auto;
+  }
+  .nameplate {
+    margin-bottom: 3rem;
   }
   .resume,
   .resume > iframe {

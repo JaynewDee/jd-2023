@@ -34,7 +34,11 @@ const BaseGrid = ({ setDisplay }: { setDisplay: DisplayDispatch }) => {
   );
 
   return (
-    <div className="grid-container grid-container-main">
+    <div
+      className="grid-container"
+      id="grid-container-main"
+      style={{ gridAutoRows: "15rem" }}
+    >
       <Nameplate />
       {categories.map((cat) => Category(cat[0], cat[1]))}
     </div>
