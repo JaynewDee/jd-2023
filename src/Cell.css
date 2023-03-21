@@ -1,4 +1,5 @@
 .cell-title {
+  display: flex;
   pointer-events: none;
 }
 

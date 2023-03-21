@@ -8,9 +8,7 @@ const Resume: React.FC<CategoryProps> = ({ setDisplay }) => {
 
   const Title = () => (
     <h4 className="cell-title">
-      <span>
-        <Journal className="journal" />
-      </span>
+      <Journal className="journal" />
       <span
         style={{
           padding: "0 1rem",
@@ -19,11 +17,10 @@ const Resume: React.FC<CategoryProps> = ({ setDisplay }) => {
       >
         Resume
       </span>
-      <span>
-        <Journal className="journal" />
-      </span>
+      <Journal className="journal" />
     </h4>
   );
+
   return (
     <>
       <div className="grid-container">
