@@ -27,4 +27,12 @@ body {
     flex-flow: column nowrap;
     padding-bottom: 3rem;
   }
+  .resume,
+  .resume > iframe {
+    width: 100%;
+  }
+}
+
+.footnote {
+  font-size: 0.66rem;
 }

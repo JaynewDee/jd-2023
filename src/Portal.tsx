@@ -8,7 +8,7 @@ import Projects from "./components/Projects";
 import Resume from "./components/Resume";
 import Social from "./components/Social";
 
-const Portal = () => {
+const Portal: React.FC = () => {
   const [displayState, setDisplayState] = useState("");
 
   const displays: { [key: string]: JSX.Element } = {

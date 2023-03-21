@@ -13,10 +13,10 @@ const BaseGrid = ({ setDisplay }: { setDisplay: DisplayDispatch }) => {
   };
 
   const categories: [number, string][] = [
-    [0, "Social"],
-    [1, "Accolades"],
-    [2, "Contact"],
     [3, "Projects"],
+    [1, "Accolades"],
+    [0, "Social"],
+    [2, "Contact"],
     [4, "Resume"],
     [5, "Placeholder"],
     [6, "Placeholder"],

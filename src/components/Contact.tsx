@@ -9,7 +9,7 @@ const Contact: React.FC<CategoryProps> = ({ setDisplay }) => {
         <h4 className="cell-title">{BsArrow90DegLeft({})}</h4>
       </div>
       <div className="message grid-cell">
-        <h4 className="cell-title">Message</h4>
+        <h4 className="cell-title">Contact</h4>
       </div>
     </div>
   );
