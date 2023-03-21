@@ -5,10 +5,11 @@ import { useEffect } from "react";
 
 function App() {
   useEffect(() => {
-    if (window.screen.width < 450) {
+    if (window.screen.width < 720) {
       console.log(window.screen.width);
     }
   }, []);
+
   return (
     <div className="App">
       <Portal />

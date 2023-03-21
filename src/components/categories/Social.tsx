@@ -1,25 +1,12 @@
 import React from "react";
-import { CategoryProps } from "../BaseGrid";
-import {
-  BsArrow90DegLeft,
-  BsFacebook,
-  BsLinkedin,
-  BsGithub,
-  BsPencil
-} from "react-icons/bs";
+import { openInNewTab } from "../../utils";
+import { BsFacebook, BsLinkedin, BsGithub, BsPencil } from "react-icons/bs";
 import { IconType } from "react-icons";
-import BackCell from "./BackCell";
+import { DisplayProps } from "../../Portal";
 
 //
 
-const Social: React.FC<CategoryProps> = ({ setDisplay }) => {
-  const goBack = () => setDisplay("");
-
-  const openInNewTab = (url: string) => {
-    const newWindow = window.open(url, "_blank", "noopener,noreferrer");
-    if (newWindow) newWindow.opener = null;
-  };
-
+const Social: React.FC<DisplayProps> = ({ backBtn }) => {
   const visitGh = () => openInNewTab("https://github.com/JaynewDee");
   const visitLi = () => openInNewTab("https://www.linkedin.com/in/jaynewd73/");
   const visitFb = () => openInNewTab("https://www.facebook.com/jndiehl");
@@ -51,13 +38,15 @@ const Social: React.FC<CategoryProps> = ({ setDisplay }) => {
   );
 
   return (
-    <div className="grid-container">
-      <BackCell goBack={goBack} />
+    <div className="grid-container-category">
+      {backBtn()}
 
       <div className="social grid-cell">
         <h4 className="cell-title">Social</h4>
       </div>
-      {options.map(({ handler, icon }, idx) => Option(handler, icon, idx))}
+      <div className="social-grid">
+        {options.map(({ handler, icon }, idx) => Option(handler, icon, idx))}
+      </div>
     </div>
   );
 };

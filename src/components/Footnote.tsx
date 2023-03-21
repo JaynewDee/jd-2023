@@ -1,15 +1,12 @@
-import React from "react";
-
+import { openInNewTab } from "../utils";
 import MITLicense from "../assets/license-MIT-blue.svg";
 
-const Footnote = () => {
-  const openInNewTab = (url: string) => {
-    const newWindow = window.open(url, "_blank", "noopener,noreferrer");
-    if (newWindow) newWindow.opener = null;
-  };
+//
 
+const Footnote = () => {
   const licenseUrl = "https://opensource.org/license/mit/";
   const visitLicensing = () => openInNewTab(licenseUrl);
+
   return (
     <div className="footnote">
       <p>built and maintained by</p>

@@ -1,11 +1,10 @@
 import React from "react";
 import { BsFillJournalBookmarkFill as Journal } from "react-icons/bs";
-import { CategoryProps } from "../BaseGrid";
-import BackCell from "./BackCell";
+import { DisplayProps } from "../../Portal";
 
-const Resume: React.FC<CategoryProps> = ({ setDisplay }) => {
-  const goBack = () => setDisplay("");
+//
 
+const Resume: React.FC<DisplayProps> = ({ backBtn }) => {
   const Title = () => (
     <h4 className="cell-title">
       <Journal className="journal" />
@@ -22,18 +21,12 @@ const Resume: React.FC<CategoryProps> = ({ setDisplay }) => {
   );
 
   return (
-    <div
-      className="grid-container"
-      style={{
-        gridTemplateRows: "repeat(9, 12rem)",
-        gridArea: "2 / 1 / 12 / 4"
-      }}
-    >
-      <BackCell goBack={goBack} />
+    <div className="grid-container-category">
+      {backBtn()}
       <div className="grid-cell">
         <Title />
       </div>
-      <div className="grid-cell"></div>
+
       <div className="resume">
         <iframe
           src="/JoshuaDiehl_Resume.pdf"

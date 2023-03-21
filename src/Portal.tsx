@@ -1,29 +1,43 @@
-import React, { useState } from "react";
-import BaseGrid from "./BaseGrid";
-import About from "./components/About";
-import Accolades from "./components/Accolades";
-import Contact from "./components/Contact";
-import Nameplate from "./components/Nameplate";
-import Placeholder from "./components/Placeholder";
-import Projects from "./components/Projects";
-import Resume from "./components/Resume";
-import Social from "./components/Social";
+import React, { Dispatch, SetStateAction, useState } from "react";
+import MenuGrid from "./MenuGrid";
+import BackBtn from "./components/BackBtn";
+import About from "./components/categories/About";
+import Accolades from "./components/categories/Accolades";
+import Contact from "./components/categories/Contact";
+import Etc from "./components/categories/Etc";
+import Projects from "./components/categories/Projects";
+import Resume from "./components/categories/Resume";
+import Skills from "./components/categories/Skills";
+import Social from "./components/categories/Social";
+
+export type DisplayProps = {
+  setDisplay: Dispatch<SetStateAction<string>>;
+  backBtn: () => JSX.Element;
+};
 
 const Portal: React.FC = () => {
   const [displayState, setDisplayState] = useState("");
 
-  const displays: { [key: string]: JSX.Element } = {
-    accolades: <Accolades setDisplay={setDisplayState} />,
-    contact: <Contact setDisplay={setDisplayState} />,
-    projects: <Projects setDisplay={setDisplayState} />,
-    resume: <Resume setDisplay={setDisplayState} />,
-    social: <Social setDisplay={setDisplayState} />,
-    who: <About setDisplay={setDisplayState} />,
-    placeholder: <Placeholder setDisplay={setDisplayState} />,
-    "": <BaseGrid setDisplay={setDisplayState} />
+  const goBack = () => setDisplayState("");
+
+  const props: DisplayProps = {
+    setDisplay: setDisplayState,
+    backBtn: () => <BackBtn goBack={goBack} />
   };
 
-  return <>{displays[displayState]}</>;
+  const displays: { [key: string]: JSX.Element } = {
+    accolades: <Accolades {...props} />,
+    contact: <Contact {...props} />,
+    projects: <Projects {...props} />,
+    skills: <Skills {...props} />,
+    resume: <Resume {...props} />,
+    social: <Social {...props} />,
+    who: <About {...props} />,
+    etc: <Etc {...props} />,
+    "": <MenuGrid {...props} />
+  };
+
+  return <div>{displays[displayState]}</div>;
 };
 
 export default Portal;

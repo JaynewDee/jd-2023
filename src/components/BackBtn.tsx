@@ -1,11 +1,13 @@
-import React from "react";
 import { BsArrow90DegLeft as BackArrow } from "react-icons/bs";
-const BackCell = ({ goBack }: any) => {
+
+//
+
+const BackBtn = ({ goBack }: { goBack: () => void }) => {
   return (
-    <div className="return grid-cell" onClick={goBack}>
+    <div className="back-btn grid-cell" onClick={goBack}>
       <h4 className="cell-title">{BackArrow({})}</h4>
     </div>
   );
 };
 
-export default BackCell;
+export default BackBtn;
