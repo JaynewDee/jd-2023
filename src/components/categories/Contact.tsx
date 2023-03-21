@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { DisplayProps } from "../../Portal";
 import emailjs from "@emailjs/browser";
+import Title from "./Title";
 
 //
 
@@ -28,10 +29,10 @@ const Contact: React.FC<DisplayProps> = ({ backBtn }) => {
   };
 
   return (
-    <div className="grid-container-category">
-      {backBtn()}
-      <div className="contact grid-cell">
-        <h4 className="cell-title">Contact</h4>
+    <div className="category-container">
+      <div className="category-header">
+        {backBtn()}
+        {Title("Contact")}
       </div>
       <div className="contact grid-cell">
         <div className="visitor-details">

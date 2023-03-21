@@ -1,14 +1,14 @@
 import { DisplayProps } from "../../Portal";
+import Title from "./Title";
 
 //
 
 const Projects: React.FC<DisplayProps> = ({ backBtn }) => {
   return (
-    <div className="grid-container-category">
-      {backBtn()}
-
-      <div className="projects grid-cell">
-        <h4 className="cell-title">Projects</h4>
+    <div className="category-container">
+      <div className="category-header">
+        {backBtn()}
+        {Title("Projects")}
       </div>
     </div>
   );

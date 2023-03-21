@@ -32,26 +32,3 @@ body {
 .App {
   min-height: 925px;
 }
-.footnote {
-  position: relative;
-  bottom: 1rem;
-  font-size: 0.6rem;
-
-  color: rgba(255, 255, 255, 0.77);
-  width: 100%;
-}
-
-.footnote > p {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-  line-height: 1.5;
-  pointer-events: none;
-}
-
-.license-badge {
-  width: 3rem;
-  cursor: pointer;
-  margin-top: 0.66rem;
-}

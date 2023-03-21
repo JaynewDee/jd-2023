@@ -21,10 +21,12 @@ const Resume: React.FC<DisplayProps> = ({ backBtn }) => {
   );
 
   return (
-    <div className="grid-container-category">
-      {backBtn()}
-      <div className="grid-cell">
-        <Title />
+    <div className="category-container">
+      <div className="category-header">
+        {backBtn()}
+        <div className="grid-cell">
+          <Title />
+        </div>
       </div>
 
       <div className="resume">
