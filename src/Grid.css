@@ -154,6 +154,13 @@ img {
   pointer-events: none;
 }
 
+.resume {
+  margin-top: 3rem;
+}
+.resume > * {
+  height: 54rem;
+}
+
 .contact-msg-input {
   width: 66%;
   height: 99%;
@@ -181,6 +188,9 @@ img {
     justify-content: center;
     margin: 2rem auto;
   }
+  .nameplate {
+    margin-bottom: 3rem;
+  }
   .social-container {
     margin-top: 6rem;
     width: 66%;
@@ -197,6 +207,9 @@ img {
     display: flex;
     flex-flow: column nowrap;
     row-gap: 1rem;
+  }
+  .resume {
+    width: 100%;
   }
 }
 
@@ -219,7 +232,7 @@ img {
 }
 
 .footnote {
-  margin-top: 6rem;
+  margin: 6rem auto 2rem;
   position: relative;
   font-size: 0.6rem;
   color: rgba(255, 255, 255, 0.77);

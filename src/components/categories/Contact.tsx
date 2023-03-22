@@ -67,6 +67,7 @@ const Contact: React.FC<DisplayProps> = ({ backBtn }) => {
         </div>
         <div className="contact-message">
           <textarea
+            placeholder="YOUR MESSAGE"
             className="contact-msg-input"
             onChange={handleInputChange}
             value={formState.message}
