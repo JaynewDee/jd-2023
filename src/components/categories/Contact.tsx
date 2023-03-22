@@ -22,10 +22,18 @@ const Contact: React.FC<DisplayProps> = ({ backBtn }) => {
   };
 
   const handleSendEmail = (e: any) => {
-    emailjs.send("service_4rfb3fe", "template_hoq4aqf", formState).then(
-      (response) => console.log("SUCCESS!", response.status, response.text),
-      (error) => console.log("FAILED...", error)
-    );
+    emailjs
+      .send(
+        "service_4rfb3fe",
+        "template_hoq4aqf",
+        formState,
+        "hXdGf86bwNCK2LZuE"
+      )
+      .then(
+        (response) => console.log("SUCCESS!", response.status, response.text),
+        (error) => console.log("FAILED...", error)
+      )
+      .then(() => setFormState({ name: "", email: "", message: "" }));
   };
 
   return (
@@ -34,7 +42,7 @@ const Contact: React.FC<DisplayProps> = ({ backBtn }) => {
         {backBtn()}
         {Title("Contact")}
       </div>
-      <div className="contact grid-cell">
+      <div className="contact-container">
         <div className="visitor-details">
           <div className="labelled-input">
             <label htmlFor="name">your name</label>
@@ -57,18 +65,20 @@ const Contact: React.FC<DisplayProps> = ({ backBtn }) => {
             />
           </div>
         </div>
-      </div>
-      <div className="contact grid-cell">
-        <textarea
-          className="contact-msg-input"
-          onChange={handleInputChange}
-          value={formState.message}
-          name="message"
-          id="message"
-        />
-      </div>
-      <div className="contact grid-cell">
-        <p onClick={handleSendEmail}>SEND</p>
+        <div className="contact-message">
+          <textarea
+            className="contact-msg-input"
+            onChange={handleInputChange}
+            value={formState.message}
+            name="message"
+            id="message"
+          />
+        </div>
+        <div className="contact grid-cell">
+          <p className="send-btn" onClick={handleSendEmail}>
+            SEND
+          </p>
+        </div>
       </div>
     </div>
   );

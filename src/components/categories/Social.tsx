@@ -34,17 +34,19 @@ const Social: React.FC<DisplayProps> = ({ backBtn }) => {
 
   const Option = (handler: () => void, icon: IconType, id: number) => (
     <div className="social grid-cell" onClick={handler} key={id}>
-      <span className="social-icon-card">{icon({ size: "3rem" })}</span>
+      <span className="social-icon-card">
+        {icon({ size: "3rem", className: "social-icon" })}
+      </span>
     </div>
   );
 
   return (
-    <div className="category-container">
+    <div className="category-container" style={{ justifyContent: "center" }}>
       <div className="category-header">
         {backBtn()}
         {Title("Social")}
       </div>
-      <div className="social-grid">
+      <div className="social-container">
         {options.map(({ handler, icon }, idx) => Option(handler, icon, idx))}
       </div>
     </div>

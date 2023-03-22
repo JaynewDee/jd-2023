@@ -7,48 +7,85 @@
 }
 
 .category-container {
-  width: 66%;
+  width: 90%;
   display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  margin: 3rem auto;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 0 auto;
 }
 
 .category-header {
+  font-size: 1.66rem;
+
   display: flex;
-  flex-flow: column;
   align-items: center;
   justify-content: space-between;
-  height: 21rem;
 }
 
 .category-title {
-  writing-mode: tb-rl;
-  transform: rotate(-180deg);
-  font-size: 2rem;
+  pointer-events: none;
 }
+
+.back-btn:hover > * > * {
+  scale: 1.15;
+}
+
 .accolades-grid {
   display: grid;
   grid-auto-rows: 12rem;
   grid-template-columns: 1fr 1fr 1fr;
   column-gap: 1rem;
+  margin: 6rem auto 0;
 }
+
 .accolades-grid > .accolade {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.social-grid {
-  height: 12rem;
-  display: grid;
-  grid-template-columns: 6rem;
-  grid-template-rows: 1fr 1fr;
-}
-.social {
+
+.social-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 1rem;
+  width: 100%;
+  margin-top: 3rem;
+}
+
+.social-icon {
+  transition: all 0.3s;
+  margin: 1rem;
+}
+
+.social-icon:hover {
+  cursor: pointer;
+  color: black;
+}
+
+.contact-container {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 66%;
+  margin: 0 auto;
+}
+
+.send-btn {
+  cursor: pointer;
+}
+.visitor-details {
+  display: flex;
+  align-items: center;
+  flex-flow: column nowrap;
+  width: 12rem;
+  margin: 3rem auto;
+}
+
+.contact-message {
+  min-height: 18rem;
+}
+.contact-message > textarea {
+  min-height: 15rem;
+  width: 90%;
 }
 
 img {
@@ -124,14 +161,42 @@ img {
   border-radius: 6px;
   background-color: #f8f8f8ef;
   color: black;
-  font-size: 2rem;
-  padding: 3rem;
+  font-size: 1.33rem;
+  padding: 1rem;
 }
 
 @media screen and (max-width: 768px) {
+  #grid-container-main {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+  }
   #grid-container-main > .menu-cell {
     display: block;
     text-align: center;
+  }
+  .category-container {
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem auto;
+  }
+  .social-container {
+    margin-top: 6rem;
+    width: 66%;
+  }
+  .category-header {
+    flex-flow: column nowrap;
+  }
+  .category-title {
+    writing-mode: unset;
+    font-size: 2rem;
+    transform: rotate(0deg);
+  }
+  .accolades-grid {
+    display: flex;
+    flex-flow: column nowrap;
+    row-gap: 1rem;
   }
 }
 
