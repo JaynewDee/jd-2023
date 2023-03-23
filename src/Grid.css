@@ -1,8 +1,8 @@
 #grid-container-main {
-  width: 75%;
+  max-width: 75%;
   grid-auto-rows: 12rem;
   display: grid;
-  margin: 3rem auto 0;
+  margin: auto;
   grid-template-columns: 1fr 1fr 1fr;
   border-radius: 50%;
 }
@@ -43,14 +43,14 @@
 .accolades-box {
   display: flex;
   flex-flow: row wrap;
-  margin: 6rem auto 0;
+  margin: 3rem auto 0;
 }
-
-.accolade {
+.badges-box,
+.certs-box {
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin: 2rem;
+  flex-flow: row wrap;
+  margin: 1rem auto;
 }
 
 .social-container {
@@ -211,7 +211,7 @@ img {
   right: 0;
   margin-left: auto;
   margin-right: auto;
-  width: 15rem;
+  width: 13rem;
 
   border-top: 2px solid white;
   padding-top: 1rem;
@@ -256,7 +256,10 @@ img {
   font-size: 1.33rem;
   padding: 1rem;
 }
-
+.cert-div {
+  position: relative;
+  margin: 1rem;
+}
 @media screen and (max-width: 768px) {
   #grid-container-main {
     display: flex;
@@ -274,7 +277,7 @@ img {
     margin: 2rem auto;
   }
   .nameplate {
-    margin-bottom: 3rem;
+    margin-bottom: 5rem;
   }
   .name-cell::after {
     width: 66vw;
@@ -291,7 +294,7 @@ img {
     flex-flow: column nowrap;
   }
   .category-title {
-    font-size: 2rem;
+    font-size: 1.5rem;
     transform: rotate(0deg);
     text-decoration: none;
   }
@@ -309,12 +312,16 @@ img {
     width: 66vw;
     border-radius: 50%;
   }
+  .cert-div {
+    width: 100%;
+    margin: 1rem auto;
+  }
 }
 
 .footnote {
   margin: 6rem auto 2rem;
   position: relative;
-  font-size: 0.6rem;
+  font-size: 0.5rem;
   color: rgba(255, 255, 255, 0.77);
   width: 100%;
 }
@@ -331,7 +338,7 @@ img {
 .license-badge {
   width: 3rem;
   cursor: pointer;
-  margin-top: 0.66rem;
+  margin-top: 0.5rem;
 }
 
 @keyframes fadeIn {

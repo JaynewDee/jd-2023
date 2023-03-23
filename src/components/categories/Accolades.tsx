@@ -9,13 +9,9 @@ import { CiMedal } from "react-icons/ci";
 import { useMagnifier } from "../../hooks/useMagnifier";
 //
 
-const accolades = [
-  BootCampBadge,
-  CloudPractitionerBadge,
-  SMUCert,
-  CS50PCert,
-  CS50XCert
-];
+const badges = [BootCampBadge, CloudPractitionerBadge];
+const certs = [SMUCert, CS50PCert, CS50XCert];
+
 const Accolades: React.FC<DisplayProps> = ({ backBtn }) => {
   //
 
@@ -30,15 +26,24 @@ const Accolades: React.FC<DisplayProps> = ({ backBtn }) => {
         </div>
       </div>
       <div className="accolades-box">
-        {accolades.map((src, idx) =>
-          useMagnifier({
-            src,
-            width: "300px",
-            height: "",
-            zoomLevel: 2,
-            id: idx
-          })
-        )}
+        <div className="badges-box">
+          {badges.map((badge, idx) => (
+            <div key={idx} className="badge-div">
+              <img src={badge} alt="" />
+            </div>
+          ))}
+        </div>
+        <div className="certs-box">
+          {certs.map((src, idx) =>
+            useMagnifier({
+              src,
+              width: "400px",
+              height: "",
+              zoomLevel: 2.5,
+              id: idx
+            })
+          )}
+        </div>
       </div>
     </div>
   );
