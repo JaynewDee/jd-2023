@@ -2,13 +2,12 @@ import { useState } from "react";
 import { DisplayProps } from "../../Portal";
 import emailjs from "@emailjs/browser";
 import Title from "./Title";
-
+import { GoMail as Mail } from "react-icons/go";
 //
 
 const Contact: React.FC<DisplayProps> = ({ backBtn }) => {
   const [formState, setFormState] = useState({
     name: "",
-    email: "",
     message: ""
   });
 
@@ -20,7 +19,9 @@ const Contact: React.FC<DisplayProps> = ({ backBtn }) => {
     });
   };
 
-  const handleSendEmail = (e: any) => {
+  const handleSendEmail = () => {
+    if (formState.message.length < 3) return;
+
     emailjs
       .send(
         "service_4rfb3fe",
@@ -32,14 +33,18 @@ const Contact: React.FC<DisplayProps> = ({ backBtn }) => {
         (response) => console.log("SUCCESS!", response.status, response.text),
         (error) => console.log("FAILED...", error)
       )
-      .then(() => setFormState({ name: "", email: "", message: "" }));
+      .then(() => setFormState({ name: "", message: "" }));
   };
 
   return (
     <div className="category-container">
       <div className="category-header">
         {backBtn()}
-        {Title("Contact")}
+        <div className="title-with-icons">
+          {Mail({})}
+          {Title("Contact")}
+          {Mail({})}
+        </div>
       </div>
       <div className="contact-container">
         <div className="visitor-details">
@@ -51,16 +56,6 @@ const Contact: React.FC<DisplayProps> = ({ backBtn }) => {
               type="text"
               name="name"
               id="name"
-            />
-          </div>
-          <div className="labelled-input">
-            <label htmlFor="email">your email</label>
-            <input
-              onChange={handleInputChange}
-              value={formState.email}
-              type="text"
-              name="email"
-              id="email"
             />
           </div>
         </div>

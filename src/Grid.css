@@ -1,5 +1,5 @@
 #grid-container-main {
-  width: 66%;
+  width: 60%;
   grid-auto-rows: 15rem;
   display: grid;
   margin: 3rem auto 0;
@@ -23,8 +23,10 @@
 }
 
 .category-title {
+  margin: 0 0.5rem 0 0.5rem;
   text-decoration: overline;
   pointer-events: none;
+  font-size: 1.33rem;
 }
 
 .title-with-icons {
@@ -80,7 +82,9 @@
 }
 
 .send-btn {
+  margin-top: 3rem;
   cursor: pointer;
+  font-size: 1.33rem;
 }
 
 .visitor-details {
@@ -108,12 +112,12 @@ img {
   display: flex;
 }
 
-.menu-cell > .cell-title {
+.menu-title {
   filter: drop-shadow(0px 3px 1px black);
   transition: all 0.33s;
 }
 
-.menu-cell:hover > .cell-title {
+.menu-cell:hover > .menu-title {
   filter: drop-shadow(0px 6px 1px black);
   transform: translateY(-3px);
 }
@@ -156,12 +160,33 @@ img {
   justify-content: center;
   grid-area: 2 / 2 / 3 / 3;
   flex-flow: column nowrap;
-  transition: all 0.3s;
 }
 
-.nameplate:hover {
+.name-cell > h1,
+.name-cell > h2 {
+  transition: all 1s;
+}
+
+.name-cell:hover > h1,
+.name-cell:hover > h2 {
   scale: 1.3;
-  filter: drop-shadow(0px 6px 1px black);
+  filter: drop-shadow(0px 1px 2px black);
+}
+
+.name-cell:hover::after {
+  filter: none;
+  content: "Jr. Software Engineer";
+  position: absolute;
+  font-size: 0.66rem;
+  font-family: monospace;
+  opacity: 0;
+  animation: fadeIn 3s 1 linear forwards;
+  margin-top: 0.5rem;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 15vw;
 }
 
 .back-btn {
@@ -210,6 +235,9 @@ img {
   .nameplate {
     margin-bottom: 3rem;
   }
+  .name-cell:hover::after {
+    width: 90vw;
+  }
   .social-container {
     margin-top: 6rem;
     width: 66%;
@@ -218,9 +246,9 @@ img {
     flex-flow: column nowrap;
   }
   .category-title {
-    writing-mode: unset;
     font-size: 2rem;
     transform: rotate(0deg);
+    text-decoration: none;
   }
   .accolades-grid {
     display: flex;
@@ -229,6 +257,11 @@ img {
   }
   .resume {
     width: 100%;
+  }
+  .mobile-rule {
+    display: flex;
+    width: 66vw;
+    border-radius: 50%;
   }
 }
 
@@ -272,4 +305,13 @@ img {
   width: 3rem;
   cursor: pointer;
   margin-top: 0.66rem;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.9;
+  }
 }

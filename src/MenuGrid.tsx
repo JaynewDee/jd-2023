@@ -15,8 +15,8 @@ const MenuGrid = ({ setDisplay }: { setDisplay: DisplayDispatch }) => {
     [1, "Accolades"],
     [0, "Projects"],
     [3, "Skills"],
-    [5, "Resume"],
     [4, "Contact"],
+    [5, "Resume"],
     [2, "Social"],
     [6, "Who?"],
     [7, "etc."]
@@ -29,7 +29,7 @@ const MenuGrid = ({ setDisplay }: { setDisplay: DisplayDispatch }) => {
       className={`menu-cell`}
       onClick={handleCategorySwitch}
     >
-      <h4 className="cell-title">{name}</h4>
+      <h4 className="cell-title menu-title">{name}</h4>
     </div>
   );
 

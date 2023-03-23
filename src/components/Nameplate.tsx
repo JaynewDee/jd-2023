@@ -6,7 +6,7 @@ const Nameplate: React.FC = () => {
   return (
     <div data-category={"nameplate"} className="nameplate grid-cell">
       <div className="name-cell">
-        <h2>Joshua</h2>
+        <h2 className="joshua">Joshua</h2>
         <h1>Diehl</h1>
       </div>
     </div>
