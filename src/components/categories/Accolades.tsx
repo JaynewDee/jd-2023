@@ -5,15 +5,21 @@ import CS50PCert from "../../assets/cs50p_cert.png";
 import CS50XCert from "../../assets/cs50x_cert.png";
 import { DisplayProps } from "../../Portal";
 import Title from "./Title";
-
+import { CiMedal } from "react-icons/ci";
 //
 
 const Accolades: React.FC<DisplayProps> = ({ backBtn }) => {
+  //
+
   return (
     <div className="category-container">
       <div className="category-header">
         {backBtn()}
-        {Title("Accolades")}
+        <div className="title-with-icons">
+          {CiMedal({})}
+          {Title("Accolades")}
+          {CiMedal({})}
+        </div>
       </div>
       <div className="accolades-grid">
         <div className="accolade grid-cell">

@@ -12,12 +12,12 @@ const MenuGrid = ({ setDisplay }: { setDisplay: DisplayDispatch }) => {
     setDisplay(e.target.dataset.category);
 
   const categories: [number, string][] = [
-    [0, "Projects"],
     [1, "Accolades"],
-    [2, "Social"],
+    [0, "Projects"],
     [3, "Skills"],
-    [4, "Contact"],
     [5, "Resume"],
+    [4, "Contact"],
+    [2, "Social"],
     [6, "Who?"],
     [7, "etc."]
   ];

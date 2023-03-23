@@ -14,11 +14,10 @@ const Contact: React.FC<DisplayProps> = ({ backBtn }) => {
 
   const handleInputChange = (e: any) => {
     const { name, value } = e.target;
-    const newState = {
+    setFormState({
       ...formState,
       [name]: value
-    };
-    setFormState(newState);
+    });
   };
 
   const handleSendEmail = (e: any) => {
