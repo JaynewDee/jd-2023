@@ -55,6 +55,7 @@ const Contact: React.FC<DisplayProps> = ({ backBtn }) => {
             type="text"
             name="name"
             id="name"
+            placeholder="CHUCK NORRIS"
           />
         </div>
         <div className="contact-message">

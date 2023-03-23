@@ -20,6 +20,7 @@ export function useMagnifier({
   const [[x, y], setXY] = useState([0, 0]);
   const [[imgWidth, imgHeight], setSize] = useState([0, 0]);
   const [showMagnifier, setShowMagnifier] = useState(false);
+
   return (
     <div
       key={id}

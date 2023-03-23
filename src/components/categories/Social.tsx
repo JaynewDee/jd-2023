@@ -4,7 +4,7 @@ import { BsFacebook, BsLinkedin, BsGithub } from "react-icons/bs";
 import { IconType } from "react-icons";
 import { DisplayProps } from "../../Portal";
 import Title from "./Title";
-import { RiTeamLine as Team } from "react-icons/ri";
+import { TbHeartHandshake as HeartShake } from "react-icons/tb";
 //
 
 const Social: React.FC<DisplayProps> = ({ backBtn }) => {
@@ -29,7 +29,7 @@ const Social: React.FC<DisplayProps> = ({ backBtn }) => {
 
   const Option = (handler: () => void, icon: IconType, id: number) => (
     <div className="social grid-cell" onClick={handler} key={id}>
-      {icon({ size: "5rem", className: "social-icon" })}
+      {icon({ size: "3rem", className: "social-icon" })}
     </div>
   );
 
@@ -38,14 +38,25 @@ const Social: React.FC<DisplayProps> = ({ backBtn }) => {
       <div className="category-header">
         {backBtn()}
         <div className="title-with-icons">
-          {Team({})}
+          {HeartShake({})}
           {Title("Social")}
-          {Team({})}
+          {HeartShake({ style: { transform: "scaleX(-1)" } })}
         </div>
       </div>
       <div className="social-container">
         {options.map(({ handler, icon }, idx) => Option(handler, icon, idx))}
       </div>
+      <section>
+        <h4 className="devto-header">
+          <p
+            className="devto-link"
+            onClick={() => openInNewTab("https://dev.to/synthetic_rain")}
+          >
+            dev.to
+          </p>
+        </h4>
+        <article></article>
+      </section>
     </div>
   );
 };

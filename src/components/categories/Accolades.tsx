@@ -37,9 +37,9 @@ const Accolades: React.FC<DisplayProps> = ({ backBtn }) => {
           {certs.map((src, idx) =>
             useMagnifier({
               src,
-              width: "400px",
+              width: "330px",
               height: "",
-              zoomLevel: 2.5,
+              zoomLevel: 1.66,
               id: idx
             })
           )}
