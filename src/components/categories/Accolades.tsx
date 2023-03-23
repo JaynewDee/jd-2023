@@ -6,8 +6,16 @@ import CS50XCert from "../../assets/cs50x_cert.png";
 import { DisplayProps } from "../../Portal";
 import Title from "./Title";
 import { CiMedal } from "react-icons/ci";
+import { useMagnifier } from "../../hooks/useMagnifier";
 //
 
+const accolades = [
+  BootCampBadge,
+  CloudPractitionerBadge,
+  SMUCert,
+  CS50PCert,
+  CS50XCert
+];
 const Accolades: React.FC<DisplayProps> = ({ backBtn }) => {
   //
 
@@ -21,22 +29,10 @@ const Accolades: React.FC<DisplayProps> = ({ backBtn }) => {
           {CiMedal({})}
         </div>
       </div>
-      <div className="accolades-grid">
-        <div className="accolade grid-cell">
-          <img className="badge-img" src={BootCampBadge}></img>
-        </div>
-        <div className="accolade grid-cell">
-          <img className="badge-img" src={CloudPractitionerBadge}></img>
-        </div>
-        <div className="accolade grid-cell">
-          <img className="cert-img" src={SMUCert}></img>
-        </div>
-        <div className="accolade grid-cell">
-          <img className="cert-img" src={CS50PCert}></img>
-        </div>
-        <div className="accolade grid-cell">
-          <img className="cert-img" src={CS50XCert}></img>
-        </div>
+      <div className="accolades-box">
+        {accolades.map((src) =>
+          useMagnifier({ src, width: "300px", height: "", zoomLevel: 2 })
+        )}
       </div>
     </div>
   );

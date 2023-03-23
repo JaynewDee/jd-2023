@@ -29,9 +29,7 @@ const Social: React.FC<DisplayProps> = ({ backBtn }) => {
 
   const Option = (handler: () => void, icon: IconType, id: number) => (
     <div className="social grid-cell" onClick={handler} key={id}>
-      <span className="social-icon-card">
-        {icon({ size: "3rem", className: "social-icon" })}
-      </span>
+      {icon({ size: "5rem", className: "social-icon" })}
     </div>
   );
 
