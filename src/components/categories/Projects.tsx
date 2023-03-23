@@ -10,10 +10,10 @@ const Projects: React.FC<DisplayProps> = ({ backBtn }) => {
       <div className="category-header">
         {backBtn()}
         <div className="title-with-icons">
-          {Wrench({ size: "1.33rem", style: { marginRight: "" } })}
+          {Wrench({ size: "1rem", style: { marginRight: "" } })}
           {Title("Projects")}
           {Wrench({
-            size: "1.33rem",
+            size: "1rem",
             style: { transform: "scaleX(-1)", marginLeft: "" }
           })}
         </div>

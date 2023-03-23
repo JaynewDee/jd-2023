@@ -83,7 +83,7 @@
   font-family: var(--jb);
   line-height: 1.15;
   font-size: 0.77rem;
-  max-width: 66vw;
+  width: 66vw;
   margin: 1rem auto;
 }
 
@@ -204,7 +204,7 @@ img {
   filter: none;
   content: "SOFTWARE ENGINEER";
   position: absolute;
-  font-size: 0.77rem;
+  font-size: 0.66rem;
   opacity: 0;
   animation: fadeIn 3s 1 linear forwards;
   left: 0;
@@ -213,7 +213,7 @@ img {
   margin-right: auto;
   width: 15rem;
 
-  border-top: 1px solid white;
+  border-top: 2px solid white;
   padding-top: 1rem;
   padding-bottom: 3px;
 }
@@ -279,7 +279,9 @@ img {
   .name-cell::after {
     width: 66vw;
   }
-
+  .about-box {
+    width: 90vw;
+  }
   .social-container {
     flex-flow: column nowrap;
     margin-top: 6rem;
@@ -298,9 +300,7 @@ img {
     align-items: center;
     justify-content: center;
   }
-  .name-cell::after {
-    border-bottom: 1px solid white;
-  }
+
   .resume {
     width: 100%;
   }

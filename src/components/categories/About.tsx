@@ -13,10 +13,9 @@ const About: React.FC<DisplayProps> = ({ backBtn }) => {
       </div>
       <div className="about-box">
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus
-          necessitatibus dolorum assumenda laboriosam error. Nam iure
-          reprehenderit distinctio rem suscipit, quos, sed dolorum labore
-          laudantium unde repellat. Praesentium, eaque error.
+          How beautiful it is! To fall to give you flight. To die to give you
+          life. To die under your sky, and in your enchanted land eternally
+          sleep.
         </p>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio,

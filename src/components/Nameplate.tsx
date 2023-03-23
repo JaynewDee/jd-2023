@@ -9,7 +9,7 @@ const Nameplate: React.FC = () => {
         <h2 className="joshua">Joshua</h2>
         <h1>Diehl</h1>
         <span style={{ transform: "translate(0, 1rem)" }}>{"["}</span>
-        <span style={{ transform: "translate(5.11rem, 1rem)" }}>{"]"}</span>
+        <span style={{ transform: "translate(4.35rem, 1rem)" }}>{"]"}</span>
       </div>
     </div>
   );
