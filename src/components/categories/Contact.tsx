@@ -48,16 +48,14 @@ const Contact: React.FC<DisplayProps> = ({ backBtn }) => {
       </div>
       <div className="contact-container">
         <div className="visitor-details">
-          <div className="labelled-input">
-            <label htmlFor="name">your name</label>
-            <input
-              onChange={handleInputChange}
-              value={formState.name}
-              type="text"
-              name="name"
-              id="name"
-            />
-          </div>
+          <label htmlFor="name">your name </label>
+          <input
+            onChange={handleInputChange}
+            value={formState.name}
+            type="text"
+            name="name"
+            id="name"
+          />
         </div>
         <div className="contact-message">
           <textarea

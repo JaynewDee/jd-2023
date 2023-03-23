@@ -1,6 +1,6 @@
 #grid-container-main {
-  width: 60%;
-  grid-auto-rows: 15rem;
+  width: 75%;
+  grid-auto-rows: 12rem;
   display: grid;
   margin: 3rem auto 0;
   grid-template-columns: 1fr 1fr 1fr;
@@ -46,7 +46,7 @@
   margin: 6rem auto 0;
 }
 
-.accolades-box > .accolade {
+.accolade {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -79,20 +79,34 @@
   margin: 0 auto;
 }
 
+.about-box {
+  font-family: var(--jb);
+  line-height: 1.15;
+  font-size: 0.77rem;
+  max-width: 66vw;
+  margin: 1rem auto;
+}
+
+#name {
+  border-radius: 3px;
+  font-size: 1rem;
+}
+
 .send-btn {
-  margin-top: 3rem;
+  margin-top: 1rem;
   cursor: pointer;
-  font-size: 1.33rem;
+  font-size: 1rem;
+  padding: 1rem;
 }
 
 .visitor-details {
   display: flex;
-  align-items: center;
   flex-flow: column nowrap;
-  width: 12rem;
   margin: 3rem auto;
 }
-
+.visitor-details > label {
+  font-size: 0.66rem;
+}
 .contact-message {
   min-height: 18rem;
 }
@@ -100,6 +114,11 @@
 .contact-message > textarea {
   min-height: 15rem;
   width: 90%;
+  caret-color: var(--accent);
+}
+
+textarea::placeholder {
+  font-size: 0.66rem;
 }
 
 img {
@@ -152,39 +171,63 @@ img {
   cursor: pointer;
 }
 
+.cell-title {
+  display: flex;
+  pointer-events: none;
+}
+
 .nameplate {
   cursor: default;
   display: flex;
   justify-content: center;
   grid-area: 2 / 2 / 3 / 3;
   flex-flow: column nowrap;
+  height: 9rem;
 }
 
+.name-cell > h1 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+.name-cell > h2 {
+  font-size: 2rem;
+}
 .name-cell > h1,
 .name-cell > h2 {
-  transition: all 1s;
+  filter: drop-shadow(0px 0px 12px black);
 }
 
-.name-cell:hover > h1,
-.name-cell:hover > h2 {
-  scale: 1.3;
-  filter: drop-shadow(0px 1px 2px black);
-}
-
-.name-cell:hover::after {
+.name-cell::after {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   filter: none;
-  content: "JR. SOFTWARE ENGINEER";
+  content: "SOFTWARE ENGINEER";
   position: absolute;
-  font-size: 0.66rem;
-  font-family: monospace;
+  font-size: 0.77rem;
   opacity: 0;
   animation: fadeIn 3s 1 linear forwards;
-  margin-top: 0.5rem;
   left: 0;
   right: 0;
   margin-left: auto;
   margin-right: auto;
-  width: 15vw;
+  width: 15rem;
+
+  border-top: 1px solid white;
+  padding-top: 1rem;
+  padding-bottom: 3px;
+}
+
+.name-cell > span {
+  padding-top: 3px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--accent);
+  font-family: var(--merri);
+  font-weight: bolder;
 }
 
 .back-btn {
@@ -233,9 +276,10 @@ img {
   .nameplate {
     margin-bottom: 3rem;
   }
-  .name-cell:hover::after {
-    width: 90vw;
+  .name-cell::after {
+    width: 66vw;
   }
+
   .social-container {
     flex-flow: column nowrap;
     margin-top: 6rem;
@@ -254,7 +298,9 @@ img {
     align-items: center;
     justify-content: center;
   }
-
+  .name-cell::after {
+    border-bottom: 1px solid white;
+  }
   .resume {
     width: 100%;
   }
@@ -263,25 +309,6 @@ img {
     width: 66vw;
     border-radius: 50%;
   }
-}
-
-.cell-title {
-  display: flex;
-  pointer-events: none;
-}
-
-.cell-title > h1 {
-  font-size: 2.5rem;
-}
-
-.cell-title > h2 {
-  font-size: 1.5rem;
-}
-
-.cell-title > span {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .footnote {

@@ -30,8 +30,14 @@ const Accolades: React.FC<DisplayProps> = ({ backBtn }) => {
         </div>
       </div>
       <div className="accolades-box">
-        {accolades.map((src) =>
-          useMagnifier({ src, width: "300px", height: "", zoomLevel: 2 })
+        {accolades.map((src, idx) =>
+          useMagnifier({
+            src,
+            width: "300px",
+            height: "",
+            zoomLevel: 2,
+            id: idx
+          })
         )}
       </div>
     </div>

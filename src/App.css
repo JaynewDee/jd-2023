@@ -1,26 +1,36 @@
 @import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cutive+Mono&family=JetBrains+Mono:ital,wght@1,100&family=Oxygen+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Merriweather:wght@700&display=swap");
 @import "./Grid.css";
 
 :root {
-  font-size: 16px;
+  --accent: rgba(17, 130, 195, 1);
+  --mmd: "Major Mono Display", monospace;
+  --cutive: "Cutive Mono", monospace;
+  --jb: "JetBrains Mono", monospace;
+  --oxygen: "Oxygen Mono", monospace;
+  --anton: "Anton", sans-serif;
+  --merri: "Merriweather", serif;
+
   line-height: 24px;
   font-weight: 400;
+  font-size: 22px;
 
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
-  --accent: rgba(17, 130, 195, 1);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
 }
 
 #root {
   max-width: 1280px;
   margin: 0 auto;
   text-align: center;
-  font-family: "Major Mono Display", monospace;
+  font-family: var(--mmd);
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }

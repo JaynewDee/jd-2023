@@ -6,7 +6,8 @@ export function useMagnifier({
   height,
   magnifierHeight = 150,
   magnifierWidth = 150,
-  zoomLevel = 1.5
+  zoomLevel = 1.5,
+  id = 0
 }: {
   src: string;
   width?: string;
@@ -14,12 +15,14 @@ export function useMagnifier({
   magnifierHeight?: number;
   magnifierWidth?: number;
   zoomLevel?: number;
+  id?: number;
 }) {
   const [[x, y], setXY] = useState([0, 0]);
   const [[imgWidth, imgHeight], setSize] = useState([0, 0]);
   const [showMagnifier, setShowMagnifier] = useState(false);
   return (
     <div
+      key={id}
       style={{
         position: "relative",
         height: height,
