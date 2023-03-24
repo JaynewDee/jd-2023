@@ -10,7 +10,7 @@ const Resume: React.FC<DisplayProps> = ({ backBtn }) => {
       <div className="category-header">
         {backBtn()}
         <div className="title-with-icons">
-          {Journal({})}
+          {Journal({ style: { transform: "scaleX(-1)" } })}
           {Title("Resume")}
           {Journal({})}
         </div>
