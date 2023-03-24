@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction, useState } from "react";
+import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 import MenuGrid from "./MenuGrid";
 import BackBtn from "./components/BackBtn";
 import About from "./components/categories/About";
@@ -19,6 +19,14 @@ const Portal: React.FC = () => {
   const [displayState, setDisplayState] = useState("");
 
   const goBack = () => setDisplayState("");
+
+  useEffect(() => {
+    window.addEventListener("keydown", (e: any) => {
+      if (e.key === "Escape") {
+        goBack();
+      }
+    });
+  }, []);
 
   const props: DisplayProps = {
     setDisplay: setDisplayState,
