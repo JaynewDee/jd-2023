@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import bgStars from "./assets/stars_bg.jpg";
 import bgWater from "./assets/white_water.jpg";
 import bgMoon from "./assets/moon_clouds.jpg";
+import bgSmoke from "./assets/smoke.jpg";
 //
 
 function App() {
@@ -18,9 +19,6 @@ function App() {
   return (
     <>
       <div className="App">
-        <div id="bg-container">
-          <img className="moon-bg" src={bgMoon} />
-        </div>
         <Portal />
         <Footnote />
       </div>

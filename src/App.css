@@ -4,7 +4,7 @@
 @import "./Grid.css";
 
 :root {
-  --accent: rgba(17, 130, 195, 1);
+  --accent: rgb(53, 101, 150);
   --mmd: "Major Mono Display", monospace;
   --cutive: "Cutive Mono", monospace;
   --jb: "JetBrains Mono", monospace;
@@ -13,7 +13,6 @@
   --merri: "Merriweather", serif;
 
   line-height: 24px;
-  font-weight: 400;
   font-size: 22px;
 
   color: rgba(255, 255, 255, 1);
@@ -27,45 +26,47 @@
 }
 
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
   text-align: center;
   font-family: var(--mmd);
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
 
-body {
-  scrollbar-gutter: stable;
-  margin: 0;
+.App {
+  overflow-y: auto;
   overflow-x: hidden;
-  overflow-y: hidden;
+  min-height: 100vh;
+  padding-top: 3rem;
 }
 
-#bg-container {
-  display: flex;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  filter: saturate(0);
+.App::before {
+  content: "";
+  background-position: center;
+  background-image: url("./assets/smoke.jpg");
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.2;
+  filter: saturate(0.5);
   z-index: -1;
-}
-.moon-bg {
-  width: 5000px;
-  margin-bottom: 9rem;
-  opacity: 0.66;
-}
-.stars-bg {
-  width: 1500px;
-  height: 1392px;
-  resize: none;
-  z-index: -1;
-  opacity: 0.9;
 }
 
-.water-bg {
-  width: 1500px;
-  height: 200vh;
-  opacity: 0.9;
+body {
+  margin: 0;
+  padding: 0;
+}
+body::-webkit-scrollbar {
+  width: 6px;
+  background-color: black;
+}
+body::-webkit-scrollbar-track {
+  width: 6px;
+  background-color: black;
+}
+body::-webkit-scrollbar-thumb {
+  width: 6px;
+  background-color: white;
 }

@@ -5,13 +5,15 @@
   margin: auto;
   grid-template-columns: 1fr 1fr 1fr;
   border-radius: 50%;
+  /* border: 1px solid white; */
+  box-shadow: inset 0 0 9px 1px rgba(30, 32, 32, 0.66),
+    0 0 9px 1px rgba(255, 255, 255, 0.01);
 }
 
 .category-container {
   width: 90%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   margin: 0 auto;
 }
 
@@ -298,6 +300,9 @@ img {
   position: relative;
   margin: 1rem;
 }
+.cert-div img {
+  border-radius: 6px;
+}
 
 .cert-div:hover {
   cursor: crosshair;
@@ -309,6 +314,7 @@ img {
     flex-flow: column nowrap;
     align-items: center;
     width: auto;
+    box-shadow: none;
   }
   #grid-container-main > .menu-cell {
     text-align: center;
