@@ -9,14 +9,7 @@ const Projects: React.FC<DisplayProps> = ({ backBtn }) => {
     <div className="category-container">
       <div className="category-header">
         {backBtn()}
-        <div className="title-with-icons">
-          {Wrench({ size: "1rem", style: { marginRight: "" } })}
-          {Title("Projects")}
-          {Wrench({
-            size: "1rem",
-            style: { transform: "scaleX(-1)", marginLeft: "" }
-          })}
-        </div>
+        <div className="title-with-icons">{Title("PROJECTS")}</div>
       </div>
     </div>
   );

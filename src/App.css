@@ -1,7 +1,10 @@
+@import "./Grid.css";
 @import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cutive+Mono&family=JetBrains+Mono:ital,wght@1,100&family=Oxygen+Mono&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Anton&family=Merriweather:wght@700&display=swap");
-@import "./Grid.css";
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Cinzel:wght@500;700&family=Montserrat:wght@300&family=Poiret+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Italiana&display=swap");
 
 :root {
   --accent: rgb(53, 101, 150);
@@ -11,6 +14,12 @@
   --oxygen: "Oxygen Mono", monospace;
   --anton: "Anton", sans-serif;
   --merri: "Merriweather", serif;
+  --qs: "Quicksand", sans-serif;
+  --monty: "Montserrat", sans-serif;
+  --cave: "Caveat", cursive;
+  --poiret: "Poiret One", cursive;
+  --cinzel: "Cinzel", serif;
+  --italy: "Italiana", serif;
   line-height: 24px;
   font-size: 22px;
 
@@ -29,7 +38,8 @@
 
 #root {
   text-align: center;
-  font-family: var(--cutive);
+  font-family: var(--cinzel);
+  font-weight: 700;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }

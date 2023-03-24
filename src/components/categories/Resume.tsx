@@ -11,7 +11,7 @@ const Resume: React.FC<DisplayProps> = ({ backBtn }) => {
         {backBtn()}
         <div className="title-with-icons">
           {Journal({ style: { transform: "scaleX(-1)" } })}
-          {Title("Resume")}
+          {Title("RESUME")}
           {Journal({})}
         </div>
       </div>
