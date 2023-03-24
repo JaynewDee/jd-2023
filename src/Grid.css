@@ -185,12 +185,12 @@ img {
   justify-content: center;
   grid-area: 2 / 2 / 3 / 3;
   flex-flow: column nowrap;
-  height: 9rem;
+  height: 10rem;
 }
 
 .name-cell > h1 {
   font-size: 3rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 .name-cell > h2 {
   font-size: 2rem;
@@ -200,32 +200,8 @@ img {
   filter: drop-shadow(0px 9px 15px black);
 }
 
-.name-cell::after {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  filter: none;
-  content: "SOFTWARE ENGINEER";
-  position: absolute;
-  font-size: 0.66rem;
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
-  width: 13rem;
-  padding-bottom: 3px;
-}
-
 .name-cell > span {
-  padding-top: 3px;
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
-  color: var(--accent);
-  font-family: var(--merri);
-  font-weight: bolder;
+  font-size: 0.66rem;
 }
 
 .back-btn {

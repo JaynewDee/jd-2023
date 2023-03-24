@@ -39,7 +39,7 @@ const Social: React.FC<DisplayProps> = ({ backBtn }) => {
         {backBtn()}
         <div className="title-with-icons">
           {HeartShake({})}
-          {Title("Social")}
+          {Title("SOCIAL")}
           {HeartShake({ style: { transform: "scaleX(-1)" } })}
         </div>
       </div>

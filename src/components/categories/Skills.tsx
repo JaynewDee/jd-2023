@@ -11,7 +11,7 @@ const Skills: React.FC<DisplayProps> = ({ backBtn }) => {
         {backBtn()}
         <div className="title-with-icons">
           {List({})}
-          {Title("Skills")}
+          {Title("SKILLS")}
           {List({})}
         </div>
       </div>
