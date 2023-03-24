@@ -7,10 +7,9 @@
   border-radius: 50%;
   box-shadow: inset 0 -6rem 12rem 0.06rem rgba(35, 35, 35, 0.43),
     inset 0 -15px 1rem 0.06rem rgba(70, 70, 65, 0.33),
-    0 3rem 3rem -0.1rem rgba(0, 0, 0, 0.34);
+    0 3rem 2.33rem -0.1rem rgba(0, 0, 0, 0.34);
   mix-blend-mode: hard-light;
   backdrop-filter: blur(3px);
-  opacity: 1;
 }
 
 .category-container {
@@ -209,14 +208,11 @@ img {
   content: "SOFTWARE ENGINEER";
   position: absolute;
   font-size: 0.66rem;
-  opacity: 0;
-  animation: fadeIn 3s 1 linear forwards;
   left: 0;
   right: 0;
   margin-left: auto;
   margin-right: auto;
   width: 13rem;
-
   padding-bottom: 3px;
 }
 
@@ -387,13 +383,4 @@ img {
   width: 3rem;
   cursor: pointer;
   margin-top: 0.5rem;
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0.9;
-  }
 }
