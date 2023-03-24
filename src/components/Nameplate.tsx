@@ -8,8 +8,8 @@ const Nameplate: React.FC = () => {
       <div className="name-cell">
         <h2 className="joshua">Joshua</h2>
         <h1>Diehl</h1>
-        <span style={{ transform: "translate(0, 1rem)" }}>{"["}</span>
-        <span style={{ transform: "translate(4.35rem, 1rem)" }}>{"]"}</span>
+        <span style={{ transform: "translate(0, 0rem)" }}>{"["}</span>
+        <span style={{ transform: "translate(4.35rem, 0rem)" }}>{"]"}</span>
       </div>
     </div>
   );
