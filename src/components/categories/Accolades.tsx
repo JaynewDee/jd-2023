@@ -1,8 +1,8 @@
-import BootCampBadge from "../../../public/boot_camp_badge.png";
-import CloudPractitionerBadge from "../../../public/cloud_practitioner.png";
-import SMUCert from "../../../public/smu_cert.png";
-import CS50PCert from "../../../public/cs50p_cert.png";
-import CS50XCert from "../../../public/cs50x_cert.png";
+import BootCampBadge from "../../assets/boot_camp_badge.png";
+import CloudPractitionerBadge from "../../assets/cloud_practitioner.png";
+import SMUCert from "../../assets/smu_cert.png";
+import CS50PCert from "../../assets/cs50p_cert.png";
+import CS50XCert from "../../assets/cs50x_cert.png";
 import { DisplayProps } from "../../Portal";
 import { CiMedal } from "react-icons/ci";
 import { useMagnifier } from "../../hooks/useMagnifier";

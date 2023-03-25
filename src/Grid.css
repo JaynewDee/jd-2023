@@ -303,6 +303,9 @@ img {
 .visitor-details > input {
   background: none;
   transition: all 0.18s;
+  min-width: 9rem;
+  max-width: 66%;
+  margin: 0.33rem auto;
   color: white;
 }
 .visitor-details > input:focus {
@@ -315,7 +318,6 @@ img {
 
 .contact-message > textarea {
   min-height: 15rem;
-  width: 90%;
   caret-color: var(--accent);
   background: none;
   color: white;
@@ -351,8 +353,7 @@ textarea:focus {
     mix-blend-mode: normal;
     backdrop-filter: none;
   }
-  #grid-container-main:hover {
-  }
+
   #grid-container-main > .menu-cell {
     text-align: center;
   }
@@ -384,6 +385,10 @@ textarea:focus {
   .social-container {
     flex-flow: column nowrap;
     width: 66%;
+  }
+  .contact-container {
+    width: 100%;
+    margin: 0 auto;
   }
   .category-header {
     flex-flow: column nowrap;

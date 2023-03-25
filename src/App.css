@@ -33,7 +33,7 @@
   -webkit-text-size-adjust: 100%;
   overflow-x: hidden;
 
-  --pattern-blue: url("./pattern_blue.jpg");
+  --pattern-blue: url("./assets/pattern_blue.jpg");
 }
 
 #root {
