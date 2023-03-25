@@ -1,5 +1,5 @@
 import { openInNewTab } from "../utils";
-import MITLicense from "../assets/license-MIT-blue.svg";
+// import MITLicense from "../assets/license-MIT-blue.svg";
 
 //
 
@@ -11,11 +11,11 @@ const Footnote = () => {
     <div className="footnote">
       <p>built and maintained by</p>
       <p>Joshua Newell Diehl</p>
-      <img
+      {/* <img
         className="license-badge"
         onClick={visitLicensing}
-        src={MITLicense}
-      />
+        // src={MITLicense}
+      /> */}
       <p>&copy;2023 </p>
     </div>
   );

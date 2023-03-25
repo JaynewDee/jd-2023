@@ -5,11 +5,11 @@
   margin: auto;
   grid-template-columns: 1fr 1fr 1fr;
   border-radius: 50%;
-  box-shadow: inset 0 -6rem 12rem 0.06rem rgba(35, 35, 35, 0.43),
-    inset 0 -15px 1rem 0.06rem rgba(70, 70, 65, 0.33),
-    0 3rem 2.33rem -0.1rem rgba(0, 0, 0, 0.34);
+  box-shadow: inset 0 -5rem 12rem 0.06rem rgba(35, 35, 35, 0.43),
+    inset 0 -15px 1rem 0.06rem rgba(70, 70, 65, 0.23),
+    0 3rem 2.33rem 0.99rem rgba(0, 0, 0, 0.44);
   mix-blend-mode: hard-light;
-  backdrop-filter: blur(3px);
+  backdrop-filter: blur(4px);
 }
 
 .category-container {
@@ -176,7 +176,7 @@
   line-height: 1.15;
   font-size: 0.77rem;
   width: 66vw;
-  margin: 1rem auto;
+  margin: 3rem auto;
 }
 
 textarea::placeholder {
@@ -396,8 +396,12 @@ img {
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  line-height: 1.5;
+  line-height: 1.7;
   pointer-events: none;
+}
+
+.footnote > p:nth-child(2) {
+  font-size: 0.66rem;
 }
 
 .license-badge {
