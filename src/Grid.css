@@ -79,6 +79,11 @@
   font-size: 0.77rem;
 }
 
+.back-btn {
+  cursor: pointer;
+  font-size: 1rem;
+}
+
 .back-btn:hover * {
   scale: 1.06;
 }
@@ -87,10 +92,14 @@
   position: absolute;
   content: "ESC";
   border: 1px solid gray;
-  padding: 0px 6px;
-  font-size: 0.66rem;
-
+  padding: 0 4px;
+  font-size: 0.5rem;
+  line-height: 1.5;
   margin-top: -1rem;
+  margin-left: 0.33rem;
+  background-color: white;
+  color: black;
+  box-shadow: 0 6px 9px 1px rgba(0, 0, 0, 0.34);
 }
 
 .accolades-box {
@@ -230,11 +239,6 @@ img {
 .cell-title {
   display: flex;
   pointer-events: none;
-}
-
-.back-btn {
-  cursor: pointer;
-  font-size: 1rem;
 }
 
 .placeholder {
