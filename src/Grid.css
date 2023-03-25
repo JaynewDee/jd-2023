@@ -87,7 +87,9 @@
 .back-btn:hover * {
   scale: 1.06;
 }
-
+.back-btn > .cell-title svg {
+  transform: scale(1.1);
+}
 .back-btn::after {
   position: absolute;
   content: "ESC";
@@ -335,6 +337,7 @@ img {
   .back-btn::after {
     display: none;
   }
+
   .nameplate {
     margin-bottom: 5rem;
   }
@@ -371,13 +374,11 @@ img {
   .resume {
     width: 100%;
   }
-  .mobile-rule {
-    display: flex;
-    width: 66vw;
-    border-radius: 50%;
-  }
   .cert-div {
     margin: 1rem 0;
+  }
+  .devto-link {
+    font-size: 1rem;
   }
 }
 
