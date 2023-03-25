@@ -130,6 +130,7 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 3rem;
+  margin-top: 6rem;
 }
 
 .social-icon {
@@ -140,7 +141,7 @@
 
 .social-icon:hover {
   cursor: pointer;
-  color: black;
+  color: var(--accent);
   background-color: rgba(255, 255, 255, 0.868);
   border-radius: 50%;
 }
@@ -299,6 +300,15 @@ img {
 .visitor-details > label {
   font-size: 0.66rem;
 }
+.visitor-details > input {
+  background: none;
+  transition: all 0.18s;
+  color: white;
+}
+.visitor-details > input:focus {
+  transform: scale(1.02);
+  backdrop-filter: blur(1px);
+}
 .contact-message {
   min-height: 18rem;
 }
@@ -307,6 +317,16 @@ img {
   min-height: 15rem;
   width: 90%;
   caret-color: var(--accent);
+  background: none;
+  color: white;
+  font-family: var(--italy);
+  transition: all 0.18s;
+  letter-spacing: 3px;
+}
+
+textarea:focus {
+  transform: scale(1.02);
+  backdrop-filter: blur(1px);
 }
 
 .cert-div {
@@ -363,7 +383,6 @@ img {
   }
   .social-container {
     flex-flow: column nowrap;
-    margin-top: 6rem;
     width: 66%;
   }
   .category-header {
