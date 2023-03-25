@@ -33,7 +33,6 @@
   -webkit-text-size-adjust: 100%;
   overflow-x: hidden;
 
-  --smoke: url("./assets/smoke.jpg");
   --pattern-blue: url("./assets/pattern_blue.jpg");
 }
 
