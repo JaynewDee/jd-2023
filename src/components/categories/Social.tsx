@@ -1,10 +1,12 @@
 import React from "react";
 import { openInNewTab } from "../../utils";
 import { BsFacebook, BsLinkedin, BsGithub } from "react-icons/bs";
+import { TbHeartHandshake as HeartShake } from "react-icons/tb";
+
 import { IconType } from "react-icons";
 import { DisplayProps } from "../../Portal";
 import Title from "./Title";
-import { TbHeartHandshake as HeartShake } from "react-icons/tb";
+import IconTitle from "../partials/IconTitle";
 //
 
 const Social: React.FC<DisplayProps> = ({ backBtn }) => {
@@ -28,7 +30,7 @@ const Social: React.FC<DisplayProps> = ({ backBtn }) => {
   ];
 
   const Option = (handler: () => void, icon: IconType, id: number) => (
-    <div className="social grid-cell" onClick={handler} key={id}>
+    <div className="social" onClick={handler} key={id}>
       {icon({ size: "3rem", className: "social-icon" })}
     </div>
   );
@@ -37,11 +39,7 @@ const Social: React.FC<DisplayProps> = ({ backBtn }) => {
     <div className="category-container" style={{ justifyContent: "center" }}>
       <div className="category-header">
         {backBtn()}
-        <div className="title-with-icons">
-          {HeartShake({})}
-          {Title("SOCIAL")}
-          {HeartShake({ style: { transform: "scaleX(-1)" } })}
-        </div>
+        {IconTitle("SOCIAL", HeartShake, true)}
       </div>
       <div className="social-container">
         {options.map(({ handler, icon }, idx) => Option(handler, icon, idx))}

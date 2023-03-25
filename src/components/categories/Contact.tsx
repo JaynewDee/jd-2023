@@ -68,7 +68,7 @@ const Contact: React.FC<DisplayProps> = ({ backBtn }) => {
             id="message"
           />
         </div>
-        <div className="contact grid-cell">
+        <div className="contact">
           <p className="send-btn" onClick={handleSendEmail}>
             SEND
           </p>
