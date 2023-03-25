@@ -1,7 +1,8 @@
 import React from "react";
 import { DisplayProps } from "../../Portal";
-import Title from "./Title";
+import Title from "../partials/Title";
 import { TbClipboardCheck as List } from "react-icons/tb";
+import IconTitle from "../partials/IconTitle";
 //
 
 const Skills: React.FC<DisplayProps> = ({ backBtn }) => {
@@ -9,11 +10,7 @@ const Skills: React.FC<DisplayProps> = ({ backBtn }) => {
     <div className="category-container">
       <div className="category-header">
         {backBtn()}
-        <div className="title-with-icons">
-          {List({})}
-          {Title("SKILLS")}
-          {List({})}
-        </div>
+        {IconTitle("SKILLS", List)}
       </div>
     </div>
   );

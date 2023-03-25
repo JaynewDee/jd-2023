@@ -1,7 +1,8 @@
 import React from "react";
 import { BsFillJournalBookmarkFill as Journal } from "react-icons/bs";
 import { DisplayProps } from "../../Portal";
-import Title from "./Title";
+import IconTitle from "../partials/IconTitle";
+import Title from "../partials/Title";
 //
 
 const Resume: React.FC<DisplayProps> = ({ backBtn }) => {
@@ -9,11 +10,7 @@ const Resume: React.FC<DisplayProps> = ({ backBtn }) => {
     <div className="category-container">
       <div className="category-header">
         {backBtn()}
-        <div className="title-with-icons">
-          {Journal({ style: { transform: "scaleX(-1)" } })}
-          {Title("RESUME")}
-          {Journal({})}
-        </div>
+        {IconTitle("RESUME", Journal, "left")}
       </div>
 
       <div className="resume">

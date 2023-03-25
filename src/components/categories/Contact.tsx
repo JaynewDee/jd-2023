@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { DisplayProps } from "../../Portal";
-import emailjs from "@emailjs/browser";
-import Title from "./Title";
 import { GoMail as Mail } from "react-icons/go";
+import IconTitle from "../partials/IconTitle";
+import { useMailHandler } from "../../hooks/useMailHandler";
+
 //
 
 const Contact: React.FC<DisplayProps> = ({ backBtn }) => {
@@ -19,44 +20,29 @@ const Contact: React.FC<DisplayProps> = ({ backBtn }) => {
     });
   };
 
-  const handleSendEmail = () => {
-    if (formState.message.length < 3) return;
+  const handleSendEmail = () => useMailHandler(formState, setFormState);
 
-    emailjs
-      .send(
-        "service_4rfb3fe",
-        "template_hoq4aqf",
-        formState,
-        "hXdGf86bwNCK2LZuE"
-      )
-      .then(
-        (response) => console.log("SUCCESS!", response.status, response.text),
-        (error) => console.log("FAILED...", error)
-      )
-      .then(() => setFormState({ name: "", message: "" }));
-  };
+  const FormInput = (value: string, name: string, placeholder: string = "") => (
+    <input
+      onChange={handleInputChange}
+      value={value}
+      type="text"
+      name={name}
+      id={name}
+      placeholder={placeholder}
+    />
+  );
 
   return (
     <div className="category-container">
       <div className="category-header">
         {backBtn()}
-        <div className="title-with-icons">
-          {Mail({})}
-          {Title("Contact")}
-          {Mail({})}
-        </div>
+        {IconTitle("CONTACT", Mail)}
       </div>
       <div className="contact-container">
         <div className="visitor-details">
           <label htmlFor="name">your name </label>
-          <input
-            onChange={handleInputChange}
-            value={formState.name}
-            type="text"
-            name="name"
-            id="name"
-            placeholder="CHUCK NORRIS"
-          />
+          {FormInput(formState.name, "name", "CHUCK NORRIS")}
         </div>
         <div className="contact-message">
           <textarea

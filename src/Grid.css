@@ -65,7 +65,6 @@
 
 .category-title {
   margin: 0 0.5rem 0 0.5rem;
-  text-decoration: overline;
   pointer-events: none;
   font-size: 1.33rem;
 }
@@ -76,8 +75,22 @@
   align-items: center;
 }
 
+.title-icon {
+  font-size: 0.77rem;
+}
+
 .back-btn:hover * {
   scale: 1.06;
+}
+
+.back-btn::after {
+  position: absolute;
+  content: "ESC";
+  border: 1px solid gray;
+  padding: 0px 6px;
+  font-size: 0.66rem;
+
+  margin-top: -1rem;
 }
 
 .accolades-box {
@@ -312,8 +325,11 @@ img {
     flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
-    margin: 2rem auto;
+    margin: 2rem auto 9rem;
     width: 100vw;
+  }
+  .back-btn::after {
+    display: none;
   }
   .nameplate {
     margin-bottom: 5rem;
@@ -362,10 +378,9 @@ img {
 }
 
 .footnote {
-  margin: 9rem auto 2rem;
+  margin: 6rem auto 2rem;
+  position: absolute;
   bottom: 0;
-  text-transform: uppercase;
-
   font-size: 0.5rem;
   color: rgba(255, 255, 255, 0.77);
   width: 100%;

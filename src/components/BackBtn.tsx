@@ -7,7 +7,7 @@ const BackBtn = ({ goBack }: { goBack: () => void }) => {
     <div className="back-btn" onClick={goBack}>
       <h4 className="cell-title">
         {BackArrow({})}
-        <span style={{ marginLeft: "1rem", fontSize: ".66rem" }}>back</span>
+        <span style={{ marginLeft: "1rem", fontSize: ".66rem" }}>BACK</span>
       </h4>
     </div>
   );

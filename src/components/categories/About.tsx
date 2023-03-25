@@ -1,6 +1,6 @@
 import React from "react";
 import { DisplayProps } from "../../Portal";
-import Title from "./Title";
+import Title from "../partials/Title";
 
 //
 

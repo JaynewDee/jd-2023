@@ -1,13 +1,18 @@
-import React from "react";
-import Title from "../categories/Title";
+import Title from "./Title";
 import { IconType } from "react-icons";
 
-const IconTitle = (title: string, Icon: IconType, mirror: boolean = false) => {
+const IconTitle = (title: string, Icon: IconType, mirror: string = "") => {
   return (
     <div className="title-with-icons">
-      {Icon({})}
+      {Icon({
+        className: "title-icon",
+        style: mirror === "left" ? { transform: "scaleX(-1)" } : {}
+      })}
       {Title(title)}
-      {Icon({ style: mirror ? { transform: "scaleX(-1)" } : {} })}
+      {Icon({
+        className: "title-icon",
+        style: mirror === "right" ? { transform: "scaleX(-1)" } : {}
+      })}
     </div>
   );
 };

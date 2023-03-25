@@ -5,7 +5,7 @@ import { TbHeartHandshake as HeartShake } from "react-icons/tb";
 
 import { IconType } from "react-icons";
 import { DisplayProps } from "../../Portal";
-import Title from "./Title";
+import Title from "../partials/Title";
 import IconTitle from "../partials/IconTitle";
 //
 
@@ -39,7 +39,7 @@ const Social: React.FC<DisplayProps> = ({ backBtn }) => {
     <div className="category-container" style={{ justifyContent: "center" }}>
       <div className="category-header">
         {backBtn()}
-        {IconTitle("SOCIAL", HeartShake, true)}
+        {IconTitle("SOCIAL", HeartShake, "right")}
       </div>
       <div className="social-container">
         {options.map(({ handler, icon }, idx) => Option(handler, icon, idx))}

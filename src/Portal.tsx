@@ -45,7 +45,7 @@ const Portal: React.FC = () => {
     "": <MenuGrid {...props} />
   };
 
-  return <div>{displays[displayState]}</div>;
+  return <>{displays[displayState]}</>;
 };
 
 export default Portal;

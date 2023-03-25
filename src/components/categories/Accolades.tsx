@@ -4,9 +4,9 @@ import SMUCert from "../../assets/smu_cert.png";
 import CS50PCert from "../../assets/cs50p_cert.png";
 import CS50XCert from "../../assets/cs50x_cert.png";
 import { DisplayProps } from "../../Portal";
-import Title from "./Title";
 import { CiMedal } from "react-icons/ci";
 import { useMagnifier } from "../../hooks/useMagnifier";
+import IconTitle from "../partials/IconTitle";
 //
 
 const badges = [BootCampBadge, CloudPractitionerBadge];
@@ -19,11 +19,7 @@ const Accolades: React.FC<DisplayProps> = ({ backBtn }) => {
     <div className="category-container">
       <div className="category-header">
         {backBtn()}
-        <div className="title-with-icons">
-          {CiMedal({})}
-          {Title("Accolades")}
-          {CiMedal({})}
-        </div>
+        {IconTitle("ACCOLADES", CiMedal)}
       </div>
       <div className="accolades-box">
         <div className="badges-box">
