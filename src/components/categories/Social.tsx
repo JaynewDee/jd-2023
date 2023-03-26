@@ -1,18 +1,18 @@
 import React from "react";
-import { openInNewTab } from "../../utils";
+import { useNewTab } from "../../hooks/useNewTab";
 import { BsFacebook, BsLinkedin, BsGithub } from "react-icons/bs";
 import { TbHeartHandshake as HeartShake } from "react-icons/tb";
 
 import { IconType } from "react-icons";
 import { DisplayProps } from "../../Portal";
-import Title from "../partials/Title";
 import IconTitle from "../partials/IconTitle";
 //
 
 const Social: React.FC<DisplayProps> = ({ backBtn }) => {
-  const visitGh = () => openInNewTab("https://github.com/JaynewDee");
-  const visitLi = () => openInNewTab("https://www.linkedin.com/in/jaynewd73/");
-  const visitFb = () => openInNewTab("https://www.facebook.com/jndiehl");
+  const visitGh = () => useNewTab("https://github.com/JaynewDee");
+  const visitLi = () => useNewTab("https://www.linkedin.com/in/jaynewd73/");
+  const visitFb = () => useNewTab("https://www.facebook.com/jndiehl");
+  const visitDev = () => useNewTab("https://dev.to/synthetic_rain");
 
   const options = [
     {
@@ -46,10 +46,7 @@ const Social: React.FC<DisplayProps> = ({ backBtn }) => {
       </div>
       <section>
         <h4 className="devto-header">
-          <p
-            className="devto-link"
-            onClick={() => openInNewTab("https://dev.to/synthetic_rain")}
-          >
+          <p className="devto-link" onClick={visitDev}>
             dev.to
           </p>
         </h4>

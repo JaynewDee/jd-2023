@@ -1,6 +1,6 @@
 import { DisplayProps } from "../../Portal";
-import Title from "../partials/Title";
 import { BsWrenchAdjustable as Wrench } from "react-icons/bs";
+import { Title } from "../partials/IconTitle";
 
 //
 

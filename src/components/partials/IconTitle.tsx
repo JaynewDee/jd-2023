@@ -1,5 +1,12 @@
-import Title from "./Title";
 import { IconType } from "react-icons";
+
+export const Title = (category: string) => {
+  return (
+    <div className="category-title-cell">
+      <h4 className="category-title">{category.toUpperCase()}</h4>
+    </div>
+  );
+};
 
 const IconTitle = (title: string, Icon: IconType, mirror: string = "") => {
   return (

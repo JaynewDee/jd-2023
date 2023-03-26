@@ -1,16 +1,15 @@
 import React from "react";
 import { DisplayProps } from "../../Portal";
-import Title from "../partials/Title";
 
 //
 
 const About: React.FC<DisplayProps> = ({ backBtn }) => {
   return (
     <div className="category-container">
-      <div className="category-header">
-        {backBtn()}
-        {Title("About Me")}
-      </div>
+      <div className="category-header">{backBtn()}</div>
+      <section className="photo-section">
+        {/* Images of oneself ... ? ... ugh */}
+      </section>
       <div className="about-box">
         <p>
           How beautiful it is! To fall to give you flight. To die to give you

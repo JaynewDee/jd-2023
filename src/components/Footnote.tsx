@@ -1,21 +1,19 @@
-import { openInNewTab } from "../utils";
-// import MITLicense from "../assets/license-MIT-blue.svg";
+import { useNewTab } from "../hooks/useNewTab";
 
 //
 
 const Footnote = () => {
-  const licenseUrl = "https://opensource.org/license/mit/";
-  const visitLicensing = () => openInNewTab(licenseUrl);
+  const repoUrl = "https://github.com/JaynewDee/jd-2023";
+  const visitPortfolioRepo = () => useNewTab(repoUrl);
+
+  const styles = {
+    cursor: "pointer"
+  };
 
   return (
-    <div className="footnote">
+    <div style={styles} className="footnote" onClick={visitPortfolioRepo}>
       <p>built and maintained by</p>
       <p>Joshua Newell Diehl</p>
-      {/* <img
-        className="license-badge"
-        onClick={visitLicensing}
-        // src={MITLicense}
-      /> */}
       <p>&copy;2023 </p>
     </div>
   );
