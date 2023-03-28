@@ -31,25 +31,19 @@ const skillsData: SkillType[] = [
   }
 ];
 
-const Skill = (name: string, Icon: IconType, level: number, key: number) => (
-  <div className="skill-box" key={key} style={{ width: `15%` }}>
-    <div className="level-bar-outline">
-      <div className="level-bar" style={{ height: `${level * 2}vh` }}></div>
+const Skill = (name: string, Icon: IconType, level: number, key: number) => {
+  const styles = { "--bar-level": level } as React.CSSProperties;
+
+  return (
+    <div className="skill-box" key={key}>
+      <div className="level-bar-outline">
+        <div className="level-bar" data-level={level} style={styles}></div>
+      </div>
+      <span className="skill-icon">{Icon({ size: "1.33rem" })}</span>
+      <span className="skill-name">{name}</span>
     </div>
-    <span>{Icon({ size: "1.33rem" })}</span>
-    <span
-      style={{
-        textAlign: "center",
-        writingMode: "vertical-lr",
-        position: "absolute",
-        transform: "rotate(180deg)",
-        marginBottom: ""
-      }}
-    >
-      {name}
-    </span>
-  </div>
-);
+  );
+};
 
 const Skills: React.FC<DisplayProps> = ({ backBtn }) => {
   return (
