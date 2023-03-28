@@ -3,7 +3,7 @@ import { DisplayProps } from "../../Portal";
 import { TbClipboardCheck as List } from "react-icons/tb";
 import IconTitle from "../partials/IconTitle";
 import { IconType } from "react-icons";
-import { SiJavascript } from "react-icons/si";
+import { SiJavascript, SiPython } from "react-icons/si";
 
 //
 
@@ -17,20 +17,22 @@ const skillsData: SkillType[] = [
   {
     name: "JavaScript",
     Icon: SiJavascript,
-    level: 5
+    level: 7
   },
   {
-    name: "JavaScript",
-    Icon: SiJavascript,
-    level: 3
+    name: "Python",
+    Icon: SiPython,
+    level: 5
   }
 ];
 
 const Skill = (name: string, Icon: IconType, level: number, key: number) => (
-  <div className="skill-box">
+  <div className="skill-box" key={key}>
+    <div className="level-bar-outline">
+      <div className="level-bar" style={{ height: `${level * 2}vh` }}></div>
+    </div>
     <span>{name}</span>
     <span>{Icon({})}</span>
-    <span>{level}</span>
   </div>
 );
 
