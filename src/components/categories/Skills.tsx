@@ -40,19 +40,31 @@ const Skills: React.FC<DisplayProps> = ({ backBtn }) => {
 
   const disabler = (displayId: number | null = null) => {
     if (displayId) {
-      if (displayId === 0 || displayId === Object.values(skills).length - 1)
+      if (displayId === 0 || displayId === Object.values(skills).length)
         return true;
     }
     return false;
   };
 
   const handlePaging = (btnType: string) => {
+    const currentState = Object.values(skills[displayState]);
+    const currentId = currentState.filter(
+      (tuple) => typeof tuple === "number"
+    )[0];
+
     if (btnType === "right") {
-      const currentState = Object.values(skills[displayState]);
-      const currentId = currentState.filter(
-        (tuple) => typeof tuple === "number"
-      );
-      console.log(currentState);
+      for (const s in skills) {
+        if (skills[s].id === (currentId as number) + 1) {
+          setDisplayState(s);
+        }
+      }
+      console.log("Right btn clicked");
+    } else {
+      for (const s in skills) {
+        if (skills[s].id === (currentId as number) - 1) {
+          setDisplayState(s);
+        }
+      }
     }
   };
 
@@ -64,7 +76,7 @@ const Skills: React.FC<DisplayProps> = ({ backBtn }) => {
       </div>
       <div className="skill-switch-header">
         <button
-          // @ts-ignore
+          onClick={() => handlePaging("left")}
           disabled={disabler(skills[displayState].id)}
           style={
             displayState === "languages"
@@ -78,7 +90,13 @@ const Skills: React.FC<DisplayProps> = ({ backBtn }) => {
         <h3>{displayState}</h3>
         <button
           className="category-next-btn"
+          disabled={disabler(skills[displayState].id)}
           onClick={() => handlePaging("right")}
+          style={
+            skills[displayState].id === Object.values(skills).length - 1
+              ? { pointerEvents: "none", opacity: ".67" }
+              : {}
+          }
         >
           {ArrowRight({})}
         </button>
