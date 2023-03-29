@@ -4,13 +4,15 @@ import {
   SiPython,
   SiRust,
   SiTypescript,
-  SiSequelize
+  SiSequelize,
+  SiMongodb
 } from "react-icons/si";
+import { GiThreeFriends } from "react-icons/gi";
 
 export type SkillType = {
   name: string;
   Icon: IconType;
-  level: number;
+  level?: number;
 };
 
 export const languages: SkillType[] = [
@@ -41,5 +43,13 @@ export const tools: SkillType[] = [
     name: "Sequelize",
     Icon: SiSequelize,
     level: 6
+  }
+];
+
+export const misc: SkillType[] = [
+  {
+    name: "Leadership",
+    Icon: GiThreeFriends,
+    level: 10
   }
 ];

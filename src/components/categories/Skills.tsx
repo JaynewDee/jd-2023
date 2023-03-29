@@ -3,7 +3,7 @@ import { DisplayProps } from "../../Portal";
 import { TbClipboardCheck as List } from "react-icons/tb";
 import IconTitle from "../partials/IconTitle";
 import { IconType } from "react-icons";
-import { languages, tools, SkillType } from "./data";
+import { languages, tools, misc, SkillType } from "./data";
 import {
   TiArrowLeft as ArrowLeft,
   TiArrowRight as ArrowRight
@@ -12,24 +12,34 @@ import {
 //
 const skills: { [key: string]: { id: number; data: SkillType[] } } = {
   languages: { id: 0, data: languages },
-  tools: { id: 1, data: tools }
+  tools: { id: 1, data: tools },
+  misc: { id: 2, data: misc }
 };
 
-console.dir(skills);
 const SkillSwitch = (display: string) =>
   skills[display].data.map(({ name, Icon, level }, idx) =>
     Skill(name, Icon, level, idx)
   );
 
-const Skill = (name: string, Icon: IconType, level: number, key: number) => {
+const Skill = (
+  name: string,
+  Icon: IconType,
+  level: number | undefined,
+  key: number
+) => {
   const styles = { "--bar-level": level } as React.CSSProperties;
 
+  const descriptionSwitch = (skillName: string) => {
+    return `${skillName} is awesome!`;
+  };
   return (
     <div className="skill-box" key={key}>
       <div className="level-bar-outline">
         <div className="level-bar" data-level={level} style={styles}></div>
       </div>
-      <span className="skill-icon">{Icon({ size: "1.33rem" })}</span>
+      <span data-descr={descriptionSwitch(name)} className="skill-icon">
+        {Icon({ size: "1.33rem" })}
+      </span>
       <span className="skill-name">{name}</span>
     </div>
   );
@@ -80,7 +90,7 @@ const Skills: React.FC<DisplayProps> = ({ backBtn }) => {
           disabled={disabler(skills[displayState].id)}
           style={
             displayState === "languages"
-              ? { pointerEvents: "none", opacity: ".67" }
+              ? { pointerEvents: "none", opacity: ".5" }
               : {}
           }
           className="category-back-btn"
@@ -94,7 +104,7 @@ const Skills: React.FC<DisplayProps> = ({ backBtn }) => {
           onClick={() => handlePaging("right")}
           style={
             skills[displayState].id === Object.values(skills).length - 1
-              ? { pointerEvents: "none", opacity: ".67" }
+              ? { pointerEvents: "none", opacity: ".5" }
               : {}
           }
         >

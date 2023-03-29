@@ -183,6 +183,26 @@
   width: 33vw;
 }
 
+.skill-icon {
+  cursor: pointer;
+  transition: background-color 0.33s;
+  transition: color 0.33s;
+  display: flex;
+  justify-content: center;
+}
+
+.skill-icon:hover {
+  outline: 3px solid var(--accent);
+  border-radius: 6px;
+  background-color: white;
+  color: var(--accent);
+}
+.skill-icon:hover::after {
+  content: attr(data-descr);
+  position: absolute;
+  background-color: white;
+  margin-top: 3rem;
+}
 .skills-container {
   display: flex;
   align-items: flex-end;
@@ -483,12 +503,9 @@ textarea:focus {
     writing-mode: unset;
   }
   .skill-switch-header {
-    width: 66vw;
+    width: 90%;
   }
-  .skill-icon {
-    display: flex;
-    justify-content: center;
-  }
+
   .level-bar-outline {
     height: 1rem;
     width: 10rem;
