@@ -5,7 +5,9 @@ import {
   SiRust,
   SiTypescript,
   SiSequelize,
-  SiMongodb
+  SiMongodb,
+  SiExpress,
+  SiNodedotjs
 } from "react-icons/si";
 import { GiThreeFriends } from "react-icons/gi";
 
@@ -29,12 +31,12 @@ export const languages: SkillType[] = [
   {
     name: "Python",
     Icon: SiPython,
-    level: 5
+    level: 6
   },
   {
     name: "Rust",
     Icon: SiRust,
-    level: 5
+    level: 6
   }
 ];
 
@@ -42,6 +44,26 @@ export const tools: SkillType[] = [
   {
     name: "Sequelize",
     Icon: SiSequelize,
+    level: 6
+  },
+  {
+    name: "MongoDB",
+    Icon: SiMongodb,
+    level: 6
+  },
+  {
+    name: "Express",
+    Icon: SiExpress,
+    level: 6
+  },
+  {
+    name: "Node",
+    Icon: SiNodedotjs,
+    level: 6
+  },
+  {
+    name: "MongoDB",
+    Icon: SiMongodb,
     level: 6
   }
 ];
