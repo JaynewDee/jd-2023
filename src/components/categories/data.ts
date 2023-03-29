@@ -8,9 +8,11 @@ import {
   SiMongodb,
   SiExpress,
   SiNodedotjs,
-  SiReact
+  SiReact,
+  SiMysql
 } from "react-icons/si";
 import { GiThreeFriends } from "react-icons/gi";
+import { TbBrandMysql } from "react-icons/tb";
 
 export type SkillType = {
   name: string;
@@ -38,10 +40,30 @@ export const languages: SkillType[] = [
     name: "Rust",
     Icon: SiRust,
     level: 6
+  },
+  {
+    name: "SQL",
+    Icon: TbBrandMysql,
+    level: 5
   }
 ];
 
 export const tools: SkillType[] = [
+  {
+    name: "React",
+    Icon: SiReact,
+    level: 8
+  },
+  {
+    name: "Node",
+    Icon: SiNodedotjs,
+    level: 7
+  },
+  {
+    name: "Express",
+    Icon: SiExpress,
+    level: 7
+  },
   {
     name: "Sequelize",
     Icon: SiSequelize,
@@ -50,21 +72,6 @@ export const tools: SkillType[] = [
   {
     name: "MongoDB",
     Icon: SiMongodb,
-    level: 6
-  },
-  {
-    name: "Express",
-    Icon: SiExpress,
-    level: 6
-  },
-  {
-    name: "Node",
-    Icon: SiNodedotjs,
-    level: 6
-  },
-  {
-    name: "React",
-    Icon: SiReact,
     level: 6
   }
 ];

@@ -37,7 +37,9 @@ const Skill = (
       <span data-descr={descriptionSwitch(name)} className="skill-icon">
         {Icon({ size: "1.33rem" })}
       </span>
-      <span className="skill-name">{name}</span>
+      <span style={{ height: "" }} className="skill-name">
+        {name}
+      </span>
     </div>
   );
 };
@@ -65,7 +67,6 @@ const Skills: React.FC<DisplayProps> = ({ backBtn }) => {
           setDisplayState(s);
         }
       }
-      console.log("Right btn clicked");
     } else {
       for (const s in skills) {
         if (skills[s].id === (currentId as number) - 1) {

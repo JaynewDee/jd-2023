@@ -223,6 +223,8 @@
   writing-mode: vertical-lr;
   position: absolute;
   transform: rotate(180deg);
+  filter: drop-shadow(0 3px 1px rgba(15, 15, 15, 0.9));
+  bottom: 3rem;
 }
 
 .skill-box {
@@ -238,9 +240,18 @@
   background: none;
   color: white;
   border: none;
-  font-size: 1.33rem;
+  font-size: 2rem;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+.category-back-btn:hover::before {
+  content: "";
+}
+.category-next-btn:hover {
+}
+
 .level-bar-outline {
   border-radius: 5px;
   background-color: rgba(0, 0, 0, 0.22);
@@ -510,6 +521,7 @@ textarea:focus {
   .skill-name {
     transform: rotate(0) translateY(0.66rem);
     writing-mode: unset;
+    bottom: unset;
   }
   .skill-switch-header {
     width: 90%;
