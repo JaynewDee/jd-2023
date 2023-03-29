@@ -1,35 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import { DisplayProps } from "../../Portal";
-import { TbClipboardCheck as List, TbFileArrowLeft } from "react-icons/tb";
+import { TbClipboardCheck as List } from "react-icons/tb";
 import IconTitle from "../partials/IconTitle";
 import { IconType } from "react-icons";
-import { SiJavascript, SiPython, SiRust } from "react-icons/si";
-import { TiArrowLeft, TiArrowRight } from "react-icons/ti";
-//
+import { languages, tools, SkillType } from "./data";
+import {
+  TiArrowLeft as ArrowLeft,
+  TiArrowRight as ArrowRight
+} from "react-icons/ti";
 
-type SkillType = {
-  name: string;
-  Icon: IconType;
-  level: number;
+//
+const skills: { [key: string]: { id: number; data: SkillType[] } } = {
+  languages: { id: 0, data: languages },
+  tools: { id: 1, data: tools }
 };
 
-const skillsData: SkillType[] = [
-  {
-    name: "JavaScript",
-    Icon: SiJavascript,
-    level: 8
-  },
-  {
-    name: "Python",
-    Icon: SiPython,
-    level: 5
-  },
-  {
-    name: "Rust",
-    Icon: SiRust,
-    level: 5
-  }
-];
+console.dir(skills);
+const SkillSwitch = (display: string) =>
+  skills[display].data.map(({ name, Icon, level }, idx) =>
+    Skill(name, Icon, level, idx)
+  );
 
 const Skill = (name: string, Icon: IconType, level: number, key: number) => {
   const styles = { "--bar-level": level } as React.CSSProperties;
@@ -46,6 +36,26 @@ const Skill = (name: string, Icon: IconType, level: number, key: number) => {
 };
 
 const Skills: React.FC<DisplayProps> = ({ backBtn }) => {
+  const [displayState, setDisplayState] = useState("languages");
+
+  const disabler = (displayId: number | null = null) => {
+    if (displayId) {
+      if (displayId === 0 || displayId === Object.values(skills).length - 1)
+        return true;
+    }
+    return false;
+  };
+
+  const handlePaging = (btnType: string) => {
+    if (btnType === "right") {
+      const currentState = Object.values(skills[displayState]);
+      const currentId = currentState.filter(
+        (tuple) => typeof tuple === "number"
+      );
+      console.log(currentState);
+    }
+  };
+
   return (
     <div className="category-container">
       <div className="category-header">
@@ -53,15 +63,27 @@ const Skills: React.FC<DisplayProps> = ({ backBtn }) => {
         {IconTitle("SKILLS", List)}
       </div>
       <div className="skill-switch-header">
-        <button className="category-back-btn">{TiArrowLeft({})}</button>
-        <h3>Programming</h3>
-        <button className="category-next-btn">{TiArrowRight({})}</button>
+        <button
+          // @ts-ignore
+          disabled={disabler(skills[displayState].id)}
+          style={
+            displayState === "languages"
+              ? { pointerEvents: "none", opacity: ".67" }
+              : {}
+          }
+          className="category-back-btn"
+        >
+          {ArrowLeft({})}
+        </button>
+        <h3>{displayState}</h3>
+        <button
+          className="category-next-btn"
+          onClick={() => handlePaging("right")}
+        >
+          {ArrowRight({})}
+        </button>
       </div>
-      <div className="skills-container">
-        {skillsData.map(({ name, Icon, level }, idx) =>
-          Skill(name, Icon, level, idx)
-        )}
-      </div>
+      <div className="skills-container">{SkillSwitch(displayState)}</div>
     </div>
   );
 };

@@ -7,8 +7,8 @@ import { useEffect } from "react";
 
 function App() {
   useEffect(() => {
-    if (window.screen.width < 720) {
-      console.log(window.screen.width);
+    if (window.innerWidth <= 768) {
+      console.log(window.innerWidth);
     }
   }, []);
 

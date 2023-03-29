@@ -41,12 +41,19 @@ const Contact: React.FC<DisplayProps> = ({ backBtn }) => {
       </div>
       <div className="contact-container">
         <div className="visitor-details">
-          <label htmlFor="name">your name </label>
+          <h5 style={{ marginBottom: 0 }}>your name</h5>
           {FormInput(formState.name, "name", "CHUCK NORRIS")}
         </div>
         <div className="contact-message">
+          <h4
+            style={{
+              marginBottom: ".33rem",
+              fontSize: "1.33rem"
+            }}
+          >
+            message
+          </h4>
           <textarea
-            placeholder="YOUR MESSAGE"
             className="contact-msg-input"
             onChange={handleInputChange}
             value={formState.message}
