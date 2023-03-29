@@ -3,7 +3,7 @@ import { DisplayProps } from "../../Portal";
 import { TbClipboardCheck as List } from "react-icons/tb";
 import IconTitle from "../partials/IconTitle";
 import { IconType } from "react-icons";
-import { languages, tools, misc, SkillType } from "./data";
+import { languages, tools, misc, SkillType, descriptionSwitch } from "./data";
 import {
   TiArrowLeft as ArrowLeft,
   TiArrowRight as ArrowRight
@@ -29,18 +29,6 @@ const Skill = (
 ) => {
   const styles = { "--bar-level": level } as React.CSSProperties;
 
-  const descriptionSwitch = (skillName: string) => {
-    const descriptions: { [key: string]: string } = {
-      JavaScript:
-        "JavaScript logically completes the technical triforce that characterizes programming for the modern web, alongside HTML & CSS",
-      TypeScript:
-        "A superset of JavaScript, TypeScript adds an object-oriented interface layer to JavaScript, shoring up some of the downfalls of its dynamism with compile-time type safety.",
-      Python:
-        "Python is a powerful tool for a programmer favoring versatility, sparse syntax, and a wealth of optimized data science libraries. ",
-      Rust: "Through balancing powerful technical capacity and a great developer experience, Rust gives you the option to control low-level details (such as memory usage) without all the hassle traditionally associated with such control."
-    };
-    return descriptions[skillName] || `${skillName} is awesome!`;
-  };
   return (
     <div className="skill-box" key={key}>
       <div className="level-bar-outline">

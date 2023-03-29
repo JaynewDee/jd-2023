@@ -202,7 +202,7 @@
   content: attr(data-descr);
   position: absolute;
   background-color: white;
-  margin-top: 3rem;
+  margin-top: 2rem;
   outline: 2px solid var(--accent);
   padding: 6px 3px;
   line-height: 1;
