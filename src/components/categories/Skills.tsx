@@ -17,27 +17,13 @@ const skills: { [key: string]: { id: number; data: SkillType[] } } = {
 };
 
 const SkillSwitch = (display: string) =>
-  skills[display].data.map(({ name, Icon, level }, idx) =>
-    Skill(name, Icon, level, idx)
-  );
+  skills[display].data.map(({ name, Icon }, idx) => Skill(name, Icon, idx));
 
-const Skill = (
-  name: string,
-  Icon: IconType,
-  level: number | undefined,
-  key: number
-) => {
-  const styles = { "--bar-level": level } as React.CSSProperties;
-
+const Skill = (name: string, Icon: IconType, key: number) => {
   return (
     <div className="skill-box" key={key}>
-      <div className="level-bar-outline">
-        <div className="level-bar" data-level={level} style={styles}></div>
-      </div>
       <span data-descr={descriptionSwitch(name)} className="skill-icon">
         {Icon({ size: "1.33rem" })}
-      </span>
-      <span style={{ height: "" }} className="skill-name">
         {name}
       </span>
     </div>
@@ -87,7 +73,7 @@ const Skills: React.FC<DisplayProps> = ({ backBtn }) => {
           onClick={() => handlePaging("left")}
           disabled={disabler(skills[displayState].id)}
           style={
-            displayState === "languages"
+            skills[displayState].id === 0
               ? { pointerEvents: "none", opacity: ".5" }
               : {}
           }

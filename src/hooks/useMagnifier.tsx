@@ -6,7 +6,7 @@ export function useMagnifier({
   height,
   magnifierHeight = 150,
   magnifierWidth = 150,
-  zoomLevel = 1.5,
+  zoomLevel = 1.77,
   id = 0
 }: {
   src: string;

@@ -46,7 +46,6 @@
 
 .App {
   overflow-y: auto;
-  overflow-x: hidden;
   min-height: 95vh;
   padding-top: 3rem;
 }
@@ -70,6 +69,7 @@ body {
   margin: 0;
   padding: 0;
 }
+
 body::-webkit-scrollbar {
   width: 6px;
   background-color: black;
