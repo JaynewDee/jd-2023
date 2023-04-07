@@ -4,17 +4,25 @@
   width: 100vw;
   background-color: rgba(30, 78, 127, 0.87);
   margin: 0;
+
   filter: drop-shadow(0px 0px 15px rgba(25, 25, 25, 0.6));
 }
 
 .project-container > * {
   padding: 1rem;
+  margin: 1rem;
 }
 
 .project-name {
   margin: 0;
   width: 33%;
   font-size: 1.33rem;
+}
+
+.name-brace {
+  color: var(--earth);
+  font-size: 1.66rem;
+  margin: 0.33rem;
 }
 
 .project-description {

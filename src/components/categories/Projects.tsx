@@ -21,7 +21,7 @@ const projects: ProjectType[] = [
     description:
       "Grouper is a command-line utility designed for use by myself and other instructional staff of edX/Trilogy/2U Full-Stack web development bootcamp.",
     story:
-      "As a junior developer and teaching assistant faced for the first time with the problem of assigning students to appropriate groups, I wondered if this was a problem in any wayfit for a program.  I wondered if the Python code representation would play out straightforwardly as it did in my head.  It didn't.  But the program worked!  One could read an entirely unformatted csv file and receive randomly assigned student groups as json output! TBC...",
+      "As a junior developer and teaching assistant faced for the first time with the problem of assigning students to appropriate groups, I wondered if this was a problem in any wayfit for a program.  I wondered if the Python code representation would play out straightforwardly as it did in my head.  It didn't.  But the program worked!  One could read an entirely unformatted csv gradebook file and receive randomly assigned student groups as json output! I realized then that the same algorithm could be augmented with a way to ensure that students are grouped based on an even distribution of grade point averages.  I rewrote the script as a Node.js package using Commander.js and implemented an iterative solution that would measure each output against a target standard deviation until the target had been met.  I wrote some tests and published the package to npm, but I lacked confidence in the app's integrity, seeking ways to further trust in the code I had written, and so I decided to superset the project with TypeScript.  The current and working version is available to download as an NPM package!",
     tools: ["TypeScript", "Node"],
     id: 0
   },
@@ -51,9 +51,11 @@ const Project = ({ name, description, story, tools, id }: ProjectType) => {
       : ({ marginLeft: "auto", textAlign: "right" } as any);
 
   return (
-    <section className="project-container">
+    <section className="project-container" key={id}>
       <h4 className="project-name" style={computedStyles}>
+        <span className="name-brace">{"["}</span>
         {name}
+        <span className="name-brace">{"]"}</span>
       </h4>
       <p className="project-description" style={computedStyles}>
         {description}
@@ -62,8 +64,10 @@ const Project = ({ name, description, story, tools, id }: ProjectType) => {
         {story}
       </p>
       <div className="tools-container">
-        {tools.map((tool) => (
-          <span className="tool">{tool}</span>
+        {tools.map((tool, idx) => (
+          <span className="tool" key={idx}>
+            {tool}
+          </span>
         ))}
       </div>
     </section>
