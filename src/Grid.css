@@ -15,7 +15,7 @@
 }
 
 .category-container {
-  width: 90%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
@@ -63,6 +63,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin: 0 3rem 3rem;
 }
 
 .category-title {
@@ -492,25 +493,11 @@ textarea:focus {
   .resume {
     width: 100%;
   }
+
   .cert-div {
     margin: 1rem 0;
   }
 
-  .skills-container {
-    flex-flow: column nowrap;
-    margin-top: 1rem;
-    max-width: 600px;
-  }
-  .skill-box {
-    margin: 0.5rem auto;
-    height: 1rem;
-  }
-
-  .skill-name {
-    transform: rotate(0) translateY(0.66rem);
-    writing-mode: unset;
-    bottom: unset;
-  }
   .skill-switch-header {
     width: 90%;
   }
