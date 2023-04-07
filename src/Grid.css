@@ -150,7 +150,6 @@
   color: rgba(255, 255, 255, 0.868);
   cursor: pointer;
   margin: 0 0.33rem;
-  font-size: 0.66rem;
 }
 
 .devto-header:hover::before {
@@ -181,6 +180,14 @@
   width: 33vw;
 }
 
+.skill-menu {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 6rem auto 0.33rem;
+
+  width: 90%;
+}
+
 .skill-icon {
   cursor: pointer;
   transition: background-color 0.33s;
@@ -199,24 +206,12 @@
   color: var(--accent);
 }
 
-/* .skill-icon:hover::after {
-  border-radius: 6px;
-  content: attr(data-descr);
-  position: absolute;
-  background-color: white;
-  margin-top: 6rem;
-  outline: 2px solid var(--accent);
-  padding: 6px 3px;
-  line-height: 1;
-  max-width: 30%;
-  font-family: monospace;
-} */
-
 .skills-container {
   display: flex;
   justify-content: center;
-  margin: 3rem;
-  height: 15rem;
+  margin: 0 auto 3rem;
+  height: 50vh;
+  width: 90%;
   border: 1px solid white;
   background-color: rgba(0, 0, 0, 0.34);
 }
@@ -500,9 +495,6 @@ textarea:focus {
   .cert-div {
     margin: 1rem 0;
   }
-  .devto-link {
-    font-size: 1rem;
-  }
 
   .skills-container {
     flex-flow: column nowrap;
@@ -513,9 +505,7 @@ textarea:focus {
     margin: 0.5rem auto;
     height: 1rem;
   }
-  .skill-box:hover {
-    all: unset;
-  }
+
   .skill-name {
     transform: rotate(0) translateY(0.66rem);
     writing-mode: unset;
@@ -523,9 +513,6 @@ textarea:focus {
   }
   .skill-switch-header {
     width: 90%;
-  }
-  .skill-icon:hover::after {
-    width: unset;
   }
 }
 

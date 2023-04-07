@@ -10,6 +10,7 @@ import {
 } from "react-icons/ti";
 
 //
+
 const skills: { [key: string]: { id: number; data: SkillType[] } } = {
   languages: { id: 0, data: languages },
   tools: { id: 1, data: tools },
@@ -95,7 +96,8 @@ const Skills: React.FC<DisplayProps> = ({ backBtn }) => {
           {ArrowRight({})}
         </button>
       </div>
-      <div className="skills-container">{SkillSwitch(displayState)}</div>
+      <div className="skill-menu">{SkillSwitch(displayState)}</div>
+      <div className="skills-container"></div>
     </div>
   );
 };
