@@ -47,7 +47,6 @@
 .App {
   overflow-y: auto;
   min-height: 95vh;
-  padding-top: 3rem;
 }
 
 .App::before {
