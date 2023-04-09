@@ -2,19 +2,19 @@
   display: grid;
   font-size: 0.66rem;
   width: 100vw;
-  background-color: rgba(250, 250, 250, 0.9);
+  background-color: rgba(250, 250, 250, 1);
   color: rgba(30, 78, 127, 0.87);
   margin: 3rem 0 5rem;
 }
 
 .project-container[data-orientation="left"] > p {
-  padding-left: 2rem;
+  padding-left: 1rem;
   margin-left: 1rem;
   margin-right: auto;
   text-align: left;
 }
 .project-container[data-orientation="right"] > p {
-  padding-right: 2rem;
+  padding-right: 1rem;
   margin-right: 1rem;
   margin-left: auto;
   text-align: right;
@@ -44,10 +44,8 @@
 }
 
 .project-description {
-  width: 66%;
+  width: 90%;
   font-size: 1rem;
-  display: flex;
-  justify-content: flex-end;
   font-family: var(--cat);
 }
 

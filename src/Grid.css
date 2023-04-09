@@ -39,11 +39,11 @@
 }
 
 .name-cell > h1 {
-  font-size: 3rem;
+  font-size: 3.5rem;
   margin-bottom: 1rem;
 }
 .name-cell > h2 {
-  font-size: 2rem;
+  font-size: 2.25rem;
 }
 .name-cell > h1,
 .name-cell > h2 {
@@ -182,6 +182,7 @@
   align-items: center;
   margin: 3rem auto 1rem;
   width: 33vw;
+  font-family: var(--mate);
 }
 
 .skill-menu {
@@ -203,6 +204,7 @@
   padding: 6px 3px;
   margin: 6px;
   padding-bottom: 0;
+  font-family: var(--pridi);
 }
 
 .skill-icon:hover {
@@ -219,6 +221,7 @@
   width: 90%;
   border: 1px solid white;
   background-color: rgba(0, 0, 0, 0.34);
+  font-family: var(--pridi);
 }
 
 .skill-name {
@@ -511,6 +514,7 @@ textarea:focus {
   font-size: 0.5rem;
   color: rgba(255, 255, 255, 0.77);
   width: 33%;
+  font-family: var(--pridi);
 }
 
 .footnote > p {

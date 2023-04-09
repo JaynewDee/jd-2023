@@ -12,9 +12,9 @@ import {
 //
 
 const skills: { [key: string]: { id: number; data: SkillType[] } } = {
-  languages: { id: 0, data: languages },
-  tools: { id: 1, data: tools },
-  misc: { id: 2, data: misc }
+  Languages: { id: 0, data: languages },
+  Tools: { id: 1, data: tools },
+  Misc: { id: 2, data: misc }
 };
 
 const SkillSwitch = (display: string) =>
@@ -32,7 +32,7 @@ const Skill = (name: string, Icon: IconType, key: number) => {
 };
 
 const Skills: React.FC<DisplayProps> = ({ backBtn }) => {
-  const [displayState, setDisplayState] = useState("languages");
+  const [displayState, setDisplayState] = useState("Languages");
 
   const disabler = (displayId: number | null = null) => {
     if (displayId) {
