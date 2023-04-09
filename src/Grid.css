@@ -499,6 +499,10 @@ textarea:focus {
   .skill-switch-header {
     width: 90%;
   }
+
+  .project-story {
+    margin: 1rem 0.33rem;
+  }
 }
 
 .footnote {
