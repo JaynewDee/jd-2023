@@ -5,7 +5,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Cinzel:wght@500;700&family=Montserrat:wght@300&family=Poiret+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Italiana&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mate:ital@1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pridi:wght@300&display=swap");
 :root {
   --accent: rgb(53, 101, 150);
   --variant: rgba(65, 157, 120);
@@ -22,6 +24,9 @@
   --poiret: "Poiret One", cursive;
   --cinzel: "Cinzel", serif;
   --italy: "Italiana", serif;
+  --cat: "Catamaran", sans-serif;
+  --mate: "Mate", serif;
+  --pridi: "Pridi", serif;
   --drop-text: drop-shadow(0px 21px 21px black);
   line-height: 24px;
   font-size: 22px;
@@ -40,7 +45,7 @@
 
 #root {
   text-align: center;
-  font-family: var(--cinzel);
+  font-family: var(--mate);
   font-weight: 700;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);

@@ -52,7 +52,7 @@
 
 .name-cell > span {
   font-size: 0.66rem;
-  font-family: var(--italy);
+  font-family: var(--cat);
   letter-spacing: 2px;
 }
 
@@ -69,6 +69,7 @@
 }
 
 .category-title {
+  font-family: var(--cat);
   margin: 0 0.5rem 0 0.5rem;
   pointer-events: none;
   font-size: 1.33rem;
@@ -287,7 +288,7 @@ img {
   transition: all 0.33s;
   opacity: 0.7;
   text-transform: uppercase;
-  font-family: var(--italy);
+  font-family: var(--cat);
   letter-spacing: 2px;
 }
 
@@ -480,7 +481,6 @@ textarea:focus {
   .category-title {
     font-size: 1.5rem;
     text-decoration: none;
-    font-family: var(--italy);
   }
   .accolades-box {
     flex-flow: row wrap;
