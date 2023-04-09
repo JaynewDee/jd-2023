@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { DisplayProps } from "../../Portal";
 import { TbClipboardCheck as List } from "react-icons/tb";
-import IconTitle from "../partials/IconTitle";
+import IconTitle from "../IconTitle";
 import { IconType } from "react-icons";
 import { languages, tools, misc, SkillType, descriptionSwitch } from "./data";
 import {

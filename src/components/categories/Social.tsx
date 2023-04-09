@@ -5,7 +5,7 @@ import { TbHeartHandshake as HeartShake } from "react-icons/tb";
 
 import { IconType } from "react-icons";
 import { DisplayProps } from "../../Portal";
-import IconTitle from "../partials/IconTitle";
+import IconTitle from "../IconTitle";
 //
 
 const Social: React.FC<DisplayProps> = ({ backBtn }) => {

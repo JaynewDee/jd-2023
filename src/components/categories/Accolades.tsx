@@ -6,7 +6,7 @@ import CS50XCert from "../../assets/cs50x_cert.png";
 import { DisplayProps } from "../../Portal";
 import { CiMedal } from "react-icons/ci";
 import { useMagnifier } from "../../hooks/useMagnifier";
-import IconTitle from "../partials/IconTitle";
+import IconTitle from "../IconTitle";
 //
 
 const badges = [BootCampBadge, CloudPractitionerBadge];

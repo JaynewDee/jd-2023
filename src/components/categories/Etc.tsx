@@ -1,6 +1,6 @@
 import React from "react";
 import { DisplayProps } from "../../Portal";
-import { Title } from "../partials/IconTitle";
+import { Title } from "../IconTitle";
 
 //
 

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { DisplayProps } from "../../Portal";
 import { GoMail as Mail } from "react-icons/go";
-import IconTitle from "../partials/IconTitle";
+import IconTitle from "../IconTitle";
 import { useMailHandler } from "../../hooks/useMailHandler";
 
 //

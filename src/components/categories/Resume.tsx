@@ -1,7 +1,7 @@
 import React from "react";
 import { BsFillJournalBookmarkFill as Journal } from "react-icons/bs";
 import { DisplayProps } from "../../Portal";
-import IconTitle from "../partials/IconTitle";
+import IconTitle from "../IconTitle";
 
 //
 

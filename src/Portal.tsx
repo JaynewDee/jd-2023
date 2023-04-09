@@ -5,7 +5,7 @@ import About from "./components/categories/About";
 import Accolades from "./components/categories/Accolades";
 import Contact from "./components/categories/Contact";
 import Etc from "./components/categories/Etc";
-import Projects from "./components/categories/Projects";
+import Projects from "./components/categories/Projects/Projects";
 import Resume from "./components/categories/Resume";
 import Skills from "./components/categories/Skills";
 import Social from "./components/categories/Social";
