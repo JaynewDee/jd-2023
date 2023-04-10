@@ -19,7 +19,7 @@ export const projects: ProjectType[] = [
       { name: "React", url: "https://react.dev/" },
       { name: "Node", url: "https://nodejs.dev/en/about/" },
       { name: "Express", url: "https://expressjs.com/" },
-      { name: "MongoDB", url: "https://www.mongodb.com/" },
+      { name: "MongoDB", url: "" },
       { name: "Socket.io", url: "https://socket.io/" }
     ],
     id: 0
@@ -31,7 +31,7 @@ export const projects: ProjectType[] = [
     story:
       "Spider is sick... I loved building it! I hope you'll check it out and let me know what you'd like to see added.",
     tools: [
-      { name: "Rust", url: "https://www.rust-lang.org/" },
+      { name: "Rust", url: "" },
       { name: "Tauri", url: "https://tauri.app/" },
       { name: "TypeScript", url: "https://www.typescriptlang.org/" }
     ],
