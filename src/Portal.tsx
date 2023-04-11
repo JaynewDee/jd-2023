@@ -7,7 +7,7 @@ import Contact from "./components/categories/Contact";
 import Etc from "./components/categories/Etc";
 import Projects from "./components/categories/Projects/Projects";
 import Resume from "./components/categories/Resume";
-import Skills from "./components/categories/Skills";
+import Skills from "./components/categories/Skills/Skills";
 import Social from "./components/categories/Social";
 
 export type DisplayProps = {

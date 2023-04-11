@@ -3,7 +3,7 @@
   font-size: 0.66rem;
   width: 100vw;
   color: white;
-  margin: 3rem 0 5rem;
+  margin: 6rem 0 5rem;
   background-color: rgba(15, 15, 15, 0.7);
   padding-bottom: 1rem;
 }
@@ -76,10 +76,9 @@
 }
 .tool {
   display: flex;
+  justify-content: center;
   margin: 0.33rem 1rem;
   font-family: var(--pridi);
-  /* border: 1px solid var(--cordovan); */
-  padding: 0 0.33rem;
   border-radius: 3px;
   cursor: pointer;
   border-bottom: 1px solid var(--cordovan);

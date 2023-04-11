@@ -1,16 +1,16 @@
-import { DisplayProps } from "../../../Portal";
-import { Title } from "../../IconTitle";
-import { projects, ProjectType } from "./data";
-import { Tool } from "./Tool";
-import "./Projects.css";
 import { useState } from "react";
 import { createPortal } from "react-dom";
+import { DisplayProps } from "../../../Portal";
+import { Title } from "../../IconTitle";
+import { Tool } from "./Tool";
+import { projects, ProjectType } from "./data";
 
+//
+import "./Projects.css";
 //
 
 const Project = (
   { name, description, story, tools, id }: ProjectType,
-  modalState: string,
   setModalState: any
 ) => {
   const withDelimiter = (delim: string, dashedStr: string) =>
@@ -72,7 +72,7 @@ const Projects: React.FC<DisplayProps> = ({ backBtn }) => {
         </div>
         <article>
           {projects.map((project, idx) => (
-            <div key={idx}>{Project(project, modalState, setModalState)}</div>
+            <div key={idx}>{Project(project, setModalState)}</div>
           ))}
         </article>
       </article>

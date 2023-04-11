@@ -1,14 +1,16 @@
 import React, { useState } from "react";
-import { DisplayProps } from "../../Portal";
+import { DisplayProps } from "../../../Portal";
 import { TbClipboardCheck as List } from "react-icons/tb";
-import IconTitle from "../IconTitle";
+import IconTitle from "../../IconTitle";
 import { IconType } from "react-icons";
-import { languages, tools, misc, SkillType, descriptionSwitch } from "./data";
+import { languages, tools, misc, SkillType, descriptionSwitch } from "../data";
 import {
   TiArrowLeft as ArrowLeft,
   TiArrowRight as ArrowRight
 } from "react-icons/ti";
 
+//
+import "./Skills.css";
 //
 
 const skills: { [key: string]: { id: number; data: SkillType[] } } = {
@@ -96,8 +98,35 @@ const Skills: React.FC<DisplayProps> = ({ backBtn }) => {
           {ArrowRight({})}
         </button>
       </div>
-      <div className="skill-menu">{SkillSwitch(displayState)}</div>
-      <div className="skills-container"></div>
+      <article className="skill-wrapper">
+        <div className="skill-menu">{SkillSwitch(displayState)}</div>
+        <div className="skills-container">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
+            quisquam fugiat odio mollitia at dolores maxime voluptatem aut
+            recusandae? Facere pariatur numquam expedita voluptatum et
+            necessitatibus modi ullam unde voluptas?
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo,
+            officiis? Ipsa, explicabo sunt ut et quas labore dolorem alias non
+            laboriosam quaerat quidem amet dolore. Distinctio iste voluptates
+            magni vel.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe fuga
+            animi inventore voluptate quibusdam enim consectetur rem reiciendis
+            facilis, minima ratione quod quis maiores, minus illum repellendus
+            voluptatem? Qui, laborum.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque
+            maxime voluptate voluptatem iure? Quia molestiae omnis eius
+            necessitatibus deserunt debitis harum asperiores voluptatem quas
+            cupiditate, nihil sint porro aliquam dolorem?
+          </p>
+        </div>
+      </article>
     </div>
   );
 };
