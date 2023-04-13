@@ -2,7 +2,7 @@ import React from "react";
 
 //
 
-const Nameplate: React.FC = () => {
+const Nameplate = () => {
   return (
     <div data-category={"nameplate"} className="nameplate">
       <div className="name-cell">

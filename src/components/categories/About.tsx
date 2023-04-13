@@ -7,9 +7,7 @@ const About: React.FC<DisplayProps> = ({ backBtn }) => {
   return (
     <div className="category-container">
       <div className="category-header">{backBtn()}</div>
-      <section className="photo-section">
-        {/* Images of oneself ... ? ... ugh */}
-      </section>
+      <section className="photo-section"></section>
       <div className="about-box">
         <p>
           How beautiful it is! To fall to give you flight. To die to give you
