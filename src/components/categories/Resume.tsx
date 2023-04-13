@@ -2,10 +2,7 @@ import React from "react";
 import { BsFillJournalBookmarkFill as Journal } from "react-icons/bs";
 import { DisplayProps } from "../../Portal";
 import IconTitle from "../IconTitle";
-const resumePDF = new URL(
-  "../../assets/JoshuaDiehl_Resume.pdf",
-  import.meta.url
-).href;
+import resumePDF from "/JoshuaDiehl_Resume.pdf";
 //
 
 const Resume: React.FC<DisplayProps> = ({ backBtn }) => {
