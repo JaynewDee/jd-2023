@@ -3,7 +3,8 @@ import { DisplayProps } from "../../../Portal";
 import { TbClipboardCheck as List } from "react-icons/tb";
 import IconTitle from "../../IconTitle";
 import { IconType } from "react-icons";
-import { languages, tools, misc, SkillType, descriptionSwitch } from "../data";
+import { descriptionSwitch } from "../data";
+import { languages, tools, misc, SkillType } from "./data";
 import {
   TiArrowLeft as ArrowLeft,
   TiArrowRight as ArrowRight

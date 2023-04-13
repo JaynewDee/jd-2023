@@ -2,7 +2,7 @@ import React from "react";
 import { BsFillJournalBookmarkFill as Journal } from "react-icons/bs";
 import { DisplayProps } from "../../Portal";
 import IconTitle from "../IconTitle";
-
+import resumePDF from "../../assets/JoshuaDiehl_Resume.pdf";
 //
 
 const Resume: React.FC<DisplayProps> = ({ backBtn }) => {
@@ -14,11 +14,7 @@ const Resume: React.FC<DisplayProps> = ({ backBtn }) => {
       </div>
 
       <div className="resume">
-        <iframe
-          src="src/assets/JoshuaDiehl_Resume.pdf"
-          width="100%"
-          height="48rem"
-        ></iframe>
+        <iframe src={resumePDF} width="100%" height="48rem"></iframe>
       </div>
     </div>
   );
