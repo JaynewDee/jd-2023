@@ -215,12 +215,14 @@ body::-webkit-scrollbar-thumb {
   display: flex;
   flex-flow: row wrap;
   margin: 3rem auto 0;
+  overflow-y: hidden;
 }
 
 .badges-box,
 .certs-box {
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-flow: row wrap;
   margin: 1rem auto;
 }
