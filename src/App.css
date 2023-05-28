@@ -84,15 +84,15 @@ body {
 }
 
 body::-webkit-scrollbar {
-  width: 4px;
+  width: 7px;
   background-color: black;
 }
 body::-webkit-scrollbar-track {
-  width: 4px;
   background-color: black;
 }
 body::-webkit-scrollbar-thumb {
   background-color: var(--cordovan);
+  border-radius: 4px;
 }
 
 /**/
@@ -522,6 +522,10 @@ textarea:focus {
 
   .nameplate {
     margin-bottom: 3rem;
+  }
+  .ua-bracket {
+    color: var(--accent);
+    font-size: 80%;
   }
   .name-cell::after {
     width: 66vw;
