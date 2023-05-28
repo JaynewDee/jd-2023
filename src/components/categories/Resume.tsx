@@ -3,11 +3,13 @@ import { BsFillJournalBookmarkFill as Journal } from "react-icons/bs";
 import { DisplayProps } from "../../Portal";
 import IconTitle from "../IconTitle";
 import resumePDF from "/JoshuaDiehl_Resume.pdf";
+
 //
 
 const Resume: React.FC<DisplayProps> = ({ backBtn }) => {
   return (
     <div className="category-container">
+
       <div className="category-header">
         {backBtn()}
         {IconTitle("RESUME", Journal, "left")}
@@ -16,6 +18,7 @@ const Resume: React.FC<DisplayProps> = ({ backBtn }) => {
       <div className="resume">
         <iframe src={resumePDF} title="Resume iframe" width="100%" height="48rem" />
       </div>
+
     </div>
   );
 };

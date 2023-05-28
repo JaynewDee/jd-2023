@@ -6,7 +6,7 @@ const Nameplate = () => {
       <div className="name-cell">
         <h2 className="joshua">
           Josh
-          <span className="ua-bracket">[</span>ua<span className="ua-bracket">]</span>
+          <span className="ua-bracket">(</span>ua<span className="ua-bracket">)</span>
         </h2>
         <h1>Diehl</h1>
         <span className="profession">

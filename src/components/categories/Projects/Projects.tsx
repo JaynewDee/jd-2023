@@ -4,26 +4,33 @@ import { DisplayProps } from "../../../Portal";
 import { Title } from "../../IconTitle";
 import { Tool } from "./Tool";
 import { projects, ProjectType } from "./data";
-import { useNewTab } from "../../../hooks/useNewTab";
-
+import { useNewTab, useImgViewer } from "../../../hooks";
 //
 import "./Projects.css";
 //
 
 type ImageProps = {
-  src: string
+  src: string,
+  activeImageSrc: string,
+  setActiveImageSrc: Dispatch<SetStateAction<string>>;
 }
 
-const ProjectImage = ({ src }: ImageProps) => {
-  const [isZoomed, setIsZoomed] = useState(false);
-  const handleZoom = () => isZoomed ? setIsZoomed(false) : setIsZoomed(true);
-
-  return <img className={isZoomed ? "img-zoomed" : "img-normal"} onClick={handleZoom} src={src}></img>
+const ProjectImage = ({ src, activeImageSrc, setActiveImageSrc }: ImageProps) => {
+  const handleActiveSrcChange = () => {
+    if (src === activeImageSrc) {
+      setActiveImageSrc("")
+    } else {
+      setActiveImageSrc(src);
+    }
+  }
+  return <img onClick={handleActiveSrcChange} src={src}></img>
 }
 
 const Project = (
   { name, description, story, tools, id, images, production_src }: ProjectType,
-  setModalState: Dispatch<SetStateAction<string>>
+  setModalState: Dispatch<SetStateAction<string>>,
+  setActiveImageSrc: Dispatch<SetStateAction<string>>,
+  activeImageSrc: string
 ) => {
   const withDelimiter = (delim: string, dashedStr: string) =>
     dashedStr.split(delim).map((section, idx) => <p key={idx + section}>{section}</p>);
@@ -43,7 +50,7 @@ const Project = (
         </h4>
         <p className="project-description">{description}</p>
         <div className="project-images">
-          {images?.map(src => <ProjectImage src={src} />)}
+          {images?.map(src => <ProjectImage src={src} activeImageSrc={activeImageSrc} setActiveImageSrc={setActiveImageSrc} />)}
         </div>
         <div className="git-links">
           <button type="button" className="git-btn" onClick={() => production_src && useNewTab(production_src)}>Deployment</button>
@@ -54,7 +61,7 @@ const Project = (
         <h5 className="tools-label">Tools</h5>
         <div className="tools-container">
           {tools.map((tool, idx) => (
-            <>{Tool(tool, setModalState, idx)}</>
+            <>{Tool(tool, setModalState, setActiveImageSrc, idx)}</>
           ))}
         </div>
       </article>
@@ -65,6 +72,8 @@ const Project = (
 //
 
 const Projects: React.FC<DisplayProps> = ({ backBtn }) => {
+  const [activeImageSrc, setActiveImageSrc] = useState("");
+
   const [modalState, setModalState] = useState("");
 
   const modalOff = () => setModalState("");
@@ -93,11 +102,12 @@ const Projects: React.FC<DisplayProps> = ({ backBtn }) => {
         </div>
         <article>
           {projects.map((project, idx) => (
-            <div key={idx + project.id}>{Project(project, setModalState)}</div>
+            <div key={idx + project.id}>{Project(project, setModalState, setActiveImageSrc, activeImageSrc)}</div>
           ))}
         </article>
       </article>
       {modalState && <Modal />}
+      {useImgViewer(activeImageSrc, setActiveImageSrc)}
     </>
   );
 };

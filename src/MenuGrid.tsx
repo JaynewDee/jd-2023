@@ -7,7 +7,7 @@ export type CategoryProps = {
   setDisplay: DisplayDispatch;
 };
 
-const keyTable: { [key: string]: string} = {
+const keyTable: { [key: string]: string } = {
   p: "projects",
   t: "tools",
   r: "resume",
@@ -24,11 +24,11 @@ const MenuGrid = ({ setDisplay }: { setDisplay: DisplayDispatch }) => {
 
   useEffect(() => {
     const handleKeyEvent = (e: KeyboardEvent) => {
-      if (e.key in keyTable) {
-        setDisplay(keyTable[e.key]); 
+      if (e.key.toLowerCase() in keyTable) {
+        setDisplay(keyTable[e.key]);
       }
     }
-    
+
     window.addEventListener('keyup', handleKeyEvent);
 
     return () => window.removeEventListener('keyup', handleKeyEvent)
@@ -45,8 +45,11 @@ const MenuGrid = ({ setDisplay }: { setDisplay: DisplayDispatch }) => {
     [7, "etc."]
   ];
 
-  const formatName = (name: string) => name.split("").map((char: string, idx: number) => idx === 0 ? <span>{char}</span> : char);
-  const formatDataCategory = (name: string) =>  name.toLowerCase().replace(/[\?\.]/, "");
+  const formatName = (name: string) => 
+    name.split("").map((char: string, idx: number) => 
+      idx === 0 ? <span className="cat-char-underlined">{char}</span> : char);
+
+  const formatDataCategory = (name: string) => name.toLowerCase().replace(/[\?\.]/, "");
 
   const MenuCategory = (id: number, name: string) => (
     <div

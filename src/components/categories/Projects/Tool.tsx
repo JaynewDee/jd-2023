@@ -1,12 +1,16 @@
 import { SetStateAction, Dispatch } from "react";
-import useTooltip from "../../../hooks/useTooltip";
+import { useTooltip } from "../../../hooks/";
 
 export function Tool(
   tool: { name: string; url: string },
   setModalState: Dispatch<SetStateAction<string>>,
+  setActiveImageSrc: Dispatch<SetStateAction<string>>,
   key: number
 ) {
-  const toggleIframe = () => setModalState(tool.url);
+  const toggleIframe = () => { 
+    setModalState(tool.url); 
+    setActiveImageSrc("") 
+  };
 
   const component = () => (
     <span className="tool" key={key} onClick={toggleIframe}>

@@ -6,7 +6,7 @@ interface TooltipProps {
   available: boolean;
 }
 
-export default function Tooltip({ children, text, available }: TooltipProps) {
+export function useTooltip({ children, text, available }: TooltipProps) {
   const [show, setShow] = useState(false);
 
   return (
