@@ -1,8 +1,9 @@
+import { SetStateAction, Dispatch } from "react";
 import useTooltip from "../../../hooks/useTooltip";
 
 export function Tool(
   tool: { name: string; url: string },
-  setModalState: any,
+  setModalState: Dispatch<SetStateAction<string>>,
   key: number
 ) {
   const toggleIframe = () => setModalState(tool.url);
@@ -13,7 +14,7 @@ export function Tool(
     </span>
   );
 
-  const unavailable = ["MongoDB", "Rust"];
+  const unavailable = ["MongoDB", "Rust", "Python"];
 
   return useTooltip({
     children: component(),

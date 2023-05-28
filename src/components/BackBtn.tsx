@@ -2,7 +2,9 @@ import { BsArrow90DegLeft as BackArrow } from "react-icons/bs";
 
 //
 
-const BackBtn = ({ goBack }: { goBack: () => void }) => {
+type BackFn = { goBack: () => void };
+
+const BackBtn = ({ goBack }: BackFn) => {
   return (
     <div className="back-btn" onClick={goBack}>
       <h4 style={{ marginTop: ".33rem" }} className="cell-title">

@@ -1,20 +1,33 @@
-import { useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 import { createPortal } from "react-dom";
 import { DisplayProps } from "../../../Portal";
 import { Title } from "../../IconTitle";
 import { Tool } from "./Tool";
 import { projects, ProjectType } from "./data";
+import { useNewTab } from "../../../hooks/useNewTab";
 
 //
 import "./Projects.css";
 //
 
+type ImageProps = {
+  src: string
+}
+
+const ProjectImage = ({ src }: ImageProps) => {
+  const [isZoomed, setIsZoomed] = useState(false);
+  const handleZoom = () => isZoomed ? setIsZoomed(false) : setIsZoomed(true);
+
+  return <img className={isZoomed ? "img-zoomed" : "img-normal"} onClick={handleZoom} src={src}></img>
+}
+
 const Project = (
-  { name, description, story, tools, id }: ProjectType,
-  setModalState: any
+  { name, description, story, tools, id, images, production_src }: ProjectType,
+  setModalState: Dispatch<SetStateAction<string>>
 ) => {
   const withDelimiter = (delim: string, dashedStr: string) =>
-    dashedStr.split(delim).map((section, idx) => <p key={idx}>{section}</p>);
+    dashedStr.split(delim).map((section, idx) => <p key={idx + section}>{section}</p>);
+
 
   return (
     <>
@@ -29,7 +42,14 @@ const Project = (
           <span className="name-brace">{"]"}</span>
         </h4>
         <p className="project-description">{description}</p>
-        <div className="project-images"></div>
+        <div className="project-images">
+          {images?.map(src => <ProjectImage src={src} />)}
+        </div>
+        <div className="git-links">
+          <button type="button" className="git-btn" onClick={() => production_src && useNewTab(production_src)}>Deployment</button>
+          <button type="button" className="git-btn">Copy Clone URL</button>
+          <button type="button" className="git-btn">Visit Repository</button>
+        </div>
         <section className="project-story">{withDelimiter(":", story)}</section>
         <h5 className="tools-label">Tools</h5>
         <div className="tools-container">
@@ -47,6 +67,7 @@ const Project = (
 const Projects: React.FC<DisplayProps> = ({ backBtn }) => {
   const [modalState, setModalState] = useState("");
 
+  const modalOff = () => setModalState("");
   const modalRoot = document.getElementById("projects-modal") as HTMLElement;
 
   const Modal = () => {
@@ -54,8 +75,8 @@ const Projects: React.FC<DisplayProps> = ({ backBtn }) => {
 
     return createPortal(
       <div style={{ marginTop: position }} className="modal-container">
-        <iframe src={modalState}></iframe>
-        <button className="modal-exit-btn" onClick={() => setModalState("")}>
+        <iframe title="Iframe Modal" src={modalState} />
+        <button type="button" className="modal-exit-btn" onClick={modalOff}>
           X CLOSE X
         </button>
       </div>,
@@ -72,7 +93,7 @@ const Projects: React.FC<DisplayProps> = ({ backBtn }) => {
         </div>
         <article>
           {projects.map((project, idx) => (
-            <div key={idx}>{Project(project, setModalState)}</div>
+            <div key={idx + project.id}>{Project(project, setModalState)}</div>
           ))}
         </article>
       </article>

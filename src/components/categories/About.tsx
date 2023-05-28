@@ -29,6 +29,8 @@ const About: React.FC<DisplayProps> = ({ backBtn }) => {
           corrupti aliquid non amet voluptatum alias laboriosam accusantium
           commodi esse nam, quasi possimus beatae.
         </p>
+
+
       </div>
     </div>
   );

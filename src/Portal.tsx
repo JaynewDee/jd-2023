@@ -7,7 +7,7 @@ import Contact from "./components/categories/Contact";
 import Etc from "./components/categories/Etc";
 import Projects from "./components/categories/Projects/Projects";
 import Resume from "./components/categories/Resume";
-import Skills from "./components/categories/Skills/Skills";
+import Tools from "./components/categories/Tools";
 import Social from "./components/categories/Social";
 
 export type DisplayProps = {
@@ -21,7 +21,7 @@ const Portal: React.FC = () => {
   const goBack = () => setDisplayState("");
 
   useEffect(() => {
-    window.addEventListener("keydown", (e: any) => {
+    window.addEventListener("keydown", (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         goBack();
       }
@@ -37,7 +37,7 @@ const Portal: React.FC = () => {
     accolades: <Accolades {...props} />,
     contact: <Contact {...props} />,
     projects: <Projects {...props} />,
-    skills: <Skills {...props} />,
+    tools: <Tools {...props} />,
     resume: <Resume {...props} />,
     social: <Social {...props} />,
     who: <About {...props} />,

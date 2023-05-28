@@ -7,6 +7,7 @@ import { DisplayProps } from "../../Portal";
 import { CiMedal } from "react-icons/ci";
 import { useMagnifier } from "../../hooks/useMagnifier";
 import IconTitle from "../IconTitle";
+
 //
 
 const badges = [BootCampBadge, CloudPractitionerBadge];
@@ -14,21 +15,13 @@ const certs = [SMUCert, CS50PCert, CS50XCert];
 
 const Accolades: React.FC<DisplayProps> = ({ backBtn }) => {
   //
-
-  return (
+return (
     <div className="category-container">
       <div className="category-header">
         {backBtn()}
         {IconTitle("ACCOLADES", CiMedal)}
       </div>
       <div className="accolades-box">
-        <div className="badges-box">
-          {badges.map((badge, idx) => (
-            <div key={idx} className="badge-div">
-              <img src={badge} alt="" />
-            </div>
-          ))}
-        </div>
         <div className="certs-box">
           {certs.map((src, idx) =>
             useMagnifier({
@@ -39,6 +32,13 @@ const Accolades: React.FC<DisplayProps> = ({ backBtn }) => {
               id: idx
             })
           )}
+        </div>
+        <div className="badges-box">
+          {badges.map((badge, idx) => (
+            <div key={idx} className="badge-div">
+              <img src={badge} alt="" />
+            </div>
+          ))}
         </div>
       </div>
     </div>

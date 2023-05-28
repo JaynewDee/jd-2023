@@ -14,7 +14,7 @@ const Resume: React.FC<DisplayProps> = ({ backBtn }) => {
       </div>
 
       <div className="resume">
-        <iframe src={resumePDF} width="100%" height="48rem"></iframe>
+        <iframe src={resumePDF} title="Resume iframe" width="100%" height="48rem" />
       </div>
     </div>
   );

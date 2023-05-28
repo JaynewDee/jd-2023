@@ -6,6 +6,7 @@ import { TbHeartHandshake as HeartShake } from "react-icons/tb";
 import { IconType } from "react-icons";
 import { DisplayProps } from "../../Portal";
 import IconTitle from "../IconTitle";
+
 //
 
 const Social: React.FC<DisplayProps> = ({ backBtn }) => {
@@ -49,8 +50,7 @@ const Social: React.FC<DisplayProps> = ({ backBtn }) => {
           <p className="devto-link" onClick={visitDev}>
             dev.to
           </p>
-        </h4>
-        <article></article>
+        </h4> 
       </section>
     </div>
   );

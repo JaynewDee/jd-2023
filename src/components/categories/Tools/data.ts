@@ -42,7 +42,7 @@ export const languages: SkillType[] = [
   }
 ];
 
-export const tools: SkillType[] = [
+export const tech: SkillType[] = [
   {
     name: "React",
     Icon: SiReact,

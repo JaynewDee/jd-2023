@@ -59,6 +59,7 @@
 
 .App {
   overflow-y: auto;
+  overflow-x: hidden;
   min-height: 100vh;
 }
 
@@ -316,6 +317,24 @@ body::-webkit-scrollbar-thumb {
   margin: 3rem auto;
 }
 
+.tools-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.tools-list > li {
+  margin: 1rem auto;
+}
+
+.tools-list > li > a { 
+  font-size: 2rem;
+  color: var(--accent);
+  text-decoration: none;
+}
+.tools-list > li > a:hover {
+  color: var(--cordovan);
+}
+
 textarea::placeholder {
   font-size: 0.66rem;
 }
@@ -337,6 +356,9 @@ img {
   letter-spacing: 2px;
 }
 
+.menu-title > span {
+  text-decoration: underline;
+}
 .menu-cell:hover > .menu-title {
   filter: drop-shadow(0px 6px 1px black) saturate(1.5);
   transform: translateY(-3px);
