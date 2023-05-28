@@ -23,7 +23,7 @@ const ProjectImage = ({ src, activeImageSrc, setActiveImageSrc }: ImageProps) =>
       setActiveImageSrc(src);
     }
   }
-  return <img onClick={handleActiveSrcChange} src={src}></img>
+  return <img className="project-image"onClick={handleActiveSrcChange} src={src}></img>
 }
 
 const Project = (

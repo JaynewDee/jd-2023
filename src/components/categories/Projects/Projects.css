@@ -13,11 +13,24 @@
   margin: 1rem auto 3rem;
 }
 
-.project-images > img {
+.project-image {
   border-radius: 6px;
   margin: 1rem;
+  cursor: pointer;
 }
 
+.project-images:hover::before {
+  content: "Click to enlarge";
+  position: absolute;
+  margin-top: -1rem;
+  text-align: center; 
+  color: white;
+ 
+  left: 50%;
+  transform: translateX(-50%);
+  font-style: italic;
+  z-index: 5;
+}
 
 .git-links {
   display: flex;
