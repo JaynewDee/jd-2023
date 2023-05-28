@@ -131,11 +131,13 @@
 .modal-exit-btn {
   position: absolute;
   left: 0;
+ 
   bottom: -1rem;
   width: 90vw;
   z-index: 3;
   color: red;
   cursor: pointer;
+  background-color: white;
 }
 
 .modal-container {
@@ -148,7 +150,7 @@
 
 .modal-container > iframe {
   width: 90vw;
-  height: 50vh;
+  height: 66vh;
 }
 
 .tooltip {

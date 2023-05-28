@@ -1,12 +1,12 @@
 import { useState } from "react";
 
 interface TooltipProps {
-  children: any;
+  children: JSX.Element[];
   text: string;
   available: boolean;
 }
 
-export function useTooltip({ children, text, available }: TooltipProps) {
+export function useTooltip({ children, text }: TooltipProps) {
   const [show, setShow] = useState(false);
 
   return (

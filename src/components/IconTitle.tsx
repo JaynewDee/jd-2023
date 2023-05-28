@@ -8,7 +8,7 @@ export const Title = (category: string) => {
   );
 };
 
-const IconTitle = (title: string, Icon: IconType, mirror: string = "") => {
+const IconTitle = (title: string, Icon: IconType, mirror = "") => {
   return (
     <div className="title-with-icons">
       {Icon({

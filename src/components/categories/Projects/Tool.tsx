@@ -18,7 +18,7 @@ export function Tool(
     </span>
   );
 
-  const unavailable = ["MongoDB", "Rust", "Python"];
+  const unavailable = ["MongoDB", "Rust", "Python", "JavaScript"];
 
   return useTooltip({
     children: component(),

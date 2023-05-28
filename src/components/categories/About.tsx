@@ -6,8 +6,10 @@ import { DisplayProps } from "../../Portal";
 const About: React.FC<DisplayProps> = ({ backBtn }) => {
   return (
     <div className="category-container">
-      <div className="category-header">{backBtn()}</div>
-      <section className="photo-section"></section>
+      <div className="category-header">
+        {backBtn()}
+        <h4>WHO AM I?</h4>
+      </div>
       <div className="about-box">
         <p>
           How beautiful it is! To fall to give you flight. To die to give you
@@ -29,8 +31,6 @@ const About: React.FC<DisplayProps> = ({ backBtn }) => {
           corrupti aliquid non amet voluptatum alias laboriosam accusantium
           commodi esse nam, quasi possimus beatae.
         </p>
-
-
       </div>
     </div>
   );

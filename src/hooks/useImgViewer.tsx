@@ -8,7 +8,7 @@ export const useImgViewer = (src: string, modalOff: Dispatch<SetStateAction<stri
     const [position] = useState(window.scrollY);
 
     return createPortal(
-      <div style={{ marginTop: position }} className="modal-container">
+      <div style={{ marginTop: position }} className="modal-container" onClick={() => modalOff("")}>
         <img src={src} style={{ width: "90vw"}}alt="testing things out, shutup errors" /> 
         <button type="button" className="modal-exit-btn" onClick={() => modalOff("")}>
           X CLOSE X
