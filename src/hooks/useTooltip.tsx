@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 interface TooltipProps {
-  children: JSX.Element[];
+  children: any;
   text: string;
   available: boolean;
 }
