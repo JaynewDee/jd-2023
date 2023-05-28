@@ -5,8 +5,10 @@ const Nameplate = () => {
     <div data-category={"nameplate"} className="nameplate">
       <div className="name-cell">
         <h2 className="joshua">
+          <span className="name-parens">(</span>
           Josh
-          <span className="ua-bracket">(</span>ua<span className="ua-bracket">)</span>
+          <span className="name-parens">)</span>
+          ua
         </h2>
         <h1>Diehl</h1>
         <span className="profession">
