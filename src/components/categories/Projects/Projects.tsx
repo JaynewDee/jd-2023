@@ -35,7 +35,7 @@ const ProjectLinks = (production_src: string) =>
     <button type="button" className="git-btn">Visit Repository</button>
   </div>
 
-const ProjectTools = (tools: { name: string, url: string }[], setModal, setActiveImg) => <div className="tools-container">
+const ProjectTools = (tools: { name: string, url: string }[], setModal: any, setActiveImg: any) => <div className="tools-container">
   {tools.map((tool, idx) => (
     <>{Tool(tool, setModal, setActiveImg, idx)}</>
   ))}
