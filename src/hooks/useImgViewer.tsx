@@ -10,8 +10,8 @@ export const useImgViewer = (src: string, modalOff: Dispatch<SetStateAction<stri
     return createPortal(
       <div style={{ marginTop: position }} className="modal-container" onClick={() => modalOff("")}>
         {/*<h5 className="img-viewer-header">IMAGE VIEWER</h5> */}
-        <img src={src} style={{ width: "90vw"}} alt="testing things out, shutup errors" /> 
-        <button type="button" className="modal-exit-btn" onClick={() => modalOff("")}>
+        <img src={src} style={{ width: "80vw"}} alt="testing things out, shutup errors" /> 
+        <button type="button" className="modal-exit-btn" style={{ width: "80vw"}} onClick={() => modalOff("")}>
           X CLOSE X
         </button>
       </div>,
@@ -19,5 +19,5 @@ export const useImgViewer = (src: string, modalOff: Dispatch<SetStateAction<stri
     );
   };
 
-  return src ? <Modal /> : <></>
+  return src && <Modal /> 
 }

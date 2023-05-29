@@ -1,15 +1,19 @@
 .project-container {
-  display: grid;
-  font-size: 0.66rem;
-  width: 100vw;
-  color: white;
   margin: 6rem 0 5rem;
   background-color: rgba(15, 15, 15, 0.7);
-  padding-bottom: 1rem;
+  padding-bottom: 1rem; 
+  width: 100vw;
 }
 
+.project-wrapper {
+  display: grid;
+  font-size: 0.66rem;
+  color: white;
+  max-width: 1080px;
+  margin: 0 auto;
+ }
+
 .project-images {
-  width: 100vw;
   margin: 1rem auto 3rem;
 }
 
@@ -24,8 +28,7 @@
   position: absolute;
   margin-top: -1rem;
   text-align: center; 
-  color: white;
- 
+  color: white; 
   left: 50%;
   transform: translateX(-50%);
   font-style: italic;
@@ -51,27 +54,27 @@
   cursor: pointer;
 }
 
-.project-container[data-orientation="left"] > p {
+.project-wrapper[data-orientation="left"] > p {
   padding-left: 1rem;
   margin-left: 1rem;
   margin-right: 1rem;
   text-align: left;
 }
 
-.project-container[data-orientation="right"] > p {
+.project-wrapper[data-orientation="right"] > p {
   padding-right: 1rem;
   margin-right: 1rem;
   margin-left: auto;
   text-align: right;
 }
 
-.project-container[data-orientation="left"] > h4 {
+.project-wrapper[data-orientation="left"] > h4 {
   margin-left: 1.33rem;
   margin-right: auto;
   text-align: left;
 }
 
-.project-container[data-orientation="right"] > h4 {
+.project-wrapper[data-orientation="right"] > h4 {
   margin-left: auto;
   margin-right: 1.33rem;
   text-align: right;
@@ -79,7 +82,6 @@
 
 .project-name {
   /* margin: 1rem; */
-  width: 33vw;
   font-size: 1.33rem;
   filter: drop-shadow(0px 12px 1px 3px rgba(0, 0, 0, 1));
 }
@@ -91,16 +93,14 @@
 }
 
 .project-description {
-  margin: 2rem;
-  padding: 0rem 1rem; 
-  width: 75vw;
+
   font-size: .8rem;
   font-family: var(--cat);
 }
 
 .project-story {
   font-family: var(--cat);
-  max-width: 75vw;
+  max-width: 24rem;
   margin: auto;
   margin-top: 0;
   padding: 2rem;

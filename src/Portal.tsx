@@ -22,7 +22,7 @@ const Portal: React.FC = () => {
 
   useEffect(() => {
     window.addEventListener("keydown", (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
+      if (e.key === "Escape" || e.key === "Home") {
         goBack();
       }
     });

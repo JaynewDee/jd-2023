@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useEffect } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import Nameplate from "./components/Nameplate";
 
 type DisplayDispatch = Dispatch<SetStateAction<string>>;
@@ -6,6 +6,13 @@ type DisplayDispatch = Dispatch<SetStateAction<string>>;
 export type CategoryProps = {
   setDisplay: DisplayDispatch;
 };
+
+const formatter = {
+  name: (name: string) =>
+    name.split("").map((char: string, idx: number) =>
+      idx === 0 ? <span className="cat-char-underlined">{char}</span> : char),
+  dataCategory: (name: string) => name.toLowerCase().replace(/[\?\.]/, "")
+}
 
 const keyTable: { [key: string]: string } = {
   p: "projects",
@@ -19,6 +26,7 @@ const keyTable: { [key: string]: string } = {
 }
 
 const MenuGrid = ({ setDisplay }: { setDisplay: DisplayDispatch }) => {
+
   const handleCategorySwitch = (e: any) =>
     setDisplay(e?.target?.dataset.category);
 
@@ -34,6 +42,8 @@ const MenuGrid = ({ setDisplay }: { setDisplay: DisplayDispatch }) => {
     return () => window.removeEventListener('keyup', handleKeyEvent)
   }, []);
 
+  const underDevelopment = ["Tools", "Etc."];
+
   const categories: [number, string][] = [
     [1, "Accolades"],
     [0, "Projects"],
@@ -42,25 +52,27 @@ const MenuGrid = ({ setDisplay }: { setDisplay: DisplayDispatch }) => {
     [5, "Resume"],
     [2, "Social"],
     [6, "Who?"],
-    [7, "etc."]
+    [7, "Etc."]
   ];
 
-  const formatName = (name: string) => 
-    name.split("").map((char: string, idx: number) => 
-      idx === 0 ? <span className="cat-char-underlined">{char}</span> : char);
+  const MenuCategory = (id: number, name: string) => {
+    const [notification, setNotification] = useState(false);
 
-  const formatDataCategory = (name: string) => name.toLowerCase().replace(/[\?\.]/, "");
+    const notifyDevelopment = () => {
+      setNotification(true);
+      setTimeout(() => setNotification(false), 3000);
+    };
 
-  const MenuCategory = (id: number, name: string) => (
-    <div
+    return <div
       key={id}
-      data-category={formatDataCategory(name)}
+      data-category={formatter.dataCategory(name)}
       className="menu-cell"
-      onClick={handleCategorySwitch}
+      onClick={underDevelopment.includes(name) ? notifyDevelopment : handleCategorySwitch}
     >
-      <h4 className="cell-title menu-title">{formatName(name)}</h4>
+      {notification && <h5 className="click-notification">Under Development</h5>}
+      <h4 className="cell-title menu-title">{formatter.name(name)}</h4>
     </div>
-  );
+  }
 
   return (
     <div className="grid-container" id="grid-container-main">

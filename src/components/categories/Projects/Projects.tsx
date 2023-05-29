@@ -5,6 +5,7 @@ import { Title } from "../../IconTitle";
 import { Tool } from "./Tool";
 import { projects, ProjectType } from "./data";
 import { useNewTab, useImgViewer } from "../../../hooks";
+
 //
 import "./Projects.css";
 //
@@ -23,8 +24,23 @@ const ProjectImage = ({ src, activeImageSrc, setActiveImageSrc }: ImageProps) =>
       setActiveImageSrc(src);
     }
   }
-  return <img className="project-image"onClick={handleActiveSrcChange} src={src}></img>
+
+  return <img className="project-image" onClick={handleActiveSrcChange} src={src}></img>
 }
+
+const ProjectLinks = (production_src: string) =>
+  <div className="git-links">
+    <button type="button" className="git-btn" onClick={() => production_src && useNewTab(production_src)}>Deployment</button>
+    <button type="button" className="git-btn">Copy Clone URL</button>
+    <button type="button" className="git-btn">Visit Repository</button>
+  </div>
+
+const ProjectTools = (tools: { name: string, url: string }[], setModal, setActiveImg) => <div className="tools-container">
+  {tools.map((tool, idx) => (
+    <>{Tool(tool, setModal, setActiveImg, idx)}</>
+  ))}
+</div>
+
 
 const Project = (
   { name, description, story, tools, id, images, production_src }: ProjectType,
@@ -35,34 +51,30 @@ const Project = (
   const withDelimiter = (delim: string, dashedStr: string) =>
     dashedStr.split(delim).map((section, idx) => <p key={idx + section}>{section}</p>);
 
+  const ProjectName = (name: string) =>
+    <h4 className="project-name">
+      <span className="name-brace">{"["}</span>
+      {name}
+      <span className="name-brace">{"]"}</span>
+    </h4>
 
   return (
     <>
       <article
-        data-orientation={id % 2 === 0 ? "left" : "right"}
         className="project-container"
         key={id}
       >
-        <h4 className="project-name">
-          <span className="name-brace">{"["}</span>
-          {name}
-          <span className="name-brace">{"]"}</span>
-        </h4>
-        <p className="project-description">{description}</p>
-        <div className="project-images">
-          {images?.map(src => <ProjectImage src={src} activeImageSrc={activeImageSrc} setActiveImageSrc={setActiveImageSrc} />)}
-        </div>
-        <div className="git-links">
-          <button type="button" className="git-btn" onClick={() => production_src && useNewTab(production_src)}>Deployment</button>
-          <button type="button" className="git-btn">Copy Clone URL</button>
-          <button type="button" className="git-btn">Visit Repository</button>
-        </div>
-        <section className="project-story">{withDelimiter(":", story)}</section>
-        <h5 className="tools-label">Tools</h5>
-        <div className="tools-container">
-          {tools.map((tool, idx) => (
-            <>{Tool(tool, setModalState, setActiveImageSrc, idx)}</>
-          ))}
+        <div className="project-wrapper" data-orientation={id % 2 === 0 ? "left" : "right"}
+        >
+          {ProjectName(name)}
+          <p className="project-description">{description}</p>
+          <div className="project-images">
+            {images?.map(src => <ProjectImage src={src} activeImageSrc={activeImageSrc} setActiveImageSrc={setActiveImageSrc} />)}
+          </div>
+          {ProjectLinks(production_src as any)}
+          <section className="project-story">{withDelimiter(":", story)}</section>
+          <h5 className="tools-label">Tools</h5>
+          {ProjectTools(tools, setModalState, setActiveImageSrc)}
         </div>
       </article>
     </>
