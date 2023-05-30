@@ -1,8 +1,9 @@
 import { SetStateAction, Dispatch } from "react";
 import { useTooltip } from "../../../hooks/";
+import { ToolType } from "./data";
 
 export function Tool(
-  tool: { name: string; url: string },
+  tool: ToolType,
   setModalState: Dispatch<SetStateAction<string>>,
   setActiveImageSrc: Dispatch<SetStateAction<string>>,
   key: number

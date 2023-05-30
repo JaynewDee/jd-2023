@@ -1,15 +1,21 @@
+export type ToolType = {
+  name: string,
+  url: string
+}
+
+type ToolSet = ToolType[]
+
 export type ProjectType = {
   name: string;
   description: string;
   story: string;
-  tools: { name: string; url: string }[];
+  tools: ToolSet;
   id: number;
   images?: string[];
   productionSrc?: string;
   gitLinks: LinkMap;
 };
 
-//
 export type LinkMap = {
   deployment: string,
   clone: string,
