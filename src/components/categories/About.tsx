@@ -8,7 +8,9 @@ const About: React.FC<DisplayProps> = ({ backBtn }) => {
     <div className="category-container">
       <div className="category-header">
         {backBtn()}
-        <h4>WHO AM I?</h4>
+        <div className="category-title-cell">
+          <h4 className="category-title">WHO AM I?</h4>
+        </div>
       </div>
       <div className="about-box">
         <p>

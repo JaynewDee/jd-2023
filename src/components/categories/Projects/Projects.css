@@ -3,28 +3,31 @@
   background-color: rgba(15, 15, 15, 0.7);
   padding-bottom: 1rem; 
   width: 100vw;
+  box-shadow: 0px 3px 15px 3px rgba(15, 15, 15, .8);
 }
 
 .project-wrapper {
   display: grid;
   font-size: 0.66rem;
   color: white;
-  max-width: 1080px;
+  max-width: 1024px;
   margin: 0 auto;
  }
 
 .project-images {
-  margin: 1rem auto 3rem;
+  margin: 1rem auto;
 }
 
 .project-image {
   border-radius: 6px;
   margin: 1rem;
   cursor: pointer;
+  object-position: center;
 }
 
 .project-images:hover::before {
   content: "Click to enlarge";
+  border-bottom: 1px solid var(--accent);
   position: absolute;
   margin-top: -1rem;
   text-align: center; 
@@ -52,6 +55,11 @@
   margin: 3px auto;
   font-family: var(--cat);
   cursor: pointer;
+}
+
+.git-links > button:disabled {
+  cursor: unset;
+  opacity: .5;
 }
 
 .project-wrapper[data-orientation="left"] > p {
@@ -93,7 +101,7 @@
 }
 
 .project-description {
-
+  max-width: 50%;
   font-size: .8rem;
   font-family: var(--cat);
 }
@@ -103,8 +111,7 @@
   max-width: 24rem;
   margin: auto;
   margin-top: 0;
-  padding: 2rem;
-  padding-top: 0;
+  padding: 1rem;
   text-align: center;
 }
 
@@ -144,18 +151,23 @@
 .modal-exit-btn {
   position: absolute;
   left: 0;
+  background-color: var(--cordovan); 
+  color: white;
  
   bottom: -1rem;
   width: 90vw;
   z-index: 3;
-  color: red;
-  cursor: pointer;
+    cursor: pointer;
+  transition: all .33s;
+}
+.modal-exit-btn:hover {
+  color: var(--cordovan);
   background-color: white;
 }
 
 .modal-container {
   position: absolute;
-  top: 0;
+  top: 10%;
   left: 50%;
   transform: translateX(-50%);
   background: white;

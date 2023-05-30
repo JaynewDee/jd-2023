@@ -25,6 +25,7 @@ const keyTable: { [key: string]: string } = {
   a: "accolades"
 }
 
+
 const MenuGrid = ({ setDisplay }: { setDisplay: DisplayDispatch }) => {
 
   const handleCategorySwitch = (e: any) =>
@@ -32,7 +33,8 @@ const MenuGrid = ({ setDisplay }: { setDisplay: DisplayDispatch }) => {
 
   useEffect(() => {
     const handleKeyEvent = (e: KeyboardEvent) => {
-      if (e.key.toLowerCase() in keyTable) {
+      const key = e.key.toLowerCase();
+      if (key in keyTable && (key !== "e" && key !== "t")) {
         setDisplay(keyTable[e.key]);
       }
     }

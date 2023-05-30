@@ -47,7 +47,7 @@ const Contact: React.FC<DisplayProps> = ({ backBtn }) => {
         <div className="contact-message">
           <h4
             style={{
-              marginBottom: ".33rem",
+              margin: ".33rem auto",
               fontSize: "1.33rem"
             }}
           >

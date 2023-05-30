@@ -3,12 +3,19 @@ import { createPortal } from "react-dom";
 import { DisplayProps } from "../../../Portal";
 import { Title } from "../../IconTitle";
 import { Tool } from "./Tool";
-import { projects, ProjectType } from "./data";
+import { LinkMap, projects, ProjectType } from "./data";
 import { useNewTab, useImgViewer } from "../../../hooks";
 
 //
 import "./Projects.css";
 //
+
+const ProjectName = (name: string) =>
+  <h4 className="project-name">
+    <span className="name-brace">{"["}</span>
+    {name}
+    <span className="name-brace">{"]"}</span>
+  </h4>
 
 type ImageProps = {
   src: string,
@@ -28,11 +35,19 @@ const ProjectImage = ({ src, activeImageSrc, setActiveImageSrc }: ImageProps) =>
   return <img className="project-image" onClick={handleActiveSrcChange} src={src}></img>
 }
 
-const ProjectLinks = (production_src: string) =>
+const useClipboard = (text: string) => {
+  try {
+    navigator.clipboard.writeText(text)
+  } catch (err) {
+    // do something
+  }
+}
+
+const ProjectLinks = ({ deployment, clone, repo }: LinkMap) =>
   <div className="git-links">
-    <button type="button" className="git-btn" onClick={() => production_src && useNewTab(production_src)}>Deployment</button>
-    <button type="button" className="git-btn">Copy Clone URL</button>
-    <button type="button" className="git-btn">Visit Repository</button>
+    <button type="button" disabled={!deployment}className="git-btn" onClick={() => deployment && useNewTab(deployment)}>Deployment</button>
+    <button type="button" className="git-btn" onClick={() => useClipboard(clone)}>Copy Clone URL</button>
+    <button type="button" className="git-btn" onClick={() => repo && useNewTab(repo)}>Visit Repository</button>
   </div>
 
 const ProjectTools = (tools: { name: string, url: string }[], setModal: any, setActiveImg: any) => <div className="tools-container">
@@ -43,7 +58,7 @@ const ProjectTools = (tools: { name: string, url: string }[], setModal: any, set
 
 
 const Project = (
-  { name, description, story, tools, id, images, production_src }: ProjectType,
+  { name, description, story, tools, id, images, gitLinks }: ProjectType,
   setModalState: Dispatch<SetStateAction<string>>,
   setActiveImageSrc: Dispatch<SetStateAction<string>>,
   activeImageSrc: string
@@ -51,12 +66,6 @@ const Project = (
   const withDelimiter = (delim: string, dashedStr: string) =>
     dashedStr.split(delim).map((section, idx) => <p key={idx + section}>{section}</p>);
 
-  const ProjectName = (name: string) =>
-    <h4 className="project-name">
-      <span className="name-brace">{"["}</span>
-      {name}
-      <span className="name-brace">{"]"}</span>
-    </h4>
 
   return (
     <>
@@ -71,7 +80,7 @@ const Project = (
           <div className="project-images">
             {images?.map(src => <ProjectImage src={src} activeImageSrc={activeImageSrc} setActiveImageSrc={setActiveImageSrc} />)}
           </div>
-          {ProjectLinks(production_src as any)}
+          {ProjectLinks(gitLinks)}
           <section className="project-story">{withDelimiter(":", story)}</section>
           <h5 className="tools-label">Tools</h5>
           {ProjectTools(tools, setModalState, setActiveImageSrc)}
