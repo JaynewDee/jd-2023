@@ -8,7 +8,6 @@ export function Tool(
   tool: ToolType,
   setModalState: Dispatch<SetStateAction<string>>,
   setActiveImageSrc: Dispatch<SetStateAction<string>>,
-  key: number
 ) {
   const toggleIframe = () => {
     setModalState(tool.url);
@@ -16,7 +15,7 @@ export function Tool(
   };
 
   const component = () => (
-    <span className="tool" key={key} onClick={toggleIframe}>
+    <span className="tool" key={tool.url} onClick={toggleIframe}>
       {tool.name}
     </span>
   );

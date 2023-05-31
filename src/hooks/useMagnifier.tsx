@@ -74,7 +74,7 @@ export function useMagnifier({
           backgroundPositionX: `${-x * zoomLevel + magnifierWidth / 2}px`,
           backgroundPositionY: `${-y * zoomLevel + magnifierHeight / 2}px`
         }}
-      ></div>
+      />
     </div>
   );
 }

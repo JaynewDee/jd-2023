@@ -9,19 +9,6 @@ import { useNewTab, useImgViewer } from "../../../hooks";
 //
 import "./Projects.css";
 //
-const filterByTool = (projectsData: ProjectType[], toInclude: string[]) => {
-  const filteredProjects = [];
-  for (const project of projectsData.slice()) {
-    for (const tool of project.tools) {
-      if (toInclude.includes(tool.name) && !filteredProjects.includes(project)) {
-        filteredProjects.push(project)
-      }
-    }
-  }
-  console.log(filteredProjects);
-  return filteredProjects;
-}
-
 const ProjectName = (name: string) =>
   <h4 className="project-name">
     <span className="name-brace">{"["}</span>
@@ -63,22 +50,24 @@ const ProjectLinks = ({ deployment, clone, repo }: LinkMap) =>
   </div>
 
 const ProjectTools = (tools: { name: string, url: string }[], setModal: any, setActiveImg: any) => <div className="tools-container">
-  {tools.map((tool, idx) => (
-    <>{Tool(tool, setModal, setActiveImg, idx)}</>
+  {tools.map((tool) => (
+    <>{Tool(tool, setModal, setActiveImg)}</>
   ))}
 </div>
-
 
 const Project = (
   { name, description, story, tools, id, images, gitLinks }: ProjectType,
   setModalState: Dispatch<SetStateAction<string>>,
   setActiveImageSrc: Dispatch<SetStateAction<string>>,
-  activeImageSrc: string
+  activeImageSrc: string,
+  activeFilters: string[]
 ) => {
   const withDelimiter = (delim: string, dashedStr: string) =>
     dashedStr.split(delim).map((section, idx) => <p key={idx + section}>{section}</p>);
 
   const storyWithDelims = withDelimiter(":", story);
+
+  const toolNames = tools.map(tool => tool.name);
 
   return (
 
@@ -86,6 +75,7 @@ const Project = (
       <article
         className="project-container"
         key={id}
+        style={activeFilters.every((filter) => toolNames.includes(filter)) ? {} : { display: "none" }}
       >
         <div className="project-wrapper" data-orientation={id % 2 === 0 ? "left" : "right"}
         >
@@ -123,10 +113,10 @@ const IFrameModal = memo(({ state, setState }: { state: string, setState: any })
 })
 
 type Filters = string[] | [];
-type FiltersProps = { active: Filters, inactive: Filters, setFilterState: any };
+type FiltersProps = { active: Filters, inactive: Filters, filterState: any, setFilterState: any };
 
 const ProjectFilters = (
-  { active, inactive, setFilterState }: FiltersProps
+  { filterState, setFilterState }: FiltersProps
 ) => {
   const handleClickActive = (tag: string) => () => {
     setFilterState(prev => ({
@@ -147,11 +137,11 @@ const ProjectFilters = (
       <h4>Filter By Tool</h4>
       <div className="inactive-filters">
         <p>Inactive</p>
-        {inactive?.map(tag => <button key={tag} onClick={handleClickActive(tag)} type="button">{tag}</button>)}
+        {filterState.inactive?.map(tag => <button key={tag} onClick={handleClickActive(tag)} type="button">{tag}</button>)}
       </div>
       <div className="active-filters">
         <p>Active</p>
-        {active?.map(tag => <button key={tag} onClick={handleClickInactive(tag)} type="button">{tag}</button>)}
+        {filterState.active?.map(tag => <button key={tag} onClick={handleClickInactive(tag)} type="button">{tag}</button>)}
       </div>
     </div>
   )
@@ -163,19 +153,23 @@ const Projects: React.FC<DisplayProps> = ({ backBtn }) => {
     inactive: aggregatedTagFilters,
   });
 
+  const resetFilters = () => setFilterState({ active: [], inactive: aggregatedTagFilters})
+
   const [activeImageSrc, setActiveImageSrc] = useState("");
 
   const [modalState, setModalState] = useState("");
-  const title = Title("PROJECTS");
-  const ImgViewer = useImgViewer(activeImageSrc, setActiveImageSrc);
-  const toInclude = filterState.active.length === 0 ? filterState.inactive : filterState.active;
+  const modal = modalState && <IFrameModal state={modalState} setState={setModalState} />;
 
-  const filteredProjects = filterByTool(projects, toInclude)?.map((project) => (
-    <div key={project.id}>{Project(project, setModalState, setActiveImageSrc, activeImageSrc)}</div>
+  const title = Title("PROJECTS");
+
+  const ImgViewer = useImgViewer(activeImageSrc, setActiveImageSrc);
+
+  const filters = <ProjectFilters filterState={filterState} setFilterState={setFilterState} />;
+
+  const filteredProjects = projects.map((project) => (
+    <div key={project.id}>{Project(project, setModalState, setActiveImageSrc, activeImageSrc, filterState.active)}</div>
   ));
 
-  const modal = modalState && <IFrameModal state={modalState} setState={setModalState} />;
-  const filters = <ProjectFilters active={filterState.active} inactive={filterState.inactive} setFilterState={setFilterState} />;
 
   return (
     <>
@@ -184,7 +178,8 @@ const Projects: React.FC<DisplayProps> = ({ backBtn }) => {
           {backBtn()}
           <div className="title-with-icons">{title}</div>
         </div>
-       {filters} 
+        {filters}
+        {filteredProjects.length === 0 && <h3>No projects found!  Adjust your filters.</h3>}
         <article>
           {filteredProjects}
         </article>
