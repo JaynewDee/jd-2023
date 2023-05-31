@@ -10,14 +10,14 @@ export type CategoryProps = {
 const formatter = {
   name: (name: string) =>
     name.split("").map((char: string, idx: number) =>
-      idx === 0 ? <span className="cat-char-underlined">{char}</span> : char),
+      idx === 0 ? <span key={char + idx}className="cat-char-underlined">{char}</span> : char),
   dataCategory: (name: string) => name.toLowerCase().replace(/[\?\.]/, "")
 }
 
 const keyTable: { [key: string]: string } = {
   p: "projects",
-  t: "tools",
   r: "resume",
+  t: "tools",
   e: "etc",
   w: "who",
   s: "social",
@@ -49,10 +49,10 @@ const MenuGrid = ({ setDisplay }: { setDisplay: DisplayDispatch }) => {
   const categories: [number, string][] = [
     [1, "Accolades"],
     [0, "Projects"],
-    [3, "Tools"],
-    [4, "Contact"],
     [5, "Resume"],
+    [4, "Contact"],
     [2, "Social"],
+    [3, "Tools"],
     [6, "Who?"],
     [7, "Etc."]
   ];

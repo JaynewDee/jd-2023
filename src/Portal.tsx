@@ -21,11 +21,14 @@ const Portal: React.FC = () => {
   const goBack = () => setDisplayState("");
 
   useEffect(() => {
-    window.addEventListener("keydown", (e: KeyboardEvent) => {
+    const handleBackEvent = (e: KeyboardEvent) => {
       if (e.key === "Escape" || e.key === "Home") {
         goBack();
       }
-    });
+    }
+    window.addEventListener("keydown", handleBackEvent);
+
+    return () => window.removeEventListener("keydown", handleBackEvent)
   }, []);
 
   const props: DisplayProps = {

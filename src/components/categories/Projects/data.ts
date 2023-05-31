@@ -3,13 +3,11 @@ export type ToolType = {
   url: string
 }
 
-type ToolSet = ToolType[]
-
 export type ProjectType = {
   name: string;
   description: string;
   story: string;
-  tools: ToolSet;
+  tools: ToolType[];
   id: number;
   images?: string[];
   productionSrc?: string;
@@ -104,3 +102,13 @@ export const projects: ProjectType[] = [
     images: ["/imagent1.png", "/imagent2.png"],
     gitLinks: { deployment: "", clone: "git@github.com:JaynewDee/imagent.git", repo: "https://github.com/JaynewDee/imagent" }
   }];
+
+const aggregateTags = (projectsData: ProjectType[]): string[] => {
+  const tools = projectsData.map(project => project.tools);
+  const tags = tools.map((toolset: any) => toolset.flatMap(tool => tool.name));
+  const uniques = new Set(tags.flat());
+  return Array.from(uniques);
+}
+
+
+export const aggregatedTagFilters = aggregateTags(projects);

@@ -2,15 +2,17 @@ import { SetStateAction, Dispatch } from "react";
 import { useTooltip } from "../../../hooks/";
 import { ToolType } from "./data";
 
+const unavailable = ["MongoDB", "Rust", "Python", "JavaScript"];
+
 export function Tool(
   tool: ToolType,
   setModalState: Dispatch<SetStateAction<string>>,
   setActiveImageSrc: Dispatch<SetStateAction<string>>,
   key: number
 ) {
-  const toggleIframe = () => { 
-    setModalState(tool.url); 
-    setActiveImageSrc("") 
+  const toggleIframe = () => {
+    setModalState(tool.url);
+    setActiveImageSrc("")
   };
 
   const component = () => (
@@ -19,13 +21,13 @@ export function Tool(
     </span>
   );
 
-  const unavailable = ["MongoDB", "Rust", "Python", "JavaScript"];
+  const isAvailable = !unavailable.includes(tool.name);
 
   return useTooltip({
     children: component(),
-    text: unavailable.includes(tool.name)
+    text: !isAvailable
       ? "Iframe unavailable"
       : "Click to activate iframe",
-    available: !unavailable.includes(tool.name)
+    available: isAvailable
   });
 }

@@ -1,5 +1,5 @@
 .project-container {
-  margin: 6rem 0 5rem;
+  margin: 1rem 0 5rem;
   background-color: rgba(15, 15, 15, 0.7);
   padding-bottom: 1rem; 
   width: 100vw;
@@ -113,6 +113,16 @@
   margin-top: 0;
   padding: 1rem;
   text-align: center;
+}
+
+.project-filters-container {
+  max-width: 66%;
+  margin: auto;
+}
+
+.inactive-filters > button, .active-filters > button {
+  background: none;
+  color: white;
 }
 
 .tools-container {
