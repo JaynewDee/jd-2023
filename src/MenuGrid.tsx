@@ -25,7 +25,6 @@ const keyTable: { [key: string]: string } = {
   a: "accolades"
 }
 
-
 const MenuGrid = ({ setDisplay }: { setDisplay: DisplayDispatch }) => {
 
   const handleCategorySwitch = (e: any) =>

@@ -35,9 +35,9 @@ const ProjectImage = ({ src, activeImageSrc, setActiveImageSrc }: ImageProps) =>
   return <img key={src} className="project-image" onClick={handleActiveSrcChange} src={src}></img>
 }
 
-const useClipboard = (text: string) => {
+const useClipboard = async (text: string) => {
   try {
-    navigator.clipboard.writeText(text)
+    await navigator.clipboard.writeText(text)
   } catch (err) {
     // do something with error
   }
@@ -50,11 +50,12 @@ const ProjectLinks = ({ deployment, clone, repo }: LinkMap) =>
     <button type="button" className="git-btn" onClick={() => repo && useNewTab(repo)}>Visit Repository</button>
   </div>
 
-const ProjectTools = (tools: { name: string, url: string }[], setModal: any, setActiveImg: any) => <div className="tools-container">
-  {tools.map((tool) => (
-    <>{Tool(tool, setModal, setActiveImg)}</>
-  ))}
-</div>
+const ProjectTools = (tools: { name: string, url: string }[], setModal: any, setActiveImg: any) =>
+  <div className="tools-container">
+    {tools.map((tool) => (
+      <>{Tool(tool, setModal, setActiveImg)}</>
+    ))}
+  </div>
 
 const Project = (
   { name, description, story, tools, id, images, gitLinks }: ProjectType,
@@ -83,10 +84,13 @@ const Project = (
           {ProjectName(name)}
           <p className="project-description">{description}</p>
           <div className="project-images">
-            {images?.map(src => <ProjectImage src={src} key={src} activeImageSrc={activeImageSrc} setActiveImageSrc={setActiveImageSrc} />)}
+            {images?.map(src => 
+              <ProjectImage src={src} key={src} activeImageSrc={activeImageSrc} setActiveImageSrc={setActiveImageSrc} />)}
           </div>
           {ProjectLinks(gitLinks)}
+          <hr className="hr-md" />
           <section className="project-story">{storyWithDelims}</section>
+          <hr className="hr-sm" />
           <h5 className="tools-label">Tools</h5>
           {ProjectTools(tools, setModalState, setActiveImageSrc)}
         </div>
@@ -113,11 +117,10 @@ const IFrameModal = memo(({ state, setState }: { state: string, setState: any })
   );
 })
 
-type Filters = string[] | [];
-type FiltersProps = { filterState: any, setFilterState: any };
+type FiltersProps = { filterState: any, setFilterState: any, reset: any };
 
 const ProjectFilters = (
-  { filterState, setFilterState }: FiltersProps
+  { filterState, setFilterState, reset }: FiltersProps
 ) => {
   const handleClickActive = (tag: string) => () => {
     setFilterState((prev: any) => ({
@@ -129,21 +132,28 @@ const ProjectFilters = (
   const handleClickInactive = (tag: string) => () => {
     setFilterState((prev: any) => ({
       inactive: [...prev.inactive, tag],
-      active: [...prev.active.filter((t:string) => t !== tag)]
+      active: [...prev.active.filter((t: string) => t !== tag)]
     }))
   }
 
   return (
     <div className="project-filters-container">
-      <h4>Filter By Tool</h4>
+      <h4 className="tooltags-header">ToolTags</h4>
       <div className="inactive-filters">
-        <p>Inactive</p>
-        {filterState.inactive?.map((tag: string) => <button key={tag} onClick={handleClickActive(tag)} className="filter-btn" type="button">{tag}</button>)}
+        {filterState.inactive?.map((tag: string) =>
+          <button key={tag} onClick={handleClickActive(tag)} className="filter-btn" type="button">{tag}</button>)
+        }
       </div>
+      <hr className="hr-md" />
       <div className="active-filters">
-        <p>Active</p>
-        {filterState.active?.map((tag:string) => <button key={tag} onClick={handleClickInactive(tag)} className="filter-btn" type="button">{tag}</button>)}
+        <h5 className="active-header">Active :::</h5>
+        <div>
+          {filterState.active?.map((tag: string) =>
+            <button key={tag} onClick={handleClickInactive(tag)} className="filter-btn" type="button">{tag}</button>)
+          }
+        </div>
       </div>
+        <button type="button" onClick={reset}>CLEAR</button>
     </div>
   )
 }
@@ -154,21 +164,27 @@ const Projects: React.FC<DisplayProps> = ({ backBtn }) => {
     inactive: aggregatedTagFilters,
   });
 
+  const resetFilters = () => setFilterState({ active: [], inactive: aggregatedTagFilters });
+
   const [activeImageSrc, setActiveImageSrc] = useState("");
 
+  // This modal handles population of the iframe on "Tool" click
   const [modalState, setModalState] = useState("");
   const modal = modalState && <IFrameModal state={modalState} setState={setModalState} />;
 
   const title = Title("PROJECTS");
 
+  // A pop-up portal similar to that used in modal above, but for images
+  // Note to self: consider unifying the two to reduce duplication
   const ImgViewer = useImgViewer(activeImageSrc, setActiveImageSrc);
 
-  const filters = <ProjectFilters filterState={filterState} setFilterState={setFilterState} />;
+  const filters = <ProjectFilters filterState={filterState} setFilterState={setFilterState} reset={resetFilters}/>;
 
   const filteredProjects = projects.map((project) => (
-    <div key={project.id}>{Project(project, setModalState, setActiveImageSrc, activeImageSrc, filterState.active)}</div>
+    <div key={project.id}>
+      {Project(project, setModalState, setActiveImageSrc, activeImageSrc, filterState.active)}
+    </div>
   ));
-
 
   return (
     <>

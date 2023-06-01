@@ -101,6 +101,28 @@ export const projects: ProjectType[] = [
     id: 7,
     images: ["/imagent1.png", "/imagent2.png"],
     gitLinks: { deployment: "", clone: "git@github.com:JaynewDee/imagent.git", repo: "https://github.com/JaynewDee/imagent" }
+  },
+  {
+    name: "Read-Gen",
+    description:
+      "Pass command-line options to generate an attractive README file for any new project.",
+    story:
+      "This program is a re-write of an early bootcamp project originally written in JavaScript.  A single command will generate a default README in a matter of seconds, and a `prompt` option allows for more user-friendly control.  ",
+    tools: [{ name: "Rust", url: "" }],
+    id: 8,
+    images: ["/readgen1.png", "/readgen2.png", "/readgen3.png"],
+    gitLinks: { deployment: "", clone: "git@github.com:JaynewDee/readme_generator.git", repo: "https://github.com/JaynewDee/readme_generator" }
+  },
+  {
+    name: "Present",
+    description:
+      "A handy attendance-taking chrome extension.",
+    story:
+      "I built Present as a way to save time during class periods, optimizing away the need to individually click boxes.  The extension uses Chrome APIs, most notably `chrome.debugger` to acquire programmatic access to a foreign iframe without Cross-Origin permissions.",
+    tools: [{ name: "JavaScript", url: "" }, { name: "Chrome API", url: "https://developer.chrome.com/docs/extensions/reference/"}],
+    id: 9,
+    images: ["/present1.png", "/present2.png"],
+    gitLinks: { deployment: "", clone: "git@github.com:JaynewDee/readme_generator.git", repo: "https://github.com/JaynewDee/readme_generator" }
   }];
 
 const aggregateTags = (projectsData: ProjectType[]): string[] => {

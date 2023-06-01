@@ -70,7 +70,7 @@
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  margin: 0 auto;
+  margin: 0 auto 2rem;
   width: 33%;
 }
 
@@ -78,7 +78,7 @@
   background: none;
   color: white;
   border-left: 2px solid var(--accent);
-  border-right: 1px solid white;
+  border-right: 3px solid white;
   border-radius: 3px;
   margin: 3px auto;
   font-family: var(--cat);
@@ -91,14 +91,14 @@
 }
 
 .project-wrapper[data-orientation="left"] > p {
-  padding-left: 1rem;
+  padding-left: 3rem;
   margin-left: 1rem;
   margin-right: 1rem;
   text-align: left;
 }
 
 .project-wrapper[data-orientation="right"] > p {
-  padding-right: 1rem;
+  padding-right: 3rem;
   margin-right: 1rem;
   margin-left: auto;
   text-align: right;
@@ -117,7 +117,6 @@
 }
 
 .project-name {
-  /* margin: 1rem; */
   font-size: 1.33rem;
   filter: drop-shadow(0px 12px 1px 3px rgba(0, 0, 0, 1));
 }
@@ -132,6 +131,7 @@
   max-width: 50%;
   font-size: .8rem;
   font-family: var(--cat);
+  padding-left: 3rem;
 }
 
 .project-story {
@@ -143,9 +143,19 @@
   text-align: center;
 }
 
+.hr-md {
+  width: 66%;
+  border-radius: 50%;
+}
+
+.hr-sm {
+  width: 33%;
+  border-radius: 50%;
+}
+
 .project-filters-container {
-  max-width: 66%;
-  margin: auto;
+  max-width: 50%;
+  margin: 6rem auto 0;
 }
 
 .filter-btn {
@@ -159,6 +169,10 @@
 
 .filter-btn:hover {
  background-color: var(--accent); 
+}
+
+.tooltags-header {
+  margin: .33rem auto;
 }
 
 .tools-container {
@@ -181,6 +195,16 @@
   cursor: pointer;
   border-bottom: 1px solid var(--cordovan);
   transition: transform 0.3s;
+}
+
+.active-header {
+  margin: .33rem .66rem;
+}
+
+.active-filters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .tool:hover {
@@ -206,6 +230,7 @@
     cursor: pointer;
   transition: all .33s;
 }
+
 .modal-exit-btn:hover {
   color: var(--cordovan);
   background-color: white;
