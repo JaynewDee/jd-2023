@@ -610,3 +610,8 @@ textarea:focus {
 .footnote > p:nth-child(2) {
   font-size: 0.66rem;
 }
+
+.footnote >p:nth-child(4) {
+  margin-top: 1rem;
+}
+

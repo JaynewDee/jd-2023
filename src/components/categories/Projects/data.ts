@@ -32,7 +32,8 @@ export const projects: ProjectType[] = [
       { name: "Node", url: "https://nodejs.dev/en/about/" },
       { name: "Express", url: "https://expressjs.com/" },
       { name: "MongoDB", url: "" },
-      { name: "Socket.io", url: "https://socket.io/" }
+      { name: "Socket.io", url: "https://socket.io/" },
+      { name: "Vite", url: "https://vitejs.dev/"}
     ],
     id: 2,
     images: ["/roomy-img-1.png", "/roomy-img-2.png", "/roomy-img-3.png"],

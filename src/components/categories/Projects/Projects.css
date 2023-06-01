@@ -179,6 +179,8 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+  max-width: 66%;
+  margin: 0 auto;
 }
 
 .tools-label {
