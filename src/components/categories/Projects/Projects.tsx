@@ -8,6 +8,7 @@ import { useNewTab, useImgViewer } from "../../../hooks";
 
 //
 import "./Projects.css";
+import { ScrollOverlay } from "../../Scroll";
 //
 const ProjectName = (name: string) =>
   <h4 className="project-name">
@@ -137,11 +138,11 @@ const ProjectFilters = (
       <h4>Filter By Tool</h4>
       <div className="inactive-filters">
         <p>Inactive</p>
-        {filterState.inactive?.map(tag => <button key={tag} onClick={handleClickActive(tag)} type="button">{tag}</button>)}
+        {filterState.inactive?.map(tag => <button key={tag} onClick={handleClickActive(tag)} className="filter-btn" type="button">{tag}</button>)}
       </div>
       <div className="active-filters">
         <p>Active</p>
-        {filterState.active?.map(tag => <button key={tag} onClick={handleClickInactive(tag)} type="button">{tag}</button>)}
+        {filterState.active?.map(tag => <button key={tag} onClick={handleClickInactive(tag)} className="filter-btn" type="button">{tag}</button>)}
       </div>
     </div>
   )
@@ -153,7 +154,7 @@ const Projects: React.FC<DisplayProps> = ({ backBtn }) => {
     inactive: aggregatedTagFilters,
   });
 
-  const resetFilters = () => setFilterState({ active: [], inactive: aggregatedTagFilters})
+  const resetFilters = () => setFilterState({ active: [], inactive: aggregatedTagFilters })
 
   const [activeImageSrc, setActiveImageSrc] = useState("");
 
@@ -184,6 +185,7 @@ const Projects: React.FC<DisplayProps> = ({ backBtn }) => {
           {filteredProjects}
         </article>
       </article>
+      <ScrollOverlay />
       {modal}
       {ImgViewer}
     </>

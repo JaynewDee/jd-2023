@@ -43,7 +43,6 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
   overflow-x: hidden;
-
   --pattern-blue: url("/pattern_blue.jpg");
 }
 
@@ -53,14 +52,11 @@
   text-align: center;
   font-family: var(--mate);
   font-weight: 700;
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
 }
 
 .App {
   overflow-y: auto;
   overflow-x: hidden;
-  min-height: 100vh;
 }
 
 .App::before {
@@ -68,13 +64,15 @@
   background-position: center;
   background-image: var(--pattern-blue);
   background-size: cover;
-  position: absolute;
+  object-fit: cover;
+  position: fixed;
   top: 0px;
   right: 0px;
   bottom: 0px;
   left: 0px;
   opacity: 0.4;
   filter: saturate(0.4);
+  height: 100vh;
   z-index: -1;
 }
 
@@ -110,7 +108,7 @@ body::-webkit-scrollbar-thumb {
   box-shadow: inset 0 -5rem 12rem 0.06rem rgba(35, 35, 35, 0.43),
     inset 0 -15px 1rem 0.06rem rgba(70, 70, 65, 0.23),
     0 3rem 2.33rem 0.99rem rgba(0, 0, 0, 0.44);
-  mix-blend-mode: hard-light;
+  mix-blend-mode:color-dodge;
   margin-top: 3rem;
 }
 
