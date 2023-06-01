@@ -114,22 +114,22 @@ const IFrameModal = memo(({ state, setState }: { state: string, setState: any })
 })
 
 type Filters = string[] | [];
-type FiltersProps = { active: Filters, inactive: Filters, filterState: any, setFilterState: any };
+type FiltersProps = { filterState: any, setFilterState: any };
 
 const ProjectFilters = (
   { filterState, setFilterState }: FiltersProps
 ) => {
   const handleClickActive = (tag: string) => () => {
-    setFilterState(prev => ({
+    setFilterState((prev: any) => ({
       active: [...prev.active, tag],
-      inactive: [...prev.inactive.filter(t => t !== tag)]
+      inactive: [...prev.inactive.filter((t: string) => t !== tag)]
     }))
   }
 
   const handleClickInactive = (tag: string) => () => {
-    setFilterState(prev => ({
+    setFilterState((prev: any) => ({
       inactive: [...prev.inactive, tag],
-      active: [...prev.active.filter(t => t !== tag)]
+      active: [...prev.active.filter((t:string) => t !== tag)]
     }))
   }
 
@@ -138,11 +138,11 @@ const ProjectFilters = (
       <h4>Filter By Tool</h4>
       <div className="inactive-filters">
         <p>Inactive</p>
-        {filterState.inactive?.map(tag => <button key={tag} onClick={handleClickActive(tag)} className="filter-btn" type="button">{tag}</button>)}
+        {filterState.inactive?.map((tag: string) => <button key={tag} onClick={handleClickActive(tag)} className="filter-btn" type="button">{tag}</button>)}
       </div>
       <div className="active-filters">
         <p>Active</p>
-        {filterState.active?.map(tag => <button key={tag} onClick={handleClickInactive(tag)} className="filter-btn" type="button">{tag}</button>)}
+        {filterState.active?.map((tag:string) => <button key={tag} onClick={handleClickInactive(tag)} className="filter-btn" type="button">{tag}</button>)}
       </div>
     </div>
   )
@@ -153,8 +153,6 @@ const Projects: React.FC<DisplayProps> = ({ backBtn }) => {
     active: [],
     inactive: aggregatedTagFilters,
   });
-
-  const resetFilters = () => setFilterState({ active: [], inactive: aggregatedTagFilters })
 
   const [activeImageSrc, setActiveImageSrc] = useState("");
 

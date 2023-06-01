@@ -21,7 +21,7 @@ export const ScrollOverlay = () => {
   const [hoverState, setHoverState] = useState(false);
 
   return (
-    <div onMouseOver={() => setHoverState(true)} onMouseLeave={() => setHoverState(false)} >
+    <div onMouseOver={() => setHoverState(true)} onFocus={() => {}} onMouseLeave={() => setHoverState(false)} >
       <div style={hoverState ? { visibility: 'visible' } : { visibility: 'hidden' }} className="scroll-overlay">
         <ScrollTop />
         <ScrollBot />
