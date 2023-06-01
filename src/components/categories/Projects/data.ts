@@ -105,7 +105,7 @@ export const projects: ProjectType[] = [
 
 const aggregateTags = (projectsData: ProjectType[]): string[] => {
   const tools = projectsData.map(project => project.tools);
-  const tags = tools.map((toolset: any) => toolset.flatMap(tool => tool.name));
+  const tags = tools.map((toolset: ToolType[]) => toolset.flatMap((tool) => tool.name));
   const uniques = new Set(tags.flat());
   return Array.from(uniques);
 }
