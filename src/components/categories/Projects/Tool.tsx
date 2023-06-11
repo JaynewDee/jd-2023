@@ -2,7 +2,7 @@ import { SetStateAction, Dispatch } from "react";
 import { useTooltip } from "../../../hooks/";
 import { ToolType } from "./data";
 
-const unavailable = ["MongoDB", "Rust", "Python", "JavaScript"];
+const unavailable = ["MongoDB", "Rust", "Python", "JavaScript", "AWS"];
 
 export function Tool(
   tool: ToolType,

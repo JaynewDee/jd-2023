@@ -45,7 +45,7 @@ export const projects: ProjectType[] = [
       "An earlier version of my creative portfolio, focused on optimizing interactivity for an app-forward experience.",
     story:
       "I went in with a coat full of footguns on this one, but it was a rewarding experience to set myself fully free to experiment with technologies I was excited about, to build the full stack myself according to my very own decisions, and learn by doing.",
-    tools: [{ name: "JavaScript", url: "" }, { name: "Express", url: "https://expressjs.com/" }],
+    tools: [{ name: "JavaScript", url: "" }, { name: "Express", url: "https://expressjs.com/" }, { name: "AWS", url: "https://aws.amazon.com/pm/ec2/"}],
     id: 3,
     images: ["/portfolio-2022-1.png", "/portfolio-2022-2.png", "/portfolio-2022-3.png"],
     gitLinks: { deployment: "https://syntheticrain.net/", clone: "git@github.com:JaynewDee/jaynewd_.git", repo: "https://github.com/JaynewDee/jaynewd_" }
@@ -132,6 +132,5 @@ const aggregateTags = (projectsData: ProjectType[]): string[] => {
   const uniques = new Set(tags.flat());
   return Array.from(uniques);
 }
-
 
 export const aggregatedTagFilters = aggregateTags(projects);

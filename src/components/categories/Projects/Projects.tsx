@@ -10,6 +10,7 @@ import { useNewTab, useImgViewer } from "../../../hooks";
 import "./Projects.css";
 import { ScrollOverlay } from "../../Scroll";
 //
+
 const ProjectName = (name: string) =>
   <h4 className="project-name">
     <span className="name-brace">{"["}</span>
@@ -39,15 +40,15 @@ const useClipboard = async (text: string) => {
   try {
     await navigator.clipboard.writeText(text)
   } catch (err) {
-    // do something with error
+    console.error("Failed to write to clipboard ... ")
   }
 }
 
 const ProjectLinks = ({ deployment, clone, repo }: LinkMap) =>
   <div className="git-links">
-    <button type="button" disabled={!deployment} className="git-btn" onClick={() => deployment && useNewTab(deployment)}>Deployment</button>
-    <button type="button" className="git-btn" onClick={() => useClipboard(clone)}>Copy Clone URL</button>
-    <button type="button" className="git-btn" onClick={() => repo && useNewTab(repo)}>Visit Repository</button>
+    <button type="button" disabled={!deployment} className="git-btn" onClick={() => deployment && useNewTab(deployment)}>DEPLOYMENT</button> 
+    <button type="button" className="git-btn" onClick={() => useClipboard(clone)}>COPY CLONE URL</button> 
+    <button type="button" className="git-btn" onClick={() => repo && useNewTab(repo)}>VISIT REPOSITORY</button>
   </div>
 
 const ProjectTools = (tools: { name: string, url: string }[], setModal: any, setActiveImg: any) =>
@@ -72,7 +73,6 @@ const Project = (
   const toolNames = tools.map(tool => tool.name);
 
   return (
-
     <>
       <article
         className="project-container"
@@ -149,7 +149,7 @@ const ProjectFilters = (
         <h5 className="active-header">Active :::</h5>
         <div>
           {filterState.active?.map((tag: string) =>
-            <button key={tag} onClick={handleClickInactive(tag)} className="filter-btn" type="button">{tag}</button>)
+            <button key={tag} onClick={handleClickInactive(tag)} className="filter-btn-active" type="button">{tag}</button>)
           }
         </div>
       </div>
