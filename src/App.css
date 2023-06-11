@@ -294,6 +294,7 @@ body::-webkit-scrollbar-thumb {
   background: none;
   color: white;
   border: none;
+  
   font-size: 2rem;
   cursor: pointer;
   display: flex;
@@ -587,6 +588,12 @@ textarea:focus {
   .project-story {
     margin: 1rem 0.33rem;
   }
+  .tooltip {
+    display: none;
+  }
+  .tools-container {
+    
+  }
 }
 
 .footnote {
@@ -614,4 +621,5 @@ textarea:focus {
 .footnote >p:nth-child(4) {
   margin-top: 1rem;
 }
+
 

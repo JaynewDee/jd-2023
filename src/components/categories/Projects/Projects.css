@@ -272,3 +272,18 @@
   border-style: solid;
   border-color: rgba(0, 0, 0, 0.7) transparent transparent;
 }
+
+@media screen and (max-width: 768px) {
+  .tools-container {
+    max-width: 90%;
+    justify-content: space-between;
+  }
+  .project-description {
+    padding: 0;
+  }
+ .project-wrapper[data-orientation="left"] > p, 
+ .project-wrapper[data-orientation="right"] > p {
+    padding: 0 1rem;
+ }
+ 
+}
