@@ -1,12 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Cutive+Mono&family=JetBrains+Mono:ital,wght@1,100&family=Oxygen+Mono&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Anton&family=Merriweather:wght@700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Cinzel:wght@500;700&family=Montserrat:wght@300&family=Poiret+One&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Italiana&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@500&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Mate:ital@1&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Pridi:wght@300&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&family=JetBrains+Mono:ital,wght@1,100&family=Oxygen+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Merriweather:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Cinzel:wght@500;700&family=Montserrat:wght@300&family=Poiret+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mate:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pridi:wght@300&display=swap');
 
 /**/
 /**/
@@ -17,21 +17,21 @@
   --variant: rgba(65, 157, 120, 0.6);
   --cordovan: rgba(144, 45, 65, 1);
   --cord-pale: rgba(144, 45, 65, 0.6);
-  --mmd: "Major Mono Display", monospace;
-  --cutive: "Cutive Mono", monospace;
-  --jb: "JetBrains Mono", monospace;
-  --oxygen: "Oxygen Mono", monospace;
-  --anton: "Anton", sans-serif;
-  --merri: "Merriweather", serif;
-  --qs: "Quicksand", sans-serif;
-  --monty: "Montserrat", sans-serif;
-  --cave: "Caveat", cursive;
-  --poiret: "Poiret One", cursive;
-  --cinzel: "Cinzel", serif;
-  --italy: "Italiana", serif;
-  --cat: "Catamaran", sans-serif;
-  --mate: "Mate", serif;
-  --pridi: "Pridi", serif;
+  --mmd: 'Major Mono Display', monospace;
+  --cutive: 'Cutive Mono', monospace;
+  --jb: 'JetBrains Mono', monospace;
+  --oxygen: 'Oxygen Mono', monospace;
+  --anton: 'Anton', sans-serif;
+  --merri: 'Merriweather', serif;
+  --qs: 'Quicksand', sans-serif;
+  --monty: 'Montserrat', sans-serif;
+  --cave: 'Caveat', cursive;
+  --poiret: 'Poiret One', cursive;
+  --cinzel: 'Cinzel', serif;
+  --italy: 'Italiana', serif;
+  --cat: 'Catamaran', sans-serif;
+  --mate: 'Mate', serif;
+  --pridi: 'Pridi', serif;
   --drop-text: drop-shadow(0px 21px 21px black);
   line-height: 24px;
   font-size: 24px;
@@ -43,7 +43,7 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
   overflow-x: hidden;
-  --pattern-blue: url("/pattern_blue.jpg");
+  --pattern-blue: url('/pattern_blue.jpg');
 }
 
 /**/
@@ -55,12 +55,11 @@
 }
 
 .App {
-  overflow-y: auto;
   overflow-x: hidden;
 }
 
 .App::before {
-  content: "";
+  content: '';
   background-position: center;
   background-image: var(--pattern-blue);
   background-size: cover;
@@ -78,7 +77,6 @@
 
 body {
   margin: 0;
-  padding: 0;
 }
 
 body::-webkit-scrollbar {
@@ -108,7 +106,7 @@ body::-webkit-scrollbar-thumb {
   box-shadow: inset 0 -5rem 12rem 0.06rem rgba(35, 35, 35, 0.43),
     inset 0 -15px 1rem 0.06rem rgba(70, 70, 65, 0.23),
     0 3rem 2.33rem 0.99rem rgba(0, 0, 0, 0.44);
-  mix-blend-mode:color-dodge;
+  mix-blend-mode: color-dodge;
   margin-top: 3rem;
 }
 
@@ -138,11 +136,11 @@ body::-webkit-scrollbar-thumb {
 
 .name-parens {
   color: var(--accent);
-  letter-spacing: .17rem;
+  letter-spacing: 0.17rem;
 }
 
 .josh {
-  padding: 0 .17rem;
+  padding: 0 0.17rem;
 }
 
 .name-cell > h1 {
@@ -207,7 +205,7 @@ body::-webkit-scrollbar-thumb {
 
 .back-btn::after {
   position: absolute;
-  content: "ESC";
+  content: 'ESC';
   border: 1px solid gray;
   padding: 0 4px;
   font-size: 0.5rem;
@@ -271,13 +269,13 @@ body::-webkit-scrollbar-thumb {
 }
 
 .devto-header:hover::before {
-  content: "{";
+  content: '{';
   color: var(--cordovan);
   font-size: 1.5rem;
 }
 
 .devto-header:hover::after {
-  content: "}";
+  content: '}';
   color: var(--cordovan);
   font-size: 1.5rem;
 }
@@ -294,7 +292,7 @@ body::-webkit-scrollbar-thumb {
   background: none;
   color: white;
   border: none;
-  
+
   font-size: 2rem;
   cursor: pointer;
   display: flex;
@@ -303,7 +301,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .category-back-btn:hover::before {
-  content: "";
+  content: '';
 }
 .category-back-btn:hover,
 .category-next-btn:hover {
@@ -335,7 +333,7 @@ body::-webkit-scrollbar-thumb {
   margin: 1rem auto;
 }
 
-.tools-list > li > a { 
+.tools-list > li > a {
   font-size: 2rem;
   color: var(--accent);
   text-decoration: none;
@@ -363,7 +361,7 @@ img {
   text-transform: uppercase;
   font-family: var(--cat);
   letter-spacing: 2px;
-   margin: 1rem; 
+  margin: 1rem;
 }
 .cat-char-underlined {
   text-decoration: underline var(--accent);
@@ -592,7 +590,6 @@ textarea:focus {
     display: none;
   }
   .tools-container {
-    
   }
 }
 
@@ -610,16 +607,15 @@ textarea:focus {
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  line-height: 1.7;
+  line-height: 1.5;
   pointer-events: none;
 }
 
 .footnote > p:nth-child(2) {
   font-size: 0.66rem;
+  filter: drop-shadow(0px 5px 1px black);
 }
 
-.footnote >p:nth-child(4) {
+.footnote > p:nth-child(4) {
   margin-top: 1rem;
 }
-
-

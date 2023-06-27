@@ -10,4 +10,4 @@ export {
   useMagnifier,
   useMailHandler,
   useTooltip
-}
+};

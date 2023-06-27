@@ -1,11 +1,10 @@
-import { ReactNode } from 'react';
 import "./App.css";
 import Portal from "./Portal";
 import Footnote from "./components/Footnote";
 
 //
 
-function App() {  
+function App() {
   return (
     <>
       <div className="App">

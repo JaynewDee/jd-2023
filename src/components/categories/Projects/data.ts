@@ -33,7 +33,7 @@ export const projects: ProjectType[] = [
       { name: "Express", url: "https://expressjs.com/" },
       { name: "MongoDB", url: "" },
       { name: "Socket.io", url: "https://socket.io/" },
-      { name: "Vite", url: "https://vitejs.dev/"}
+      { name: "Vite", url: "https://vitejs.dev/" }
     ],
     id: 2,
     images: ["/roomy-img-1.png", "/roomy-img-2.png", "/roomy-img-3.png"],
@@ -45,7 +45,7 @@ export const projects: ProjectType[] = [
       "An earlier version of my creative portfolio, focused on optimizing interactivity for an app-forward experience.",
     story:
       "I went in with a coat full of footguns on this one, but it was a rewarding experience to set myself fully free to experiment with technologies I was excited about, to build the full stack myself according to my very own decisions, and learn by doing.",
-    tools: [{ name: "JavaScript", url: "" }, { name: "Express", url: "https://expressjs.com/" }, { name: "AWS", url: "https://aws.amazon.com/pm/ec2/"}],
+    tools: [{ name: "JavaScript", url: "" }, { name: "Express", url: "https://expressjs.com/" }, { name: "AWS", url: "https://aws.amazon.com/pm/ec2/" }],
     id: 3,
     images: ["/portfolio-2022-1.png", "/portfolio-2022-2.png", "/portfolio-2022-3.png"],
     gitLinks: { deployment: "https://syntheticrain.net/", clone: "git@github.com:JaynewDee/jaynewd_.git", repo: "https://github.com/JaynewDee/jaynewd_" }
@@ -55,7 +55,7 @@ export const projects: ProjectType[] = [
     description:
       "Designed to make classroom grouping decisions as fast, simple and equitable as possible.",
     story:
-      "As a junior developer and teaching assistant faced for the first time with the problem of assigning students to appropriate groups, I wondered if this was a problem in any way fit for a program.  I wondered if the Python code representation would play out straightforwardly as it did in my head. : It didn't. : But the program worked!  One could read an entirely unformatted csv gradebook file and receive randomly assigned student groups as json output! I realized then that the same algorithm could be augmented with a way to ensure that students are grouped based on an even distribution of grade point averages. : I rewrote the script as a Node.js package using Commander.js and implemented an iterative solution that would measure each output against a target standard deviation until the target had been met. : I wrote some tests and published the package to npm, but I lacked confidence in the app's integrity, seeking reasons to further trust in the code I had written, and so I decided to superset the project with TypeScript.  The current and working version is available to download as an NPM package!",
+      "As a junior developer and teaching assistant faced for the first time with the problem of assigning students to appropriate groups, I wondered if this was a problem in any way fit for a program.  I wondered if the Python code representation would play out straightforwardly as it did in my head. : It didn't. : But the program worked!  One could read an entirely unformatted csv gradebook file and receive randomly assigned student groups as json output! I realized then that the same algorithm could be augmented with a way to ensure that students are grouped based on an even distribution of grade point averages. : I rewrote the script as a Node.js package using Commander.js and implemented an iterative solution that would measure each output against a target standard deviation until the target had been met.",
     tools: [
       { name: "TypeScript", url: "https://www.typescriptlang.org/" },
       { name: "Node", url: "https://nodejs.dev/en/about/" }
@@ -120,7 +120,7 @@ export const projects: ProjectType[] = [
       "A handy attendance-taking chrome extension.",
     story:
       "I built Present as a way to save time during class periods, optimizing away the need to individually click boxes.  The extension uses Chrome APIs, most notably `chrome.debugger` to acquire programmatic access to a foreign iframe without Cross-Origin permissions.",
-    tools: [{ name: "JavaScript", url: "" }, { name: "Chrome API", url: "https://developer.chrome.com/docs/extensions/reference/"}],
+    tools: [{ name: "JavaScript", url: "" }, { name: "Chrome API", url: "https://developer.chrome.com/docs/extensions/reference/" }],
     id: 9,
     images: ["/present1.png", "/present2.png"],
     gitLinks: { deployment: "", clone: "git@github.com:JaynewDee/readme_generator.git", repo: "https://github.com/JaynewDee/readme_generator" }

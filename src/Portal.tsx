@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
+import React, { Dispatch, SetStateAction, useEffect, useLayoutEffect, useState } from "react";
 import MenuGrid from "./MenuGrid";
 import BackBtn from "./components/BackBtn";
 import About from "./components/categories/About";
@@ -15,6 +15,8 @@ export type DisplayProps = {
   backBtn: () => JSX.Element;
 };
 
+
+
 const Portal: React.FC = () => {
   const [displayState, setDisplayState] = useState("");
 
@@ -26,10 +28,13 @@ const Portal: React.FC = () => {
         goBack();
       }
     }
+
     window.addEventListener("keydown", handleBackEvent);
 
     return () => window.removeEventListener("keydown", handleBackEvent)
   }, []);
+
+
 
   const props: DisplayProps = {
     setDisplay: setDisplayState,
