@@ -7,6 +7,7 @@ import { DisplayProps } from "../../Portal";
 import { CiMedal } from "react-icons/ci";
 import { useMagnifier } from "../../hooks/useMagnifier";
 import IconTitle from "../IconTitle";
+import { SetStateAction, useState, Dispatch } from "react";
 
 //
 
@@ -14,21 +15,26 @@ const badges = [BootCampBadge, CloudPractitionerBadge];
 const certs = [SMUCert, CS50PCert, CS50XCert];
 
 const Accolades: React.FC<DisplayProps> = ({ backBtn }) => {
+  const [magnification, setMagnification] = useState(1.6)
+
   //
-return (
+
+  return (
     <div className="category-container">
       <div className="category-header">
         {backBtn()}
         {IconTitle("ACCOLADES", CiMedal)}
       </div>
+      <MagnifierSlider magnification={magnification} setLevel={setMagnification} />
+      <p className="magnify-instruction">Tap or hover to magnify</p>
       <div className="accolades-box">
         <div className="certs-box">
           {certs.map((src, idx) =>
             useMagnifier({
               src,
-              width: "330px",
+              width: "360px",
               height: "",
-              zoomLevel: 1.66,
+              zoomLevel: magnification,
               id: idx
             })
           )}
@@ -45,4 +51,25 @@ return (
   );
 };
 
+const MagnifierSlider = ({ magnification, setLevel }: { magnification: number, setLevel: Dispatch<SetStateAction<number>> }) => {
+
+  const handleChange = (event: any) => {
+    setLevel(Number(event.target.value));
+  };
+
+  return (
+    <div className="magnify-controls">
+      <p>Magnification Strength</p>
+      <input
+        type="range"
+        min="1"
+        max="2.5"
+        step="0.1"
+        value={magnification}
+        onChange={handleChange}
+      />
+      <p>{magnification}</p>
+    </div>
+  );
+}
 export default Accolades;
