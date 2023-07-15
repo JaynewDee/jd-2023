@@ -11,7 +11,6 @@ import {
   SiReact
 } from "react-icons/si";
 import { GiThreeFriends } from "react-icons/gi";
-import { TbBrandMysql } from "react-icons/tb";
 
 export type SkillType = {
   name: string;

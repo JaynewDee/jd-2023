@@ -12,7 +12,7 @@ export type ProjectType = {
   images?: string[];
   productionSrc?: string;
   gitLinks: LinkMap;
-};
+}
 
 export type LinkMap = {
   deployment: string,
@@ -24,7 +24,7 @@ export const projects: ProjectType[] = [
   {
     name: "Synthbrain",
     description:
-      "",
+      "Command-line AI assistant",
     story: "",
     tools: [
       { name: "Rust", url: "" }, { name: "OpenAI", url: "" }
@@ -32,20 +32,19 @@ export const projects: ProjectType[] = [
     id: 0,
     images: ["/synth1.png", "", ""],
     gitLinks: { deployment: "https://meep-mountain.herokuapp.com/", clone: "git@github.com:JaynewDee/jd-2023.git", repo: "https://github.com/JaynewDee/jd-2023" }
-
   },
   {
     name: "Catch-Flow",
     description:
-      "",
-    story: "",
+      "Rapidly prototype asynchronous JS with iterable try-catch decorators.",
+    story: "Inspired by the Functional programming paradigm for some time, my journey led me to explore the concepts of decorators and closures.  This tiny library is a slice of that experimentation, and the full code is available to the world through NPM.",
     tools: [
       { name: "TypeScript", url: "https://www.typescriptlang.org/" },
-      { name: "JavaScript", url: "" }
+      { name: "Node", url: "https://nodejs.dev/en/about/" }
     ],
     id: 1,
-    images: ["/synth1.png", "", ""],
-    gitLinks: { deployment: "https://meep-mountain.herokuapp.com/", clone: "git@github.com:JaynewDee/jd-2023.git", repo: "https://github.com/JaynewDee/jd-2023" }
+    images: ["/catchflow1.png", "/catchflow2.png", ""],
+    gitLinks: { deployment: "https://www.npmjs.com/package/catch-flow", clone: "git@github.com:JaynewDee/jd-2023.git", repo: "https://github.com/JaynewDee/jd-2023" }
 
   },
   {
