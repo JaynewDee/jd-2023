@@ -7,7 +7,7 @@ import { DisplayProps } from "../../Portal";
 import { CiMedal } from "react-icons/ci";
 import { useMagnifier } from "../../hooks/useMagnifier";
 import IconTitle from "../IconTitle";
-import { SetStateAction, useState, Dispatch } from "react";
+import { SetStateAction, useState, Dispatch, ChangeEvent } from "react";
 
 //
 
@@ -53,13 +53,13 @@ const Accolades: React.FC<DisplayProps> = ({ backBtn }) => {
 
 const MagnifierSlider = ({ magnification, setLevel }: { magnification: number, setLevel: Dispatch<SetStateAction<number>> }) => {
 
-  const handleChange = (event: any) => {
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setLevel(Number(event.target.value));
   };
 
   return (
     <div className="magnify-controls">
-      <p>Magnification Strength</p>
+      <p className="mag-strength">Magnification Strength</p>
       <input
         type="range"
         min="1"
@@ -68,7 +68,7 @@ const MagnifierSlider = ({ magnification, setLevel }: { magnification: number, s
         value={magnification}
         onChange={handleChange}
       />
-      <p>{magnification}</p>
+      <p className="mag-value">{magnification}</p>
     </div>
   );
 }

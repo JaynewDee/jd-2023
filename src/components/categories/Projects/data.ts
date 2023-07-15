@@ -22,6 +22,19 @@ export type LinkMap = {
 
 export const projects: ProjectType[] = [
   {
+    name: "Synthbrain",
+    description:
+      "",
+    story: "",
+    tools: [
+      { name: "Rust", url: "" }, { name: "OpenAI", url: "https://openai.com/blog/openai-api" }
+    ],
+    id: 1,
+    images: ["/synth1.png", "", ""],
+    gitLinks: { deployment: "https://meep-mountain.herokuapp.com/", clone: "git@github.com:JaynewDee/jd-2023.git", repo: "https://github.com/JaynewDee/jd-2023" }
+
+  },
+  {
     name: "Roomy",
     description:
       "Roomy seeks to provide a straightforward chat experience, free from noisy bells and whistles.",
@@ -108,7 +121,7 @@ export const projects: ProjectType[] = [
     description:
       "Pass command-line options to generate an attractive README file for any new project.",
     story:
-      "This program is a re-write of an early bootcamp project originally written in JavaScript.  A single command will generate a default README in a matter of seconds, and a `prompt` option allows for more user-friendly control.  ",
+      "This program is a Rust re-write of an early bootcamp project originally written in JavaScript.  A single command will generate a default README in a matter of seconds, and a `prompt` option allows for more user-friendly control.  And of course it's ~blazingly fast~! ",
     tools: [{ name: "Rust", url: "" }],
     id: 8,
     images: ["/readgen1.png", "/readgen2.png", "/readgen3.png"],
@@ -124,7 +137,22 @@ export const projects: ProjectType[] = [
     id: 9,
     images: ["/present1.png", "/present2.png"],
     gitLinks: { deployment: "", clone: "git@github.com:JaynewDee/readme_generator.git", repo: "https://github.com/JaynewDee/readme_generator" }
-  }];
+  },
+  {
+    name: "Termkey.js",
+    description:
+      "Simple and secure command-line file encryption.",
+    story:
+      "I wanna protect my stuff!",
+    tools: [
+      { name: "TypeScript", url: "https://www.typescriptlang.org/" },
+      { name: "Node", url: "https://nodejs.dev/en/about/" },
+    ],
+    id: 10,
+    images: ["/termkey1.png"],
+    gitLinks: { deployment: "https://www.npmjs.com/package/termkey?activeTab=readme", clone: "git@github.com:JaynewDee/termkey-js.git", repo: "https://github.com/JaynewDee/termkey-js" }
+  },
+];
 
 const aggregateTags = (projectsData: ProjectType[]): string[] => {
   const tools = projectsData.map(project => project.tools);

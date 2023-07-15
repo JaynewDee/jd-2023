@@ -226,8 +226,16 @@ body::-webkit-scrollbar-thumb {
 .magnify-controls {
   margin-top: 3rem;
 }
+.mag-strength {
+  margin: .33rem;
+  font-size: .8rem;
+}
+.mag-value {
+  margin: .33rem;
+}
 .magnify-instruction {
   margin-bottom: -3rem;
+  font-size: .66rem;
 }
 .badges-box,
 .certs-box {
