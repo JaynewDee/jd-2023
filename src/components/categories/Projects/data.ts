@@ -27,7 +27,21 @@ export const projects: ProjectType[] = [
       "",
     story: "",
     tools: [
-      { name: "Rust", url: "" }, { name: "OpenAI", url: "https://openai.com/blog/openai-api" }
+      { name: "Rust", url: "" }, { name: "OpenAI", url: "" }
+    ],
+    id: 0,
+    images: ["/synth1.png", "", ""],
+    gitLinks: { deployment: "https://meep-mountain.herokuapp.com/", clone: "git@github.com:JaynewDee/jd-2023.git", repo: "https://github.com/JaynewDee/jd-2023" }
+
+  },
+  {
+    name: "Catch-Flow",
+    description:
+      "",
+    story: "",
+    tools: [
+      { name: "TypeScript", url: "https://www.typescriptlang.org/" },
+      { name: "JavaScript", url: "" }
     ],
     id: 1,
     images: ["/synth1.png", "", ""],
