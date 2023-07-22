@@ -79,7 +79,7 @@ const Project = (
         key={id}
         style={activeFilters.every((filter) => toolNames.includes(filter)) ? {} : { display: "none" }}
       >
-        <div className="project-wrapper" data-orientation={id % 2 === 0 ? "left" : "right"}
+        <div className="project-wrapper" data-orientation={id % 2 === 0 ? "left" : "left"}
         >
           {ProjectName(name)}
           <p className="project-description">{description}</p>
@@ -165,6 +165,10 @@ const Projects: React.FC<DisplayProps> = ({ backBtn }) => {
     inactive: aggregatedTagFilters,
   });
 
+  // TODO
+  // Implement toggle control to change state
+  const [sortDirection, setSortDireciton] = useState<"asc" | "desc">("asc")
+
   const resetFilters = () => setFilterState({ active: [], inactive: aggregatedTagFilters });
 
   const [activeImageSrc, setActiveImageSrc] = useState("");
@@ -181,7 +185,10 @@ const Projects: React.FC<DisplayProps> = ({ backBtn }) => {
 
   const filters = <ProjectFilters filterState={filterState} setFilterState={setFilterState} reset={resetFilters} />;
 
-  const filteredProjects = projects.map((project) => (
+  const sortDesc = (a: ProjectType, b: ProjectType) => a.name > b.name ? 1 : -1;
+  const sortAsc = (a: ProjectType, b: ProjectType) => a.name < b.name ? 1 : -1;
+
+  const filteredSortedProjects = projects.sort((a, b) => sortDirection === "desc" ? sortDesc(a, b) : sortAsc(a, b)).map((project) => (
     <div key={project.id}>
       {Project(project, setModalState, setActiveImageSrc, activeImageSrc, filterState.active)}
     </div>
@@ -195,8 +202,11 @@ const Projects: React.FC<DisplayProps> = ({ backBtn }) => {
           <div className="title-with-icons">{title}</div>
         </div>
         {filters}
+        <div>
+
+        </div>
         <article>
-          {filteredProjects}
+          {filteredSortedProjects}
         </article>
       </article>
       <ScrollOverlay />
