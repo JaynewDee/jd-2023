@@ -53,7 +53,7 @@ export const projects: ProjectType[] = [
   {
     name: "Grouperjs",
     description:
-      "Designed to make classroom grouping decisions as fast, simple and equitable as possible.",
+      "Designed to make classroom grouping decisions as an edX instructor as fast, simple and equitable as possible.",
     story:
       "As a junior developer and teaching assistant faced for the first time with the problem of assigning students to appropriate groups, I wondered if this was a problem in any way fit for a program.  I wondered if the Python code representation would play out straightforwardly as it did in my head. : It didn't. : But the program worked!  One could read an entirely unformatted csv gradebook file and receive randomly assigned student groups as json output! I realized then that the same algorithm could be augmented with a way to ensure that students are grouped based on an even distribution of grade point averages. : I rewrote the script as a Node.js package using Commander.js and implemented an iterative solution that would measure each output against a target standard deviation until the target had been met.",
     tools: [
