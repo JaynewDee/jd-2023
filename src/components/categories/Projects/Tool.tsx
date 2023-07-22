@@ -2,7 +2,9 @@ import { SetStateAction, Dispatch } from "react";
 import { useTooltip } from "../../../hooks/";
 import { ToolType } from "./data";
 
-const unavailable = ["MongoDB", "Rust", "Python", "JavaScript", "AWS"];
+const unavailableIframes = ["MongoDB", "Rust", "Python", "JavaScript", "AWS"];
+
+
 
 export function Tool(
   tool: ToolType,
@@ -15,12 +17,12 @@ export function Tool(
   };
 
   const component = () => (
-    <span className="tool" key={tool.url} onClick={toggleIframe}>
+    <span className="tool" onClick={toggleIframe}>
       {tool.name}
     </span>
   );
 
-  const isAvailable = !unavailable.includes(tool.name);
+  const isAvailable = !unavailableIframes.includes(tool.name);
 
   return useTooltip({
     children: component(),

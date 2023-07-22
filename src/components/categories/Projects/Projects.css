@@ -1,9 +1,9 @@
 .project-container {
   margin: 1rem 0 5rem;
-  background-color: rgba(15, 15, 15, 0.8);
+  background-color: rgba(15, 15, 15, 0.87);
   padding-bottom: 1rem; 
   width: 100vw;
-  box-shadow: 0px 3px 9px 1px rgba(15, 15, 15, .8);
+  box-shadow: 0px 3px 1px 1px rgba(15, 15, 15, .9);
 }
 
 .scroll-btn {
@@ -154,17 +154,21 @@
 }
 
 .project-filters-container {
-  max-width: 50%;
+  max-width: 350px;
   margin: 6rem auto 0;
 }
 
 .filter-btn, .filter-btn-active {
-  background: none;
+  background: rgba(10, 10, 10, .5);
   color: white;
   border-radius: .33rem;
   cursor: pointer;
   padding: .11rem .33rem;
   margin: 3px;
+}
+
+.filter-btn-active {
+  border: 1px solid white;
 }
 
 .filter-btn:hover {
@@ -177,6 +181,10 @@
 
 .tooltags-header {
   margin: .33rem auto;
+}
+
+.tooltags-subheader {
+  margin:.33rem auto;
 }
 
 .tools-container {

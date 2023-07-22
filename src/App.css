@@ -223,7 +223,20 @@ body::-webkit-scrollbar-thumb {
   margin: 3rem auto 0;
   overflow-y: hidden;
 }
-
+.magnify-controls {
+  margin-top: 3rem;
+}
+.mag-strength {
+  margin: .33rem;
+  font-size: .8rem;
+}
+.mag-value {
+  margin: .33rem;
+}
+.magnify-instruction {
+  margin-bottom: -3rem;
+  font-size: .66rem;
+}
 .badges-box,
 .certs-box {
   display: flex;

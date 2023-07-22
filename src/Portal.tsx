@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction, useEffect, useLayoutEffect, useState } from "react";
+import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 import MenuGrid from "./MenuGrid";
 import BackBtn from "./components/BackBtn";
 import About from "./components/categories/About";
@@ -14,8 +14,6 @@ export type DisplayProps = {
   setDisplay: Dispatch<SetStateAction<string>>;
   backBtn: () => JSX.Element;
 };
-
-
 
 const Portal: React.FC = () => {
   const [displayState, setDisplayState] = useState("");
@@ -33,8 +31,6 @@ const Portal: React.FC = () => {
 
     return () => window.removeEventListener("keydown", handleBackEvent)
   }, []);
-
-
 
   const props: DisplayProps = {
     setDisplay: setDisplayState,

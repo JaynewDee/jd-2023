@@ -46,15 +46,15 @@ const useClipboard = async (text: string) => {
 
 const ProjectLinks = ({ deployment, clone, repo }: LinkMap) =>
   <div className="git-links">
-    <button type="button" disabled={!deployment} className="git-btn" onClick={() => deployment && useNewTab(deployment)}>DEPLOYMENT</button> 
-    <button type="button" className="git-btn" onClick={() => useClipboard(clone)}>COPY CLONE URL</button> 
+    <button type="button" disabled={!deployment} className="git-btn" onClick={() => deployment && useNewTab(deployment)}>DEPLOYMENT</button>
+    <button type="button" className="git-btn" onClick={() => useClipboard(clone)}>COPY CLONE URL</button>
     <button type="button" className="git-btn" onClick={() => repo && useNewTab(repo)}>VISIT REPOSITORY</button>
   </div>
 
 const ProjectTools = (tools: { name: string, url: string }[], setModal: any, setActiveImg: any) =>
   <div className="tools-container">
-    {tools.map((tool) => (
-      <>{Tool(tool, setModal, setActiveImg)}</>
+    {tools.map((tool, idx) => (
+      <div key={idx}>{Tool(tool, setModal, setActiveImg)}</div>
     ))}
   </div>
 
@@ -84,7 +84,7 @@ const Project = (
           {ProjectName(name)}
           <p className="project-description">{description}</p>
           <div className="project-images">
-            {images?.map(src => 
+            {images?.map(src =>
               <ProjectImage src={src} key={src} activeImageSrc={activeImageSrc} setActiveImageSrc={setActiveImageSrc} />)}
           </div>
           {ProjectLinks(gitLinks)}
@@ -139,6 +139,7 @@ const ProjectFilters = (
   return (
     <div className="project-filters-container">
       <h4 className="tooltags-header">ToolTags</h4>
+      <h6 className="tooltags-subheader">Filter by associated technology</h6>
       <div className="inactive-filters">
         {filterState.inactive?.map((tag: string) =>
           <button key={tag} onClick={handleClickActive(tag)} className="filter-btn" type="button">{tag}</button>)
@@ -153,7 +154,7 @@ const ProjectFilters = (
           }
         </div>
       </div>
-        <button type="button" onClick={reset}>CLEAR</button>
+      <button type="button" onClick={reset}>CLEAR</button>
     </div>
   )
 }
@@ -178,7 +179,7 @@ const Projects: React.FC<DisplayProps> = ({ backBtn }) => {
   // Note to self: consider unifying the two to reduce duplication
   const ImgViewer = useImgViewer(activeImageSrc, setActiveImageSrc);
 
-  const filters = <ProjectFilters filterState={filterState} setFilterState={setFilterState} reset={resetFilters}/>;
+  const filters = <ProjectFilters filterState={filterState} setFilterState={setFilterState} reset={resetFilters} />;
 
   const filteredProjects = projects.map((project) => (
     <div key={project.id}>
@@ -194,7 +195,6 @@ const Projects: React.FC<DisplayProps> = ({ backBtn }) => {
           <div className="title-with-icons">{title}</div>
         </div>
         {filters}
-        {filteredProjects.length === 0 && <h3>No projects found!  Adjust your filters.</h3>}
         <article>
           {filteredProjects}
         </article>

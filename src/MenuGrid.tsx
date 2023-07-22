@@ -10,7 +10,7 @@ export type CategoryProps = {
 const formatter = {
   name: (name: string) =>
     name.split("").map((char: string, idx: number) =>
-      idx === 0 ? <span key={char + idx}className="cat-char-underlined">{char}</span> : char),
+      idx === 0 ? <span key={char + idx} className="cat-char-underlined">{char}</span> : char),
   dataCategory: (name: string) => name.toLowerCase().replace(/[\?\.]/, "")
 }
 
@@ -33,7 +33,9 @@ const MenuGrid = ({ setDisplay }: { setDisplay: DisplayDispatch }) => {
   useEffect(() => {
     const handleKeyEvent = (e: KeyboardEvent) => {
       const key = e.key.toLowerCase();
-      if (key in keyTable && (key !== "e" && key !== "t")) {
+      const notIncluded = key !== "e" && key !== "t"
+
+      if (key in keyTable && (notIncluded)) {
         setDisplay(keyTable[e.key]);
       }
     }
