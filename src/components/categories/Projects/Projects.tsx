@@ -165,6 +165,10 @@ const Projects: React.FC<DisplayProps> = ({ backBtn }) => {
     inactive: aggregatedTagFilters,
   });
 
+  // TODO
+  // Implement toggle control to change state
+  const [sortDirection, setSortDireciton] = useState<"asc" | "desc">("asc")
+
   const resetFilters = () => setFilterState({ active: [], inactive: aggregatedTagFilters });
 
   const [activeImageSrc, setActiveImageSrc] = useState("");
@@ -181,7 +185,10 @@ const Projects: React.FC<DisplayProps> = ({ backBtn }) => {
 
   const filters = <ProjectFilters filterState={filterState} setFilterState={setFilterState} reset={resetFilters} />;
 
-  const filteredSortedProjects = projects.sort((a, b) => a.name > b.name ? 1 : -1).map((project) => (
+  const sortDesc = (a: ProjectType, b: ProjectType) => a.name > b.name ? 1 : -1;
+  const sortAsc = (a: ProjectType, b: ProjectType) => a.name < b.name ? 1 : -1;
+
+  const filteredSortedProjects = projects.sort((a, b) => sortDirection === "desc" ? sortDesc(a, b) : sortAsc(a, b)).map((project) => (
     <div key={project.id}>
       {Project(project, setModalState, setActiveImageSrc, activeImageSrc, filterState.active)}
     </div>
@@ -195,6 +202,9 @@ const Projects: React.FC<DisplayProps> = ({ backBtn }) => {
           <div className="title-with-icons">{title}</div>
         </div>
         {filters}
+        <div>
+
+        </div>
         <article>
           {filteredSortedProjects}
         </article>

@@ -125,7 +125,7 @@ export const projects: ProjectType[] = [
       { name: "Node", url: "https://nodejs.dev/en/about/" }
     ],
     id: 7,
-    images: ["/catchflow1.png", "/catchflow2.png", ""],
+    images: ["/catchflow1.png", "/catchflow2.png"],
     gitLinks: { deployment: "https://www.npmjs.com/package/catch-flow", clone: "git@github.com:JaynewDee/jd-2023.git", repo: "https://github.com/JaynewDee/jd-2023" }
 
   },
