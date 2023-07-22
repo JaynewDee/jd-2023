@@ -139,6 +139,7 @@ const ProjectFilters = (
   return (
     <div className="project-filters-container">
       <h4 className="tooltags-header">ToolTags</h4>
+      <h6 className="tooltags-subheader">Filter by associated technology</h6>
       <div className="inactive-filters">
         {filterState.inactive?.map((tag: string) =>
           <button key={tag} onClick={handleClickActive(tag)} className="filter-btn" type="button">{tag}</button>)

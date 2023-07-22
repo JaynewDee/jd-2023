@@ -183,6 +183,10 @@
   margin: .33rem auto;
 }
 
+.tooltags-subheader {
+  margin:.33rem auto;
+}
+
 .tools-container {
   display: flex;
   flex-flow: row wrap;

@@ -22,32 +22,6 @@ export type LinkMap = {
 
 export const projects: ProjectType[] = [
   {
-    name: "Synthbrain",
-    description:
-      "Command-line AI assistant",
-    story: "",
-    tools: [
-      { name: "Rust", url: "" }, { name: "OpenAI", url: "" }
-    ],
-    id: 0,
-    images: ["/synth1.png", "", ""],
-    gitLinks: { deployment: "https://meep-mountain.herokuapp.com/", clone: "git@github.com:JaynewDee/jd-2023.git", repo: "https://github.com/JaynewDee/jd-2023" }
-  },
-  {
-    name: "Catch-Flow",
-    description:
-      "Rapidly prototype asynchronous JS with iterable try-catch decorators.",
-    story: "Inspired by the Functional programming paradigm for some time, my journey led me to explore the concepts of decorators and closures.  This tiny library is a slice of that experimentation, and the full code is available to the world through NPM.",
-    tools: [
-      { name: "TypeScript", url: "https://www.typescriptlang.org/" },
-      { name: "Node", url: "https://nodejs.dev/en/about/" }
-    ],
-    id: 1,
-    images: ["/catchflow1.png", "/catchflow2.png", ""],
-    gitLinks: { deployment: "https://www.npmjs.com/package/catch-flow", clone: "git@github.com:JaynewDee/jd-2023.git", repo: "https://github.com/JaynewDee/jd-2023" }
-
-  },
-  {
     name: "Roomy",
     description:
       "Roomy seeks to provide a straightforward chat experience, free from noisy bells and whistles.",
@@ -70,11 +44,12 @@ export const projects: ProjectType[] = [
     description:
       "An earlier version of my creative portfolio, focused on optimizing interactivity for an app-forward experience.",
     story:
-      "I went in with a coat full of footguns on this one, but it was a rewarding experience to set myself fully free to experiment with technologies I was excited about, to build the full stack myself according to my very own decisions, and learn by doing.",
+      "I went in with a coat full of footguns on this one, but it was a rewarding experience to set myself fully free to experiment with technologies I was excited about, to build the full stack myself according to my very own decisions, and learn by doing. : Unfortunately, this also led to some silly beginner mistakes, such as failing to properly accomodate mobile viewports! : Finally, this project represents my first attempt to host a full-stack application on an AWS EC2 instance with a custom domain name, and it was a smashing success!",
     tools: [{ name: "JavaScript", url: "" }, { name: "Express", url: "https://expressjs.com/" }, { name: "AWS", url: "https://aws.amazon.com/pm/ec2/" }],
     id: 3,
     images: ["/portfolio-2022-1.png", "/portfolio-2022-2.png", "/portfolio-2022-3.png"],
-    gitLinks: { deployment: "https://syntheticrain.net/", clone: "git@github.com:JaynewDee/jaynewd_.git", repo: "https://github.com/JaynewDee/jaynewd_" }
+    gitLinks: { deployment: "https://syntheticrain.net/", clone: "git@github.com:JaynewDee/jaynewd_.git", repo: "https://github.com/JaynewDee/jaynewd_" },
+
   },
   {
     name: "Grouperjs",
@@ -128,6 +103,32 @@ export const projects: ProjectType[] = [
     id: 7,
     images: ["/imagent1.png", "/imagent2.png"],
     gitLinks: { deployment: "", clone: "git@github.com:JaynewDee/imagent.git", repo: "https://github.com/JaynewDee/imagent" }
+  },
+  {
+    name: "Synthbrain",
+    description:
+      "Command-line AI assistant",
+    story: "",
+    tools: [
+      { name: "Rust", url: "" }, { name: "OpenAI", url: "" }
+    ],
+    id: 0,
+    images: ["/synth1.png", "", ""],
+    gitLinks: { deployment: "https://meep-mountain.herokuapp.com/", clone: "git@github.com:JaynewDee/jd-2023.git", repo: "https://github.com/JaynewDee/jd-2023" }
+  },
+  {
+    name: "Catch-Flow",
+    description:
+      "Rapidly prototype asynchronous JS with iterable try-catch decorators.",
+    story: "Inspired by the Functional programming paradigm for some time, my journey led me to explore the concepts of decorators and closures.  This tiny library is a slice of that experimentation, and the full code is available to the world through NPM.",
+    tools: [
+      { name: "TypeScript", url: "https://www.typescriptlang.org/" },
+      { name: "Node", url: "https://nodejs.dev/en/about/" }
+    ],
+    id: 1,
+    images: ["/catchflow1.png", "/catchflow2.png", ""],
+    gitLinks: { deployment: "https://www.npmjs.com/package/catch-flow", clone: "git@github.com:JaynewDee/jd-2023.git", repo: "https://github.com/JaynewDee/jd-2023" }
+
   },
   {
     name: "Read-Gen",
