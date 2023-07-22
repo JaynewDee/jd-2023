@@ -53,8 +53,8 @@ const ProjectLinks = ({ deployment, clone, repo }: LinkMap) =>
 
 const ProjectTools = (tools: { name: string, url: string }[], setModal: any, setActiveImg: any) =>
   <div className="tools-container">
-    {tools.map((tool) => (
-      <>{Tool(tool, setModal, setActiveImg)}</>
+    {tools.map((tool, idx) => (
+      <div key={idx}>{Tool(tool, setModal, setActiveImg)}</div>
     ))}
   </div>
 

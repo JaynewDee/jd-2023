@@ -25,7 +25,7 @@ export const projects: ProjectType[] = [
     name: "Roomy",
     description:
       "Roomy seeks to provide a straightforward chat experience, free from noisy bells and whistles.",
-    story: "Roomy defines my first meaningful foray into the world of websocket communication.  Socket.io provides the application with a clean and consistent API for establishing communication between the server and potentially many clients. Built with a keen interest in scalability, the server is designed to support both WebSocket and traditional HTTP protocols.  It persists all messages on the back-end through MongoDB, providing the user with a reliable and responsive full-stack chat experience.",
+    story: "Roomy defines my first meaningful foray into the world of websocket communication.  Socket.io provides the application with a clean and consistent API for establishing communication between the server and potentially many clients. : Built with a keen interest in scalability, the server is designed to support both WebSocket and traditional HTTP protocols.  It persists all messages on the back-end through MongoDB, providing the user with a reliable and responsive full-stack chat experience.",
     tools: [
       { name: "TypeScript", url: "https://www.typescriptlang.org/" },
       { name: "React", url: "https://react.dev/" },
@@ -49,7 +49,6 @@ export const projects: ProjectType[] = [
     id: 3,
     images: ["/portfolio-2022-1.png", "/portfolio-2022-2.png", "/portfolio-2022-3.png"],
     gitLinks: { deployment: "https://syntheticrain.net/", clone: "git@github.com:JaynewDee/jaynewd_.git", repo: "https://github.com/JaynewDee/jaynewd_" },
-
   },
   {
     name: "Grouperjs",
@@ -157,7 +156,7 @@ export const projects: ProjectType[] = [
     description:
       "Simple and secure command-line file encryption.",
     story:
-      "I wanna protect my stuff!",
+      "This program started as an exploration of encryption when I decided through experimentation to write myself a program to encrypt my files. :  I also used this experience as an opportunity to explore specific topics related to encryption, such as various encryption standards and their relative levels of security. : Termkey uses the AES-256-CBC SSL encryption standard along with a password-based key derivation function (PBKDF2) to encrypt and decrypt sensitive text information.",
     tools: [
       { name: "TypeScript", url: "https://www.typescriptlang.org/" },
       { name: "Node", url: "https://nodejs.dev/en/about/" },
@@ -172,7 +171,8 @@ const aggregateTags = (projectsData: ProjectType[]): string[] => {
   const tools = projectsData.map(project => project.tools);
   const tags = tools.map((toolset: ToolType[]) => toolset.flatMap((tool) => tool.name));
   const uniques = new Set(tags.flat());
-  return Array.from(uniques);
+  console.log(uniques)
+  return Array.from(uniques).sort();
 }
 
 export const aggregatedTagFilters = aggregateTags(projects);
