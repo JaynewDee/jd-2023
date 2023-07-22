@@ -79,7 +79,7 @@ const Project = (
         key={id}
         style={activeFilters.every((filter) => toolNames.includes(filter)) ? {} : { display: "none" }}
       >
-        <div className="project-wrapper" data-orientation={id % 2 === 0 ? "left" : "right"}
+        <div className="project-wrapper" data-orientation={id % 2 === 0 ? "left" : "left"}
         >
           {ProjectName(name)}
           <p className="project-description">{description}</p>
@@ -181,7 +181,7 @@ const Projects: React.FC<DisplayProps> = ({ backBtn }) => {
 
   const filters = <ProjectFilters filterState={filterState} setFilterState={setFilterState} reset={resetFilters} />;
 
-  const filteredProjects = projects.map((project) => (
+  const filteredSortedProjects = projects.sort((a, b) => a.name > b.name ? 1 : -1).map((project) => (
     <div key={project.id}>
       {Project(project, setModalState, setActiveImageSrc, activeImageSrc, filterState.active)}
     </div>
@@ -196,7 +196,7 @@ const Projects: React.FC<DisplayProps> = ({ backBtn }) => {
         </div>
         {filters}
         <article>
-          {filteredProjects}
+          {filteredSortedProjects}
         </article>
       </article>
       <ScrollOverlay />
