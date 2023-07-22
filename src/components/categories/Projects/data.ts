@@ -113,7 +113,7 @@ export const projects: ProjectType[] = [
     ],
     id: 6,
     images: ["/synth1.png"],
-    gitLinks: { deployment: "https://meep-mountain.herokuapp.com/", clone: "git@github.com:JaynewDee/jd-2023.git", repo: "https://github.com/JaynewDee/jd-2023" }
+    gitLinks: { deployment: "", clone: "git@github.com:JaynewDee/jd-2023.git", repo: "https://github.com/JaynewDee/jd-2023" }
   },
   {
     name: "Catch-Flow",
