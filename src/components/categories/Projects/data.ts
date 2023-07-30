@@ -107,13 +107,13 @@ export const projects: ProjectType[] = [
     name: "Synthbrain",
     description:
       "Command-line AI assistant",
-    story: "",
+    story: "Synthbrain utilizes OpenAI's powerful, highly-trained machine learning models to generate text completions, produce images from text prompts, and convert speech audio into text.",
     tools: [
       { name: "Rust", url: "" }, { name: "OpenAI", url: "" }
     ],
     id: 6,
     images: ["/synth1.png"],
-    gitLinks: { deployment: "", clone: "git@github.com:JaynewDee/jd-2023.git", repo: "https://github.com/JaynewDee/jd-2023" }
+    gitLinks: { deployment: "", clone: "git@github.com:JaynewDee/jd-2023.git", repo: "https://github.com/JaynewDee/synth-brain" }
   },
   {
     name: "Catch-Flow",
