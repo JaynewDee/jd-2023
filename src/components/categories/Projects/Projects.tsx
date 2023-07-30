@@ -5,6 +5,7 @@ import { Title } from "../../IconTitle";
 import { Tool } from "./Tool";
 import { LinkMap, projects, ProjectType, aggregatedTagFilters } from "./data";
 import { useNewTab, useImgViewer } from "../../../hooks";
+import { AiOutlineArrowUp as Arrow } from 'react-icons/ai'
 
 //
 import "./Projects.css";
@@ -194,6 +195,8 @@ const Projects: React.FC<DisplayProps> = ({ backBtn }) => {
     </div>
   ));
 
+  const toggleSortDirection = () => sortDirection === "asc" ? setSortDireciton("desc") : setSortDireciton("asc")
+
   return (
     <>
       <article className="category-container">
@@ -202,8 +205,10 @@ const Projects: React.FC<DisplayProps> = ({ backBtn }) => {
           <div className="title-with-icons">{title}</div>
         </div>
         {filters}
-        <div>
-
+        <div className="sort-direction-control">
+          <span>{Arrow({ className: sortDirection === "asc" ? "arrow-up" : "arrow-down" })}</span>
+          <p onClick={toggleSortDirection}>Sort Direction</p>
+          <span>{Arrow({ className: sortDirection === "asc" ? "arrow-up" : "arrow-down" })}</span>
         </div>
         <article>
           {filteredSortedProjects}
