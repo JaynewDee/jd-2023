@@ -16,7 +16,7 @@ const badges = [BootCampBadge, CloudPractitionerBadge];
 const certs = [SMUCert, CS50PCert, CS50XCert];
 
 const Accolades: React.FC<DisplayProps> = ({ backBtn }) => {
-  const [magnification, setMagnification] = useState(1.6)
+  const [magnification, setMagnification] = useState(1.8)
 
   //
 

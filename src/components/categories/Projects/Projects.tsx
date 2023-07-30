@@ -56,7 +56,7 @@ function ProjectLinks({ deployment, clone, repo }: LinkMap) {
 
   return <div className="git-links">
     <button type="button" disabled={!deployment} className="git-btn" onClick={() => deployment && useNewTab(deployment)}>DEPLOYMENT</button>
-    <button type="button" className="git-btn" onClick={() => handleCopyCloneUrl(clone)}>{clipboardResult}</button>
+    <button type="button" className="git-btn" onClick={() => handleCopyCloneUrl(clone)}>{clipboardResult || "COPY CLONE URL"}</button>
     <button type="button" className="git-btn" onClick={() => repo && useNewTab(repo)}>VISIT REPOSITORY</button>
   </div>
 
