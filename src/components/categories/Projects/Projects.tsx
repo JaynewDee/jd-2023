@@ -4,11 +4,13 @@ import { DisplayProps } from "../../../Portal";
 import { Title } from "../../IconTitle";
 import { Tool } from "./Tool";
 import { LinkMap, projects, ProjectType, aggregatedTagFilters } from "./data";
-import { useNewTab, useImgViewer } from "../../../hooks";
+import { useNewTab, useImgViewer, useClipboard } from "../../../hooks";
+import { AiOutlineArrowUp as Arrow } from 'react-icons/ai'
 
 //
 import "./Projects.css";
 import { ScrollOverlay } from "../../Scroll";
+import { useScrollDetection } from "../../../hooks/useScrollDetection";
 //
 
 const ProjectName = (name: string) =>
@@ -36,21 +38,30 @@ const ProjectImage = ({ src, activeImageSrc, setActiveImageSrc }: ImageProps) =>
   return <img key={src} className="project-image" onClick={handleActiveSrcChange} src={src}></img>
 }
 
-const useClipboard = async (text: string) => {
-  try {
-    await navigator.clipboard.writeText(text)
-  } catch (err) {
-    console.error("Failed to write to clipboard ... ")
-  }
-}
 
-const ProjectLinks = ({ deployment, clone, repo }: LinkMap) =>
-  <div className="git-links">
+function ProjectLinks({ deployment, clone, repo }: LinkMap) {
+  const [clipboardResult, setClipboardResult] = useState("COPY CLONE URL")
+
+  const notifyCopyResult = (result: boolean) => {
+    setClipboardResult(result ? "SUCCESS" : "FAILURE");
+    setTimeout(() => {
+      setClipboardResult("COPY CLONE URL")
+    }, 3000)
+  };
+
+  const handleCopyCloneUrl = async (clone: string) => {
+    const isCopiedToClipboard = await useClipboard(clone)
+    notifyCopyResult(isCopiedToClipboard)
+  }
+
+  return <div className="git-links">
     <button type="button" disabled={!deployment} className="git-btn" onClick={() => deployment && useNewTab(deployment)}>DEPLOYMENT</button>
-    <button type="button" className="git-btn" onClick={() => useClipboard(clone)}>COPY CLONE URL</button>
+    <button type="button" className="git-btn" onClick={() => handleCopyCloneUrl(clone)}>{clipboardResult || "COPY CLONE URL"}</button>
     <button type="button" className="git-btn" onClick={() => repo && useNewTab(repo)}>VISIT REPOSITORY</button>
   </div>
 
+
+}
 const ProjectTools = (tools: { name: string, url: string }[], setModal: any, setActiveImg: any) =>
   <div className="tools-container">
     {tools.map((tool, idx) => (
@@ -159,15 +170,13 @@ const ProjectFilters = (
   )
 }
 
-const Projects: React.FC<DisplayProps> = ({ backBtn }) => {
+function Projects({ backBtn }: DisplayProps) {
   const [filterState, setFilterState] = useState({
     active: [],
     inactive: aggregatedTagFilters,
   });
 
-  // TODO
-  // Implement toggle control to change state
-  const [sortDirection, setSortDireciton] = useState<"asc" | "desc">("asc")
+  const [sortDirection, setSortDireciton] = useState<"asc" | "desc">("desc")
 
   const resetFilters = () => setFilterState({ active: [], inactive: aggregatedTagFilters });
 
@@ -183,6 +192,8 @@ const Projects: React.FC<DisplayProps> = ({ backBtn }) => {
   // Note to self: consider unifying the two to reduce duplication
   const ImgViewer = useImgViewer(activeImageSrc, setActiveImageSrc);
 
+  const scrollDetected = useScrollDetection();
+
   const filters = <ProjectFilters filterState={filterState} setFilterState={setFilterState} reset={resetFilters} />;
 
   const sortDesc = (a: ProjectType, b: ProjectType) => a.name > b.name ? 1 : -1;
@@ -194,16 +205,21 @@ const Projects: React.FC<DisplayProps> = ({ backBtn }) => {
     </div>
   ));
 
+  const toggleSortDirection = () => sortDirection === "asc" ? setSortDireciton("desc") : setSortDireciton("asc")
+
   return (
     <>
+      <header style={scrollDetected ? { display: "flex" } : { display: "none" }}>Scrollbar</header>
       <article className="category-container">
         <div className="category-header">
           {backBtn()}
           <div className="title-with-icons">{title}</div>
         </div>
         {filters}
-        <div>
-
+        <div className="sort-direction-control">
+          <span>{Arrow({ className: sortDirection === "asc" ? "arrow-up" : "arrow-down" })}</span>
+          <p onClick={toggleSortDirection}>Sort Direction</p>
+          <span>{Arrow({ className: sortDirection === "asc" ? "arrow-up" : "arrow-down" })}</span>
         </div>
         <article>
           {filteredSortedProjects}

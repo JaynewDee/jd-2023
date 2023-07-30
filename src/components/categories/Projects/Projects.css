@@ -91,7 +91,7 @@
 }
 
 .project-wrapper {
-  max-width: 33rem;
+  max-width: 38rem;
 }
 
 .project-wrapper > p {
@@ -147,7 +147,7 @@
 
 .project-filters-container {
   max-width: 350px;
-  margin: 2rem auto 3rem;
+  margin: 2rem auto 1rem;
 }
 
 .filter-btn, .filter-btn-active {
@@ -177,6 +177,28 @@
 
 .tooltags-subheader {
   margin:.33rem auto;
+}
+
+.sort-direction-control {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 13rem;
+  font-size: .8rem;
+  margin: 0 auto;
+}
+
+.sort-direction-control:hover > p {
+  color: rgba(240, 240, 240, .8)
+}
+.arrow-up {
+  transition: all .3s;
+}
+
+.arrow-down {
+  transform: rotate(180deg);
+  transition: all .3s;
 }
 
 .tools-container {
