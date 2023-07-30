@@ -160,15 +160,13 @@ const ProjectFilters = (
   )
 }
 
-const Projects: React.FC<DisplayProps> = ({ backBtn }) => {
+function Projects({ backBtn }: DisplayProps) {
   const [filterState, setFilterState] = useState({
     active: [],
     inactive: aggregatedTagFilters,
   });
 
-  // TODO
-  // Implement toggle control to change state
-  const [sortDirection, setSortDireciton] = useState<"asc" | "desc">("asc")
+  const [sortDirection, setSortDireciton] = useState<"asc" | "desc">("desc")
 
   const resetFilters = () => setFilterState({ active: [], inactive: aggregatedTagFilters });
 

@@ -8,6 +8,7 @@ import { CiMedal } from "react-icons/ci";
 import { useMagnifier } from "../../hooks/useMagnifier";
 import IconTitle from "../IconTitle";
 import { SetStateAction, useState, Dispatch, ChangeEvent } from "react";
+import "./slider.css";
 
 //
 
@@ -68,7 +69,7 @@ const MagnifierSlider = ({ magnification, setLevel }: { magnification: number, s
         value={magnification}
         onChange={handleChange}
       />
-      <p className="mag-value">{magnification}</p>
+      <p className="mag-value">{magnification}{"x"}</p>
     </div>
   );
 }
