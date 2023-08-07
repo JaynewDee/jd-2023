@@ -59,9 +59,8 @@ function ProjectLinks({ deployment, clone, repo }: LinkMap) {
     <button type="button" className="git-btn" onClick={() => handleCopyCloneUrl(clone)}>{clipboardResult || "COPY CLONE URL"}</button>
     <button type="button" className="git-btn" onClick={() => repo && useNewTab(repo)}>VISIT REPOSITORY</button>
   </div>
-
-
 }
+
 const ProjectTools = (tools: { name: string, url: string }[], setModal: any, setActiveImg: any) =>
   <div className="tools-container">
     {tools.map((tool, idx) => (
@@ -165,7 +164,7 @@ const ProjectFilters = (
           }
         </div>
       </div>
-      <button type="button" onClick={reset}>CLEAR</button>
+      <button className="clear-filters-btn" type="button" onClick={reset}>CLEAR</button>
     </div>
   )
 }

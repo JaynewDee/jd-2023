@@ -15,7 +15,7 @@ import "./slider.css";
 const badges = [BootCampBadge, CloudPractitionerBadge];
 const certs = [SMUCert, CS50PCert, CS50XCert];
 
-const Accolades: React.FC<DisplayProps> = ({ backBtn }) => {
+function Accolades({ backBtn }: DisplayProps) {
   const [magnification, setMagnification] = useState(1.8)
 
   //

@@ -165,7 +165,44 @@ export const projects: ProjectType[] = [
     images: ["/termkey1.png"],
     gitLinks: { deployment: "https://www.npmjs.com/package/termkey?activeTab=readme", clone: "git@github.com:JaynewDee/termkey-js.git", repo: "https://github.com/JaynewDee/termkey-js" }
   },
+  {
+    name: "Bord",
+    description:
+      "Bord? make sounds.",
+    story:
+      "",
+    tools: [
+      { name: "TypeScript", url: "https://www.typescriptlang.org/" },
+      { name: "Rust", url: "" },
+      { name: "React", url: "https://react.dev/" },
+      { name: "Vite", url: "https://vitejs.dev/" },
+      { name: "Tauri", url: "https://tauri.app" },
+      { name: "CPAL", url: "https://github.com/RustAudio/cpal"}
+    ],
+    id: 11,
+    images: ["/bord1.png", "/bord2.png", "/bord3.png"],
+    gitLinks: { deployment: "", clone: "git@github.com:JaynewDee/bord.git", repo: "https://github.com/JaynewDee/bord" }
+  },
+  {
+    name: "Keyper",
+    description:
+      "Log keypresses live on screen",
+    story:
+      "",
+    tools: [
+      { name: "TypeScript", url: "https://www.typescriptlang.org/" },
+      { name: "Rust", url: "" },
+      { name: "React", url: "https://react.dev/" },
+      { name: "Vite", url: "https://vitejs.dev/" },
+      { name: "Tauri", url: "https://tauri.app" },
+     ],
+    id: 12,
+    images: ["/keyper1.png"],
+    gitLinks: { deployment: "", clone: "", repo: "" }
+  },
 ];
+
+// NEW - keyper, atomic
 
 const aggregateTags = (projectsData: ProjectType[]): string[] => {
   const tools = projectsData.map(project => project.tools);
