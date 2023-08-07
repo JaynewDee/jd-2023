@@ -200,9 +200,22 @@ export const projects: ProjectType[] = [
     images: ["/keyper1.png"],
     gitLinks: { deployment: "", clone: "", repo: "" }
   },
+  {
+    name: "Atomic Slush",
+    description:
+      "Offical website of Dallas-Fort Worth frozen beverages company Atomic Slush",
+    story:
+      "",
+    tools: [
+      { name: "TypeScript", url: "https://www.typescriptlang.org/" },
+      { name: "React", url: "https://react.dev/" },
+      { name: "Vite", url: "https://vitejs.dev/" },
+     ],
+    id: 13,
+    images: ["/atomic1.png"],
+    gitLinks: { deployment: "https://atomicslush.com", clone: "git@github.com:JaynewDee/atomic-slush.git", repo: "https://github.com/JaynewDee/atomic-slush" }
+  },
 ];
-
-// NEW - keyper, atomic
 
 const aggregateTags = (projectsData: ProjectType[]): string[] => {
   const tools = projectsData.map(project => project.tools);
