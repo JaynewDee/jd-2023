@@ -18,16 +18,16 @@ const Social: React.FC<DisplayProps> = ({ backBtn }) => {
   const options = [
     {
       handler: visitGh,
-      icon: BsGithub
+      icon: BsGithub,
     },
     {
       handler: visitLi,
-      icon: BsLinkedin
+      icon: BsLinkedin,
     },
     {
       handler: visitFb,
-      icon: BsFacebook
-    }
+      icon: BsFacebook,
+    },
   ];
 
   const Option = (handler: () => void, icon: IconType, id: number) => (
@@ -50,7 +50,7 @@ const Social: React.FC<DisplayProps> = ({ backBtn }) => {
           <p className="devto-link" onClick={visitDev}>
             dev.to
           </p>
-        </h4> 
+        </h4>
       </section>
     </div>
   );

@@ -8,7 +8,7 @@ const Footnote = () => {
   const visitPortfolioRepo = () => useNewTab(repoUrl);
 
   const styles = {
-    cursor: "pointer"
+    cursor: "pointer",
   };
 
   return (
@@ -16,7 +16,9 @@ const Footnote = () => {
       <p>built and maintained by</p>
       <p>Joshua Newell Diehl</p>
       <p>&copy;2023 </p>
-      <p className="beta-release">Beta Release.  All features subject to change.</p>
+      <p className="beta-release">
+        Beta Release. All features subject to change.
+      </p>
     </div>
   );
 };

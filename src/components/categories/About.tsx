@@ -14,11 +14,16 @@ const About: React.FC<DisplayProps> = ({ backBtn }) => {
       </div>
       <div className="about-box">
         <p>
-          "How beautiful it is!<br />To fall to give you flight.<br />To die to give you
-          life. <br />To rest under your sky, <br />and in your enchanted land <br />eternally
-          sleep." <br /><br /> - Jose Rizal
+          "How beautiful it is!
+          <br />
+          To fall to give you flight.
+          <br />
+          To die to give you life. <br />
+          To rest under your sky, <br />
+          and in your enchanted land <br />
+          eternally sleep." <br />
+          <br /> - Jose Rizal
         </p>
-        
       </div>
     </div>
   );

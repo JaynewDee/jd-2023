@@ -7,7 +7,7 @@ export function useMagnifier({
   magnifierHeight = 150,
   magnifierWidth = 150,
   zoomLevel = 1.77,
-  id = 0
+  id = 0,
 }: {
   src: string;
   width?: string;
@@ -27,7 +27,7 @@ export function useMagnifier({
       className="cert-div"
       style={{
         height: height,
-        width: width
+        width: width,
       }}
     >
       <img
@@ -72,7 +72,7 @@ export function useMagnifier({
             imgHeight * zoomLevel
           }px`,
           backgroundPositionX: `${-x * zoomLevel + magnifierWidth / 2}px`,
-          backgroundPositionY: `${-y * zoomLevel + magnifierHeight / 2}px`
+          backgroundPositionY: `${-y * zoomLevel + magnifierHeight / 2}px`,
         }}
       />
     </div>

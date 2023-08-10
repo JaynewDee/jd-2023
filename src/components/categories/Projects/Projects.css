@@ -1,15 +1,15 @@
 .project-container {
   margin: 1rem 0 5rem;
   background-color: rgba(15, 15, 15, 0.87);
-  padding-bottom: 1rem; 
+  padding-bottom: 1rem;
   width: 100vw;
-  box-shadow: 0px 3px 1px 1px rgba(15, 15, 15, .9);
+  box-shadow: 0px 3px 1px 1px rgba(15, 15, 15, 0.9);
 }
 
 .scroll-btn {
   cursor: pointer;
   border: none;
-  background: none 
+  background: none;
 }
 
 .scroll-top-btn {
@@ -40,11 +40,11 @@
   color: white;
   max-width: 1024px;
   margin: 0 auto;
- }
+}
 
 .project-images {
   margin: 1rem auto;
- }
+}
 
 .project-image {
   border-radius: 6px;
@@ -58,8 +58,8 @@
   border-bottom: 1px solid var(--accent);
   position: absolute;
   margin-top: -1rem;
-  text-align: center; 
-  color: white; 
+  text-align: center;
+  color: white;
   left: 50%;
   transform: translateX(-50%);
   font-style: italic;
@@ -87,7 +87,7 @@
 
 .git-links > button:disabled {
   cursor: unset;
-  opacity: .5;
+  opacity: 0.5;
 }
 
 .project-wrapper {
@@ -110,7 +110,7 @@
 .project-name {
   font-size: 1.33rem;
   filter: drop-shadow(0px 12px 1px 3px rgba(0, 0, 0, 1));
- }
+}
 
 .name-brace {
   color: var(--cordovan);
@@ -120,7 +120,7 @@
 
 .project-description {
   max-width: 50%;
-  font-size: .8rem;
+  font-size: 0.8rem;
   font-family: var(--cat);
   padding-left: 3rem;
   margin-top: 0;
@@ -150,12 +150,13 @@
   margin: 2rem auto 1rem;
 }
 
-.filter-btn, .filter-btn-active {
-  background: rgba(10, 10, 10, .5);
+.filter-btn,
+.filter-btn-active {
+  background: rgba(10, 10, 10, 0.5);
   color: white;
-  border-radius: .33rem;
+  border-radius: 0.33rem;
   cursor: pointer;
-  padding: .11rem .33rem;
+  padding: 0.11rem 0.33rem;
   margin: 3px;
 }
 
@@ -164,7 +165,7 @@
 }
 
 .filter-btn:hover {
- background-color: var(--variant); 
+  background-color: var(--variant);
 }
 
 .filter-btn-active:hover {
@@ -172,17 +173,17 @@
 }
 
 .tooltags-header {
-  margin: .33rem auto;
+  margin: 0.33rem auto;
 }
 
 .tooltags-subheader {
-  margin:.33rem auto;
+  margin: 0.33rem auto;
 }
 
 .clear-filters-btn {
-  background: rgba(250,250,250, .9);
+  background: rgba(250, 250, 250, 0.9);
   color: black;
-border-radius: 5px;
+  border-radius: 5px;
 }
 
 .sort-direction-control {
@@ -191,20 +192,20 @@ border-radius: 5px;
   align-items: center;
   cursor: pointer;
   width: 13rem;
-  font-size: .8rem;
+  font-size: 0.8rem;
   margin: 0 auto;
 }
 
 .sort-direction-control:hover > p {
-  color: rgba(240, 240, 240, .8)
+  color: rgba(240, 240, 240, 0.8);
 }
 .arrow-up {
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 .arrow-down {
   transform: rotate(180deg);
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 .tools-container {
@@ -232,7 +233,7 @@ border-radius: 5px;
 }
 
 .active-header {
-  margin: .33rem .66rem;
+  margin: 0.33rem 0.66rem;
 }
 
 .active-filters {
@@ -255,14 +256,14 @@ border-radius: 5px;
 .modal-exit-btn {
   position: absolute;
   left: 0;
-  background-color: var(--cordovan); 
+  background-color: var(--cordovan);
   color: white;
- 
+
   bottom: -1rem;
   width: 90vw;
   z-index: 3;
-    cursor: pointer;
-  transition: all .33s;
+  cursor: pointer;
+  transition: all 0.33s;
 }
 
 .modal-exit-btn:hover {
@@ -276,7 +277,6 @@ border-radius: 5px;
   left: 50%;
   transform: translateX(-50%);
   background: white;
-
 }
 .modal-container > img {
   margin-left: auto;
@@ -317,9 +317,8 @@ border-radius: 5px;
   .project-wrapper > h4 {
     margin-left: 1rem;
   }
- .project-wrapper[data-orientation="left"] > p, 
- .project-wrapper[data-orientation="right"] > p {
+  .project-wrapper[data-orientation="left"] > p,
+  .project-wrapper[data-orientation="right"] > p {
     padding: 0 1rem;
- }
- 
+  }
 }

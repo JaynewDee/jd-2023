@@ -16,7 +16,7 @@ const badges = [BootCampBadge, CloudPractitionerBadge];
 const certs = [SMUCert, CS50PCert, CS50XCert];
 
 function Accolades({ backBtn }: DisplayProps) {
-  const [magnification, setMagnification] = useState(1.8)
+  const [magnification, setMagnification] = useState(1.8);
 
   //
 
@@ -26,7 +26,10 @@ function Accolades({ backBtn }: DisplayProps) {
         {backBtn()}
         {IconTitle("ACCOLADES", CiMedal)}
       </div>
-      <MagnifierSlider magnification={magnification} setLevel={setMagnification} />
+      <MagnifierSlider
+        magnification={magnification}
+        setLevel={setMagnification}
+      />
       <p className="magnify-instruction">Tap or hover to magnify</p>
       <div className="accolades-box">
         <div className="certs-box">
@@ -36,8 +39,8 @@ function Accolades({ backBtn }: DisplayProps) {
               width: "360px",
               height: "",
               zoomLevel: magnification,
-              id: idx
-            })
+              id: idx,
+            }),
           )}
         </div>
         <div className="badges-box">
@@ -50,10 +53,15 @@ function Accolades({ backBtn }: DisplayProps) {
       </div>
     </div>
   );
-};
+}
 
-const MagnifierSlider = ({ magnification, setLevel }: { magnification: number, setLevel: Dispatch<SetStateAction<number>> }) => {
-
+const MagnifierSlider = ({
+  magnification,
+  setLevel,
+}: {
+  magnification: number;
+  setLevel: Dispatch<SetStateAction<number>>;
+}) => {
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setLevel(Number(event.target.value));
   };
@@ -69,8 +77,11 @@ const MagnifierSlider = ({ magnification, setLevel }: { magnification: number, s
         value={magnification}
         onChange={handleChange}
       />
-      <p className="mag-value">{magnification}{"x"}</p>
+      <p className="mag-value">
+        {magnification}
+        {"x"}
+      </p>
     </div>
   );
-}
+};
 export default Accolades;

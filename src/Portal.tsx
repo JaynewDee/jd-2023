@@ -25,16 +25,16 @@ const Portal: React.FC = () => {
       if (e.key === "Escape" || e.key === "Home") {
         goBack();
       }
-    }
+    };
 
     window.addEventListener("keydown", handleBackEvent);
 
-    return () => window.removeEventListener("keydown", handleBackEvent)
+    return () => window.removeEventListener("keydown", handleBackEvent);
   }, []);
 
   const props: DisplayProps = {
     setDisplay: setDisplayState,
-    backBtn: () => <BackBtn goBack={goBack} />
+    backBtn: () => <BackBtn goBack={goBack} />,
   };
 
   const displays: { [key: string]: JSX.Element } = {
@@ -46,7 +46,7 @@ const Portal: React.FC = () => {
     social: <Social {...props} />,
     who: <About {...props} />,
     etc: <Etc {...props} />,
-    "": <MenuGrid {...props} />
+    "": <MenuGrid {...props} />,
   };
 
   return <>{displays[displayState]}</>;
