@@ -326,7 +326,7 @@ function Projects({ backBtn }: DisplayProps) {
             })}
           </span>
         </div>
-        <article>{filteredSortedProjects}</article>
+        <article>{filteredSortedProjects.length && filteredSortedProjects}</article>
       </article>
       <ScrollOverlay />
       {modal}

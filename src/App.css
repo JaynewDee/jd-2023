@@ -352,6 +352,7 @@ body::-webkit-scrollbar-thumb {
   color: var(--accent);
   text-decoration: none;
 }
+
 .tools-list > li > a:hover {
   color: var(--cordovan);
 }
@@ -446,28 +447,37 @@ img {
   margin-top: 5rem;
 }
 
-.mobile-resume > button {
+.mobile-resume > a {
   padding: 5px 8px;
   cursor: pointer;
   transition: all .3s;
   font-family: var(--qs);
   font-size: .8rem;
+  text-decoration: none;
 }
 
-.mobile-resume > button:first-child {
-  background: none;
+.mobile-resume > a:first-child {
+  background: var(--accent);
   color: white;
+  border-radius: 5px 5px 0 0;
 }
 
-.mobile-resume > button:first-child:hover {
+.mobile-resume > a:first-child:hover {
   background: white;
-  color: black;
+  color: var(--accent);
 }
 
-.mobile-resume > button:nth-child(2):hover {
-  background: black;
+.mobile-resume > a:nth-child(2) {
+  background: var(--variant);
   color: white;
+  border-radius: 0 0 5px 5px;
 }
+
+.mobile-resume > a:nth-child(2):hover {
+  background: white;
+  color: var(--variant);
+}
+
 .contact-msg-input {
   width: 66%;
   height: 99%;
