@@ -172,11 +172,9 @@
   background-color: var(--cordovan);
 }
 
-.tooltags-header {
-  margin: 0.33rem auto;
-}
-
+.tooltags-header, 
 .tooltags-subheader {
+  pointer-events: none;
   margin: 0.33rem auto;
 }
 
@@ -234,6 +232,7 @@
 
 .active-header {
   margin: 0.33rem 0.66rem;
+  pointer-events: none;
 }
 
 .active-filters {

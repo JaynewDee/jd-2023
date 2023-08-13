@@ -3,10 +3,14 @@ import { BsFillJournalBookmarkFill as Journal } from "react-icons/bs";
 import { DisplayProps } from "../../Portal";
 import IconTitle from "../IconTitle";
 import resumePDF from "/JoshuaDiehl_Resume.pdf";
+import { useViewportQuery } from "../../hooks";
 
 //
 
 const Resume: React.FC<DisplayProps> = ({ backBtn }) => {
+
+  const [width, _] = useViewportQuery();
+
   return (
     <div className="category-container">
       <div className="category-header">
@@ -14,14 +18,17 @@ const Resume: React.FC<DisplayProps> = ({ backBtn }) => {
         {IconTitle("RESUME", Journal, "left")}
       </div>
 
-      <div className="resume">
-        <iframe
-          src={resumePDF}
-          title="Resume iframe"
-          width="100%"
-          height="48rem"
-        />
-      </div>
+      {
+        width > 768 ?
+        <div className="resume">
+          <iframe
+            src={resumePDF}
+            title="Resume iframe"
+            width="100%"
+            height="48rem"
+          /> 
+        </div> : <div></div>
+      }
     </div>
   );
 };

@@ -222,7 +222,7 @@ export const projects: ProjectType[] = [
   {
     name: "Bord",
     description: "Bord? make sounds.",
-    story: "",
+    story: "The inspiration to create Bord came from encounters with other developers using soundboards in virtual meetings. : I found the idea of a soundboard to be fun and novel, but most importantly, I realized a perfect opportunity to explore low-level audio manipulation in software. :  Bord instantly saves audio samples to the user's temp directory as they are dropped onto the window.  Those samples can then be assigned to a 'pad' on the user's virtual soundboard.",
     tools: [
       { name: "TypeScript", url: "https://www.typescriptlang.org/" },
       { name: "Rust", url: "" },
@@ -242,7 +242,7 @@ export const projects: ProjectType[] = [
   {
     name: "Keyper",
     description: "Log keypresses live on screen",
-    story: "",
+    story: "The inspiration for this simple application came from a content creator I admire, who often displays key presses to viewers as they work through a problem.  I felt this could prove useful to me as a teacher, so I set out to build my own. : The app's functionality is deceptively simple, as in order to register key presses while the window is inactive, the application must hook into the user's OS to monitor low-level SYSCALLS.",
     tools: [
       { name: "TypeScript", url: "https://www.typescriptlang.org/" },
       { name: "Rust", url: "" },
@@ -262,7 +262,7 @@ export const projects: ProjectType[] = [
     name: "Atomic Slush",
     description:
       "Offical website of Dallas-Fort Worth frozen beverages company Atomic Slush",
-    story: "",
+    story: "Atomic Slush is a brand new family business operating within the DFW, Texas metroplex and specializing in the rental and delivery of frozen beverage machines for special events. : The wonderful folks running the enterprise, with 20 + years’ experience in the hospitality industry, are passionate about freshness and transparency, promising delicious frozen refreshments of the highest quality.",
     tools: [
       { name: "TypeScript", url: "https://www.typescriptlang.org/" },
       { name: "React", url: "https://react.dev/" },

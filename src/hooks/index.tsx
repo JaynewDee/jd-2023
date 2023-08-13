@@ -5,6 +5,7 @@ import { useMailHandler } from "./useMailHandler";
 import { useTooltip } from "./useTooltip";
 import { useClipboard } from "./useClipboard";
 import { useScrollDetection } from "./useScrollDetection";
+import { useViewportQuery } from "./useViewportQuery";
 
 export {
   useNewTab,
@@ -14,4 +15,5 @@ export {
   useTooltip,
   useClipboard,
   useScrollDetection,
+  useViewportQuery
 };
