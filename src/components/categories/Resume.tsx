@@ -17,7 +17,6 @@ const Resume: React.FC<DisplayProps> = ({ backBtn }) => {
         {backBtn()}
         {IconTitle("RESUME", Journal, "left")}
       </div>
-
       {
         width > 768 ?
         <div className="resume">
@@ -27,7 +26,12 @@ const Resume: React.FC<DisplayProps> = ({ backBtn }) => {
             width="100%"
             height="48rem"
           /> 
-        </div> : <div></div>
+        </div>
+        :
+        <div className="mobile-resume">
+            <button>VIEW</button>
+            <button>DOWNLOAD</button>
+        </div>
       }
     </div>
   );

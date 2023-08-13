@@ -440,6 +440,34 @@ img {
   height: 54rem;
 }
 
+.mobile-resume {
+  display: flex;
+  flex-flow: column nowrap;
+  margin-top: 5rem;
+}
+
+.mobile-resume > button {
+  padding: 5px 8px;
+  cursor: pointer;
+  transition: all .3s;
+  font-family: var(--qs);
+  font-size: .8rem;
+}
+
+.mobile-resume > button:first-child {
+  background: none;
+  color: white;
+}
+
+.mobile-resume > button:first-child:hover {
+  background: white;
+  color: black;
+}
+
+.mobile-resume > button:nth-child(2):hover {
+  background: black;
+  color: white;
+}
 .contact-msg-input {
   width: 66%;
   height: 99%;
