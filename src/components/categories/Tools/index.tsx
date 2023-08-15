@@ -7,7 +7,7 @@ import { descriptionSwitch } from "../data";
 import { languages, tech, misc, SkillType } from "./data";
 import {
   TiArrowLeft as ArrowLeft,
-  TiArrowRight as ArrowRight
+  TiArrowRight as ArrowRight,
 } from "react-icons/ti";
 
 //
@@ -17,7 +17,7 @@ import "./Tools.css";
 const tools: { [key: string]: { id: number; data: SkillType[] } } = {
   Languages: { id: 0, data: languages },
   Tools: { id: 1, data: tech },
-  Misc: { id: 2, data: misc }
+  Misc: { id: 2, data: misc },
 };
 
 const ToolSwitch = (display: string) =>
@@ -48,7 +48,7 @@ const Tools: React.FC<DisplayProps> = ({ backBtn }) => {
   const handlePaging = (btnType: string) => {
     const currentState = Object.values(tools[displayState]);
     const currentId = currentState.filter(
-      (tuple) => typeof tuple === "number"
+      (tuple) => typeof tuple === "number",
     )[0];
 
     if (btnType === "right") {

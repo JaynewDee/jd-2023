@@ -1,35 +1,36 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Beta state of a chatroom application designed for simplicity and reliability."
+    />
+    <title>Joshua Diehl - Portfolio</title>
+    <style>
+      #image-root::before {
+        content: "";
+        background-position: center;
+        background-image: var(--pattern-blue);
+        background-size: cover;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        opacity: 0.4;
+        filter: saturate(0.4);
+        z-index: -1;
+      }
+    </style>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Beta state of a chatroom application designed for simplicity and reliability." />
-  <title>Joshua Diehl - Portfolio</title>
-  <style>
-    #image-root::before {
-      content: "";
-      background-position: center;
-      background-image: var(--pattern-blue);
-      background-size: cover;
-      position: absolute;
-      top: 0px;
-      right: 0px;
-      bottom: 0px;
-      left: 0px;
-      opacity: 0.4;
-      filter: saturate(0.4);
-      z-index: -1;
-    }
-  </style>
-</head>
-
-<body>
-  <div id="root"></div>
-  <div id="img-root"></div>
-  <div id="projects-modal"></div>
-  <div id="img-viewer-modal"></div>
-  <script type="module" src="/src/main.tsx"></script>
-</body>
-
+  <body>
+    <div id="root"></div>
+    <div id="img-root"></div>
+    <div id="projects-modal"></div>
+    <div id="img-viewer-modal"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>

@@ -9,14 +9,14 @@ import { useMailHandler } from "../../hooks/useMailHandler";
 const Contact: React.FC<DisplayProps> = ({ backBtn }) => {
   const [formState, setFormState] = useState({
     name: "",
-    message: ""
+    message: "",
   });
 
   const handleInputChange = (e: any) => {
     const { name, value } = e.target;
     setFormState({
       ...formState,
-      [name]: value
+      [name]: value,
     });
   };
 
@@ -48,7 +48,7 @@ const Contact: React.FC<DisplayProps> = ({ backBtn }) => {
           <h4
             style={{
               margin: ".33rem auto",
-              fontSize: "1.33rem"
+              fontSize: "1.33rem",
             }}
           >
             MESSAGE

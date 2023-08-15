@@ -4,8 +4,6 @@ import { ToolType } from "./data";
 
 const unavailableIframes = ["MongoDB", "Rust", "Python", "JavaScript", "AWS"];
 
-
-
 export function Tool(
   tool: ToolType,
   setModalState: Dispatch<SetStateAction<string>>,
@@ -13,7 +11,7 @@ export function Tool(
 ) {
   const toggleIframe = () => {
     setModalState(tool.url);
-    setActiveImageSrc("")
+    setActiveImageSrc("");
   };
 
   const component = () => (
@@ -26,9 +24,7 @@ export function Tool(
 
   return useTooltip({
     children: component(),
-    text: !isAvailable
-      ? "Iframe unavailable"
-      : "Click to activate iframe",
-    available: isAvailable
+    text: !isAvailable ? "Iframe unavailable" : "Click to activate iframe",
+    available: isAvailable,
   });
 }
