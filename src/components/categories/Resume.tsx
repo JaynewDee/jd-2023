@@ -2,7 +2,6 @@ import React from "react";
 import { BsFillJournalBookmarkFill as Journal } from "react-icons/bs";
 import { DisplayProps } from "../../Portal";
 import IconTitle from "../IconTitle";
-import resumePDF from "/JoshuaDiehl_Resume.pdf";
 import { useNewTab, useViewportQuery } from "../../hooks";
 
 //
@@ -10,7 +9,7 @@ import { useNewTab, useViewportQuery } from "../../hooks";
 const Resume: React.FC<DisplayProps> = ({ backBtn }) => {
   const [width, _] = useViewportQuery();
 
-  const resumeSrc = "./JoshuaDiehl_Resume.pdf";
+  const resumeSrc = "./Joshua_Diehl_Resume.pdf";
 
   return (
     <div className="category-container">
@@ -22,7 +21,7 @@ const Resume: React.FC<DisplayProps> = ({ backBtn }) => {
         width > 768 ?
         <div className="resume">
           <iframe
-            src={resumePDF}
+            src={resumeSrc}
             title="Resume iframe"
             width="100%"
             height="48rem"
