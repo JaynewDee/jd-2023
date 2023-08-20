@@ -1,13 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Cutive+Mono&family=JetBrains+Mono:ital,wght@1,100&family=Oxygen+Mono&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Anton&family=Merriweather:wght@700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Cinzel:wght@500;700&family=Montserrat:wght@300&family=Poiret+One&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Italiana&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@500&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Mate:ital@1&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Pridi:wght@300&display=swap");
-
 /**/
 /**/
 /**/
@@ -17,18 +7,6 @@
   --variant: rgba(65, 157, 120, 0.6);
   --cordovan: rgba(144, 45, 65, 1);
   --cord-pale: rgba(144, 45, 65, 0.6);
-  --mmd: "Major Mono Display", monospace;
-  --cutive: "Cutive Mono", monospace;
-  --jb: "JetBrains Mono", monospace;
-  --oxygen: "Oxygen Mono", monospace;
-  --anton: "Anton", sans-serif;
-  --merri: "Merriweather", serif;
-  --qs: "Quicksand", sans-serif;
-  --monty: "Montserrat", sans-serif;
-  --cave: "Caveat", cursive;
-  --poiret: "Poiret One", cursive;
-  --cinzel: "Cinzel", serif;
-  --italy: "Italiana", serif;
   --cat: "Catamaran", sans-serif;
   --mate: "Mate", serif;
   --pridi: "Pridi", serif;
