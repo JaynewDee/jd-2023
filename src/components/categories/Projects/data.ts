@@ -276,6 +276,24 @@ export const projects: ProjectType[] = [
       repo: "https://github.com/JaynewDee/atomic-slush",
     },
   },
+  {
+    name: "Synthetic Rain",
+    description:
+      "Some words I wrote, creatively.",
+    story: "I chose to name my poetry page Synthetic Rain because I am fascinated by the contrast between the artificial and the natural.  If the human being is an extension of the natural world, how are the microchip, the motherboard, and the mainframe not expressions of that same underlying force?",
+    tools: [
+      { name: "TypeScript", url: "https://www.typescriptlang.org/" },
+      { name: "Solid", url: "https://www.solidjs.com/" },
+      { name: "Vite", url: "https://vitejs.dev/" },
+    ],
+    id: 14,
+    images: ["/synthetic.png", "/rain.png"],
+    gitLinks: {
+      deployment: "https://atomicslush.com",
+      clone: "git@github.com:JaynewDee/atomic-slush.git",
+      repo: "https://github.com/JaynewDee/atomic-slush",
+    },
+  },
 ];
 
 const aggregateTags = (projectsData: ProjectType[]): string[] => {
