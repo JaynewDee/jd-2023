@@ -11,17 +11,18 @@
   --mate: "Mate", serif;
   --pridi: "Pridi", serif;
   --drop-text: drop-shadow(0px 21px 21px black);
+  --pattern-blue: url("/pattern_blue.jpg");
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
   line-height: 24px;
   font-size: 24px;
   color: rgba(255, 255, 255, 1);
   background-color: #242424;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
   overflow-x: hidden;
-  --pattern-blue: url("/pattern_blue.jpg");
+  overflow-y: scroll;
 }
 
 /**/

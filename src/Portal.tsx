@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
+import React, { Dispatch, SetStateAction, useEffect, useState, useCallback } from "react";
 import MenuGrid from "./MenuGrid";
 import BackBtn from "./components/BackBtn";
 import About from "./components/categories/About";
@@ -33,7 +33,7 @@ const Portal: React.FC = () => {
   }, []);
 
   const props: DisplayProps = {
-    setDisplay: setDisplayState,
+    setDisplay: useCallback(setDisplayState, [setDisplayState]),
     backBtn: () => <BackBtn goBack={goBack} />,
   };
 

@@ -1,12 +1,12 @@
 import { Dispatch, SetStateAction, useState, memo } from "react";
 import { createPortal } from "react-dom";
 import { DisplayProps } from "../../../Portal";
-import { Title } from "../../IconTitle";
+import IconTitle, { Title } from "../../IconTitle";
 import { Tool } from "./Tool";
 import { LinkMap, projects, ProjectType, aggregatedTagFilters } from "./data";
 import { useNewTab, useImgViewer, useClipboard } from "../../../hooks";
 import { AiOutlineArrowUp as Arrow } from "react-icons/ai";
-
+import { VscTools as Abstract } from 'react-icons/vsc'
 //
 import "./Projects.css";
 import { ScrollOverlay } from "../../Scroll";
@@ -260,8 +260,6 @@ function Projects({ backBtn }: DisplayProps) {
     <IFrameModal state={modalState} setState={setModalState} />
   );
 
-  const title = Title("PROJECTS");
-
   // A pop-up portal similar to that used in modal above, but for images
   // Note to self: consider unifying the two to reduce duplication
   const ImgViewer = useImgViewer(activeImageSrc, setActiveImageSrc);
@@ -310,7 +308,7 @@ function Projects({ backBtn }: DisplayProps) {
       <article className="category-container">
         <div className="category-header">
           {backBtn()}
-          <div className="title-with-icons">{title}</div>
+          {IconTitle("PROJECTS", Abstract)}
         </div>
         {filters}
         <div className="sort-direction-control">
