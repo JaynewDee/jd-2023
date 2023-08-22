@@ -115,7 +115,8 @@ h5,  h6 {
   grid-area: 2 / 2 / 3 / 3;
   flex-flow: column nowrap;
   height: 10rem;
-  font-family: var(--mate)
+  font-family: var(--mate);
+  font-style: italic;
 }
 
 .name-parens {
@@ -257,6 +258,7 @@ h5,  h6 {
   justify-content: center;
   align-items: center;
   transition: all 0.33s;
+  font-family: var(--mate)
 }
 
 .devto-link {
