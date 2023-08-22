@@ -110,6 +110,7 @@
 .project-name {
   font-size: 1.33rem;
   filter: drop-shadow(0px 12px 1px 3px rgba(0, 0, 0, 1));
+  font-family: var(--mate)
 }
 
 .name-brace {
