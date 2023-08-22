@@ -11,18 +11,18 @@
   --mate: "Mate", serif;
   --pridi: "Pridi", serif;
   --drop-text: drop-shadow(0px 21px 21px black);
-  --pattern-blue: url("/pattern_blue.jpg");
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+  --qs: "Quicksand", sans-serif;
   line-height: 24px;
   font-size: 24px;
   color: rgba(255, 255, 255, 1);
   background-color: #242424;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
   overflow-x: hidden;
-  overflow-y: scroll;
+  --pattern-blue: url("/pattern_blue.jpg");
 }
 
 /**/
@@ -70,6 +70,9 @@ body::-webkit-scrollbar-thumb {
   border-radius: 4px;
 }
 
+h5,  h6 {
+  font-family: var(--mate)
+}
 /**/
 
 #grid-container-main {
@@ -112,6 +115,7 @@ body::-webkit-scrollbar-thumb {
   grid-area: 2 / 2 / 3 / 3;
   flex-flow: column nowrap;
   height: 10rem;
+  font-family: var(--mate)
 }
 
 .name-parens {
@@ -209,6 +213,7 @@ body::-webkit-scrollbar-thumb {
 .mag-strength {
   margin: 0.33rem;
   font-size: 0.8rem;
+  font-family: var(--mate)
 }
 .mag-value {
   margin: 0.33rem;
