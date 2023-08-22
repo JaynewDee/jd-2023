@@ -289,9 +289,9 @@ export const projects: ProjectType[] = [
     id: 14,
     images: ["/synthetic.png", "/rain.png"],
     gitLinks: {
-      deployment: "https://atomicslush.com",
-      clone: "git@github.com:JaynewDee/atomic-slush.git",
-      repo: "https://github.com/JaynewDee/atomic-slush",
+      deployment: "https://synthetic-rain.vercel.app/",
+      clone: "git@github.com:JaynewDee/synthetic_rain.git",
+      repo: "https://github.com/JaynewDee/synthetic_rain",
     },
   },
 ];
