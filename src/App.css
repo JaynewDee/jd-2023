@@ -546,6 +546,14 @@ textarea:focus {
   cursor: crosshair;
 }
 
+.student-feedback p {
+  text-align: left;
+  text-indent: 2rem;
+  max-width: 820px;
+  margin: 2rem auto;
+  font-family: var(--pridi);  
+}
+
 @media screen and (max-width: 767px) {
   #grid-container-main {
     display: flex;
@@ -630,6 +638,10 @@ textarea:focus {
     display: none;
   }
   .tools-container {
+  }
+  .student-feedback p {
+    margin-left: 8%;
+    margin-right: 8%;
   }
 }
 

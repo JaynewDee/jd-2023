@@ -29,13 +29,18 @@ const feedbacks = [
 ]
 
 function Feedback() {
-  return <>
-    <h4>Student Feedback & Testimonials</h4>
-    <h5>The following anonymous statements were excerpted from a student survey as part of a weekly KPI assessment</h5>
+  return <div className="student-feedback">
+    <h3 style={{ fontFamily: "var(--mate)", fontStyle: "italic", marginTop: "3rem", lineHeight: "1.2" }}>Student Feedback <br /> & <br /> Testimonials</h3>
+    <h5 style={{ maxWidth: "300px", margin: "0 auto 5rem", fontFamily: "var(--mate)", fontStyle: "italic" }}>The following anonymous statements were excerpted from student surveys as part of a weekly KPI assessment</h5>
     {
       feedbacks.map(statement => {
-        return <p>{statement}</p>
+        return <>
+          <hr style={{ width: "200px", height: "3px", backgroundColor: "var(--accent)", borderRadius: "50%", border: "none" }} />
+          <p>
+            "{statement}"
+          </p>
+        </>
       })
     }
-  </>
+  </div>
 }
