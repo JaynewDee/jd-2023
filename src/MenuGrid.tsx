@@ -39,9 +39,9 @@ function MenuGrid({ setDisplay }: { setDisplay: DisplayDispatch }) {
   useEffect(() => {
     const handleKeyEvent = (e: KeyboardEvent) => {
       const key = e.key.toLowerCase();
-      const notIncluded = key !== "e" && key !== "t";
+      const included = key !== "t";
 
-      if (key in keyTable && notIncluded) {
+      if (key in keyTable && included) {
         setDisplay(keyTable[e.key]);
       }
     };
@@ -51,7 +51,7 @@ function MenuGrid({ setDisplay }: { setDisplay: DisplayDispatch }) {
     return () => window.removeEventListener("keyup", handleKeyEvent);
   }, []);
 
-  const underDevelopment = ["Tools", "Etc."];
+  const underDevelopment = ["Tools"];
 
   const categories: [number, string][] = [
     [1, "Accolades"],

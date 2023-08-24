@@ -71,8 +71,10 @@ body::-webkit-scrollbar-thumb {
 }
 
 h5,  h6 {
-  font-family: var(--mate)
+  font-family: var(--mate);
+  font-style: italic;
 }
+
 /**/
 
 #grid-container-main {
@@ -544,7 +546,7 @@ textarea:focus {
   cursor: crosshair;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   #grid-container-main {
     display: flex;
     flex-flow: column nowrap;
