@@ -1,5 +1,6 @@
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import Nameplate from "./components/Nameplate";
+import SparkleField from "./components/SparkleField";
 
 type DisplayDispatch = Dispatch<SetStateAction<string>>;
 
@@ -93,6 +94,7 @@ function MenuGrid({ setDisplay }: { setDisplay: DisplayDispatch }) {
 
   return (
     <div className="grid-container" id="grid-container-main">
+      {/* <SparkleField /> */}
       <Nameplate />
       {categories.map((cat) => MenuCategory(cat[0], cat[1]))}
     </div>
