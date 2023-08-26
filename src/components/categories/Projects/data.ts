@@ -294,6 +294,24 @@ export const projects: ProjectType[] = [
       repo: "https://github.com/JaynewDee/synthetic_rain",
     },
   },
+  {
+    name: "React-iceburger",
+    description:
+      "A super *cool* React menu component library",
+    story: "React-iceburger offers simple, accessible, customizable menu components such as an animated burger menu icon and hiding sliding drawer. : A quick package install lets you quickly prototype a groovy interactive menu in a matter of minutes. : -> `npm install react-iceburger` to try it now!",
+    tools: [
+      { name: "React", url: "https://react.dev/" },
+      { name: "TypeScript", url: "https://www.typescriptlang.org/" },
+      { name: "Vite", url: "https://vitejs.dev/" },
+    ],
+    id: 15,
+    images: [""],
+    gitLinks: {
+      deployment: "https://www.npmjs.com/package/react-iceburger",
+      clone: "git@github.com:JaynewDee/react-iceburger.git",
+      repo: "https://github.com/JaynewDee/react-iceburger",
+    },
+  }
 ];
 
 const aggregateTags = (projectsData: ProjectType[]): string[] => {
