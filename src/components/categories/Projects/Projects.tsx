@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction, useState, memo } from "react";
 import { createPortal } from "react-dom";
 import { DisplayProps } from "../../../Portal";
-import IconTitle, { Title } from "../../IconTitle";
+import IconTitle from "../../IconTitle";
 import { Tool } from "./Tool";
 import { LinkMap, projects, ProjectType, aggregatedTagFilters } from "./data";
 import { useNewTab, useImgViewer, useClipboard } from "../../../hooks";
