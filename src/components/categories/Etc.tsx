@@ -35,12 +35,12 @@ function Feedback() {
     <h5 style={{ maxWidth: "300px", margin: "0 auto 5rem", fontFamily: "var(--mate)", fontStyle: "italic" }}>The following anonymous statements were excerpted from student surveys as part of a weekly KPI assessment</h5>
     {
       feedbacks.map(statement => {
-        return <>
+        return <div key={statement.slice(-9, -1)}>
           <hr style={{ width: "200px", height: "3px", backgroundColor: "var(--accent)", borderRadius: "50%", border: "none" }} />
           <p>
             "{statement}"
           </p>
-        </>
+        </div>
       })
     }
   </div>

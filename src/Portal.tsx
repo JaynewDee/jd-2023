@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction, useEffect, useState, useCallback } from "react";
+import React, { Dispatch, SetStateAction, useEffect, useState, useCallback, useMemo } from "react";
 import MenuGrid from "./MenuGrid";
 import BackBtn from "./components/BackBtn";
 import About from "./components/categories/About";
@@ -7,7 +7,7 @@ import Contact from "./components/categories/Contact";
 import Etc from "./components/categories/Etc";
 import Projects from "./components/categories/Projects/Projects";
 import Resume from "./components/categories/Resume";
-import Tools from "./components/categories/Tools";
+import Media from "./components/categories/Media";
 import Social from "./components/categories/Social";
 
 export type DisplayProps = {
@@ -34,14 +34,14 @@ const Portal: React.FC = () => {
 
   const props: DisplayProps = {
     setDisplay: useCallback(setDisplayState, [setDisplayState]),
-    backBtn: () => <BackBtn goBack={goBack} />,
+    backBtn: useMemo(() => () => <BackBtn goBack={goBack} />, [goBack]),
   };
 
   const displays: { [key: string]: JSX.Element } = {
     accolades: <Accolades {...props} />,
     contact: <Contact {...props} />,
     projects: <Projects {...props} />,
-    tools: <Tools {...props} />,
+    media: <Media {...props} />,
     resume: <Resume {...props} />,
     social: <Social {...props} />,
     who: <About {...props} />,

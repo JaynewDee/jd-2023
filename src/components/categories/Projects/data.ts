@@ -321,14 +321,14 @@ export const projects: ProjectType[] = [
       { name: "React", url: "https://react.dev/" },
       { name: "TypeScript", url: "https://www.typescriptlang.org/" },
       { name: "Vite", url: "https://vitejs.dev/" },
-      { name: "Web Audio API", url: "https://www.w3.org/TR/webaudio/" }
+      { name: "Web Audio API", url: "https://css-tricks.com/introduction-web-audio-api/" }
     ],
-    id: 15,
-    images: [""],
+    id: 16,
+    images: ["/wmp-retro.png"],
     gitLinks: {
-      deployment: "https://www.npmjs.com/package/react-iceburger",
-      clone: "git@github.com:JaynewDee/react-iceburger.git",
-      repo: "https://github.com/JaynewDee/react-iceburger",
+      deployment: "https://wmp-retro.vercel.app/",
+      clone: "",
+      repo: "",
     },
   }
 ];

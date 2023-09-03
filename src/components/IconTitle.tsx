@@ -12,11 +12,13 @@ const IconTitle = (title: string, Icon: IconType, mirror = "") => {
   return (
     <div className="title-with-icons">
       {Icon({
+        color: "white",
         className: "title-icon",
         style: mirror === "left" ? { transform: "scaleX(-1)" } : {},
       })}
       {Title(title)}
       {Icon({
+        color: "white",
         className: "title-icon",
         style: mirror === "right" ? { transform: "scaleX(-1)" } : {},
       })}

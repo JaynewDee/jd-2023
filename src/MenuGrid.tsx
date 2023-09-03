@@ -1,6 +1,5 @@
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useEffect } from "react";
 import Nameplate from "./components/Nameplate";
-import SparkleField from "./components/SparkleField";
 
 type DisplayDispatch = Dispatch<SetStateAction<string>>;
 
@@ -15,9 +14,9 @@ const formatter = {
         <span key={char + idx} className="cat-char-underlined">
           {char}
         </span>
-      ) : (
-        char
-      ),
+      ) :
+        char === "e" && idx === name.length - 1 ? <span>&eacute;</span> : char
+      ,
     ),
   dataCategory: (name: string) => name.toLowerCase().replace(/[\?\.]/, ""),
 };
@@ -25,7 +24,7 @@ const formatter = {
 const keyTable: { [key: string]: string } = {
   p: "projects",
   r: "resume",
-  t: "tools",
+  t: "media",
   e: "etc",
   w: "who",
   s: "social",
@@ -52,41 +51,26 @@ function MenuGrid({ setDisplay }: { setDisplay: DisplayDispatch }) {
     return () => window.removeEventListener("keyup", handleKeyEvent);
   }, []);
 
-  const underDevelopment = ["Tools"];
-
   const categories: [number, string][] = [
     [1, "Accolades"],
     [0, "Projects"],
     [5, "Resume"],
     [4, "Contact"],
     [2, "Social"],
-    [3, "Tools"],
+    [3, "Media"],
     [6, "Who?"],
     [7, "Etc."],
   ];
 
-  const MenuCategory = (id: number, name: string) => {
-    const [notification, setNotification] = useState(false);
-
-    const notifyDevelopment = () => {
-      setNotification(true);
-      setTimeout(() => setNotification(false), 3000);
-    };
+  const MenuCategory = ({ id, name }: { id: number, name: string }) => {
 
     return (
       <div
         key={id}
         data-category={formatter.dataCategory(name)}
         className="menu-cell"
-        onClick={
-          underDevelopment.includes(name)
-            ? notifyDevelopment
-            : handleCategorySwitch
-        }
+        onClick={handleCategorySwitch}
       >
-        {notification && (
-          <h5 className="click-notification">Under Development</h5>
-        )}
         <h4 className="cell-title menu-title">{formatter.name(name)}</h4>
       </div>
     );
@@ -94,9 +78,8 @@ function MenuGrid({ setDisplay }: { setDisplay: DisplayDispatch }) {
 
   return (
     <div className="grid-container" id="grid-container-main">
-      {/* <SparkleField /> */}
       <Nameplate />
-      {categories.map((cat) => MenuCategory(cat[0], cat[1]))}
+      {categories.map((cat) => <MenuCategory id={cat[0]} name={cat[1]} />)}
     </div>
   );
 }
