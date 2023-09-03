@@ -305,11 +305,30 @@ export const projects: ProjectType[] = [
       { name: "Vite", url: "https://vitejs.dev/" },
     ],
     id: 15,
-    images: [""],
+    images: ["/iceburger1.png"],
     gitLinks: {
       deployment: "https://www.npmjs.com/package/react-iceburger",
       clone: "git@github.com:JaynewDee/react-iceburger.git",
       repo: "https://github.com/JaynewDee/react-iceburger",
+    },
+  },
+  {
+    name: "WMP Retro",
+    description:
+      "Custom music player inspired by Windows XP",
+    story: "I began this project out of a desire to create a personalized location from which to share my music on the web, and emerged from the experience with a deep appreciation for the incredible Web Audio API. : The player features volume control, track seeking, a toggleable audio visualization, and several tracks which I created myself using the Reaper Digital Audio Workstation. : The design of the player is inspired by the Windows Media Player designs beloved throughout my childhood.",
+    tools: [
+      { name: "React", url: "https://react.dev/" },
+      { name: "TypeScript", url: "https://www.typescriptlang.org/" },
+      { name: "Vite", url: "https://vitejs.dev/" },
+      { name: "Web Audio API", url: "https://css-tricks.com/introduction-web-audio-api/" }
+    ],
+    id: 16,
+    images: ["/wmp-retro.png"],
+    gitLinks: {
+      deployment: "https://wmp-retro.vercel.app/",
+      clone: "",
+      repo: "",
     },
   }
 ];

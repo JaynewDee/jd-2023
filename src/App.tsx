@@ -7,13 +7,11 @@ import SparkleField from "./components/SparkleField";
 
 function App() {
   return (
-    <>
-      <div className="App">
-        <SparkleField />
-        <Portal />
-        <Footnote />
-      </div>
-    </>
+    <div className="App">
+      <SparkleField />
+      <Portal />
+      <Footnote />
+    </div>
   );
 }
 
