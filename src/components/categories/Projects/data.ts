@@ -305,7 +305,7 @@ export const projects: ProjectType[] = [
       { name: "Vite", url: "https://vitejs.dev/" },
     ],
     id: 15,
-    images: [""],
+    images: ["/iceburger1.png"],
     gitLinks: {
       deployment: "https://www.npmjs.com/package/react-iceburger",
       clone: "git@github.com:JaynewDee/react-iceburger.git",
