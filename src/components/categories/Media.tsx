@@ -12,7 +12,7 @@ const Media: React.FC<DisplayProps> = ({ backBtn }) => {
             </div>
             <div style={{ marginTop: "3rem" }}>
                 <h4>Music</h4>
-                <iframe src='https://wmp-retro.vercel.app/' style={{ width: "100vw", height: "15rem" }}></iframe>
+                <iframe src='https://wmp-retro.vercel.app/' style={{ width: "100vw", height: "15rem", border: "none" }}></iframe>
             </div>
         </div>
     )

@@ -16,12 +16,12 @@ const formatter = {
         </span>
       ) :
         char === "e" && idx === name.length - 1 ? <span>&eacute;</span> : char
-      ,
     ),
   dataCategory: (name: string) => name.toLowerCase().replace(/[\?\.]/, ""),
 };
 
 const keyTable: { [key: string]: string } = {
+  m: "media",
   p: "projects",
   r: "resume",
   t: "media",
