@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useState, memo } from "react";
+import { Dispatch, SetStateAction, useState, memo, useMemo } from "react";
 import { createPortal } from "react-dom";
 import { DisplayProps } from "../../../Portal";
 import IconTitle from "../../IconTitle";
@@ -50,7 +50,9 @@ const ProjectImage = ({
   );
 };
 
-function ProjectLinks({ deployment, clone, repo }: LinkMap) {
+const ProjectLinks = memo(function ProjectLinks({ gitLinks }: { gitLinks: LinkMap }) {
+  const { deployment, clone, repo } = gitLinks;
+
   const [clipboardResult, setClipboardResult] = useState("COPY CLONE URL");
 
   const notifyCopyResult = (result: boolean) => {
@@ -92,7 +94,7 @@ function ProjectLinks({ deployment, clone, repo }: LinkMap) {
       </button>
     </div>
   );
-}
+})
 
 const ProjectTools = (
   tools: { name: string; url: string }[],
@@ -149,7 +151,7 @@ const Project = (
               />
             ))}
           </div>
-          {ProjectLinks(gitLinks)}
+          <ProjectLinks gitLinks={gitLinks} />
           <hr className="hr-md" />
           <section className="project-story">{storyWithDelims}</section>
           <hr className="hr-sm" />
