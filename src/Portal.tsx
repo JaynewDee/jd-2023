@@ -34,7 +34,7 @@ const Portal: React.FC = () => {
 
   const props: DisplayProps = {
     setDisplay: useCallback(setDisplayState, [setDisplayState]),
-    backBtn: useMemo(() => () => <BackBtn goBack={goBack} />, [goBack]),
+    backBtn: useMemo(() => () => <BackBtn goBack={goBack} />, []),
   };
 
   const displays: { [key: string]: JSX.Element } = {
