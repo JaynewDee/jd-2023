@@ -1,14 +1,14 @@
-import BootCampBadge from "/boot_camp_badge.png";
+import { SetStateAction, useState, Dispatch, ChangeEvent } from "react";
+import { CiMedal } from "react-icons/ci";
+import IconTitle from "../components/IconTitle";
+import BackBtn from "../components/BackBtn";
+import { useMagnifier } from "../hooks/useMagnifier";
+import "../styles/slider.css";
 import CloudPractitionerBadge from "/cloud_practitioner.png";
+import BootCampBadge from "/boot_camp_badge.png";
 import SMUCert from "/smu_cert.png";
 import CS50PCert from "/cs50p_cert.png";
 import CS50XCert from "/cs50x_cert.png";
-import { CiMedal } from "react-icons/ci";
-import { useMagnifier } from "../hooks/useMagnifier";
-import IconTitle from "../components/IconTitle";
-import { SetStateAction, useState, Dispatch, ChangeEvent } from "react";
-import "../styles/slider.css";
-import BackBtn from "../components/BackBtn";
 
 //
 
