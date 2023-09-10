@@ -1,5 +1,5 @@
 import { SetStateAction, Dispatch } from "react";
-import { useTooltip } from "../../../hooks/";
+import { useTooltip } from "../hooks";
 import { ToolType } from "./data";
 
 const unavailableIframes = ["MongoDB", "Rust", "Python", "JavaScript", "AWS"];

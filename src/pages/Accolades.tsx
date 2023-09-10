@@ -3,19 +3,19 @@ import CloudPractitionerBadge from "/cloud_practitioner.png";
 import SMUCert from "/smu_cert.png";
 import CS50PCert from "/cs50p_cert.png";
 import CS50XCert from "/cs50x_cert.png";
-import { DisplayProps } from "../../Portal";
 import { CiMedal } from "react-icons/ci";
-import { useMagnifier } from "../../hooks/useMagnifier";
-import IconTitle from "../IconTitle";
+import { useMagnifier } from "../hooks/useMagnifier";
+import IconTitle from "../components/IconTitle";
 import { SetStateAction, useState, Dispatch, ChangeEvent } from "react";
-import "./slider.css";
+import "../styles/slider.css";
+import BackBtn from "../components/BackBtn";
 
 //
 
 const badges = [BootCampBadge, CloudPractitionerBadge];
 const certs = [SMUCert, CS50PCert, CS50XCert];
 
-function Accolades({ backBtn }: DisplayProps) {
+function Accolades() {
   const [magnification, setMagnification] = useState(1.8);
 
   //
@@ -23,7 +23,7 @@ function Accolades({ backBtn }: DisplayProps) {
   return (
     <div className="category-container">
       <div className="category-header">
-        {backBtn()}
+        {BackBtn()}
         {IconTitle("ACCOLADES", CiMedal)}
       </div>
       <MagnifierSlider
