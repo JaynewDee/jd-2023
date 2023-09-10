@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { DisplayProps } from "../../Portal";
 import { GoMail as Mail } from "react-icons/go";
-import IconTitle from "../IconTitle";
-import { useMailHandler } from "../../hooks/useMailHandler";
+import IconTitle from "../components/IconTitle";
+import { useMailHandler } from "../hooks/useMailHandler";
+import BackBtn from "../components/BackBtn";
 
 //
 
-const Contact: React.FC<DisplayProps> = ({ backBtn }) => {
+const Contact = () => {
   const [formState, setFormState] = useState({
     name: "",
     message: "",
@@ -36,7 +36,7 @@ const Contact: React.FC<DisplayProps> = ({ backBtn }) => {
   return (
     <div className="category-container">
       <div className="category-header">
-        {backBtn()}
+        {BackBtn()}
         {IconTitle("CONTACT", Mail)}
       </div>
       <div className="contact-container">
