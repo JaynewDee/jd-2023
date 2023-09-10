@@ -62,21 +62,16 @@ function MenuGrid() {
     [7, "Etc."],
   ];
 
-  const MenuCategory = ({ id, name }: { id: number, name: string }) => {
+  const MenuCategory = ({ id, name }: { id: number, name: string }) =>
+    <div
+      key={id}
+      data-category={formatter.dataCategory(name)}
+      className="menu-cell"
+      onClick={handleCategorySwitch}
+    >
+      <h4 className="cell-title menu-title">{formatter.name(name)}</h4>
+    </div>
 
-    console.log(name)
-
-    return (
-      <div
-        key={id}
-        data-category={formatter.dataCategory(name)}
-        className="menu-cell"
-        onClick={handleCategorySwitch}
-      >
-        <h4 className="cell-title menu-title">{formatter.name(name)}</h4>
-      </div>
-    );
-  };
 
   return (
     <div className="grid-container" id="grid-container-main">
