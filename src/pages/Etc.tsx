@@ -1,5 +1,5 @@
-import { Title } from "../components/IconTitle";
 import BackBtn from "../components/BackBtn";
+import { Title } from "../components/IconTitle";
 
 //
 

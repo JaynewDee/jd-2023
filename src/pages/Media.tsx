@@ -1,6 +1,6 @@
-import IconTitle from '../components/IconTitle'
 import { TiMediaRewindOutline as MediaIcon } from 'react-icons/ti'
 import BackBtn from '../components/BackBtn'
+import IconTitle from '../components/IconTitle'
 
 const Media = () => {
     return (

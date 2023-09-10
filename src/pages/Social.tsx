@@ -1,11 +1,10 @@
-import { useNewTab } from "../hooks/useNewTab";
 import { BsFacebook, BsLinkedin, BsGithub } from "react-icons/bs";
 import { TbHeartHandshake as HeartShake } from "react-icons/tb";
-
 import { IconType } from "react-icons";
+//
 import IconTitle from "../components/IconTitle";
 import BackBtn from "../components/BackBtn";
-
+import { useNewTab } from "../hooks/useNewTab";
 //
 
 const Social = () => {

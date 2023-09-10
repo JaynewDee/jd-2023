@@ -1,16 +1,16 @@
-import { Dispatch, SetStateAction, useState, memo, useMemo } from "react";
+import { Dispatch, SetStateAction, useState, memo } from "react";
 import { createPortal } from "react-dom";
-import IconTitle from "../components/IconTitle";
-import { Tool } from "../components/Tool";
-import { LinkMap, projects, ProjectType, aggregatedTagFilters } from "../components/data";
-import { useNewTab, useImgViewer, useClipboard } from "../hooks";
 import { AiOutlineArrowUp as Arrow } from "react-icons/ai";
 import { VscTools as Abstract } from 'react-icons/vsc'
 //
-import "../styles/Projects.css";
-import { ScrollOverlay } from "../components/Scroll";
-import { useScrollDetection } from "../hooks/useScrollDetection";
 import BackBtn from "../components/BackBtn";
+import IconTitle from "../components/IconTitle";
+import { Tool } from "../components/Tool";
+import { LinkMap, projects, ProjectType, aggregatedTagFilters } from "../components/data";
+import { ScrollOverlay } from "../components/Scroll";
+import { useNewTab, useImgViewer, useClipboard, useScrollDetection } from "../hooks";
+//
+import "../styles/Projects.css";
 //
 
 const ProjectName = (name: string) => (

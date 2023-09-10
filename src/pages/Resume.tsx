@@ -1,7 +1,7 @@
 import { BsFillJournalBookmarkFill as Journal } from "react-icons/bs";
+import BackBtn from "../components/BackBtn";
 import IconTitle from "../components/IconTitle";
 import { useViewportQuery } from "../hooks";
-import BackBtn from "../components/BackBtn";
 
 //
 

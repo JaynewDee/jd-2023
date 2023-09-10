@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App";
-
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+
+import App from "./App";
 import MenuGrid from "./MenuGrid";
 import Media from "./pages/Media";
 import Projects from "./pages/Projects";
