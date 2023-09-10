@@ -1,12 +1,11 @@
-import React from "react";
 import { BsFillJournalBookmarkFill as Journal } from "react-icons/bs";
-import { DisplayProps } from "../../Portal";
-import IconTitle from "../IconTitle";
-import { useViewportQuery } from "../../hooks";
+import IconTitle from "../components/IconTitle";
+import { useViewportQuery } from "../hooks";
+import BackBtn from "../components/BackBtn";
 
 //
 
-const Resume: React.FC<DisplayProps> = ({ backBtn }) => {
+const Resume = () => {
   const [width, _] = useViewportQuery();
 
   const resumeSrc = "./Joshua_Diehl_Resume.pdf";
@@ -14,24 +13,24 @@ const Resume: React.FC<DisplayProps> = ({ backBtn }) => {
   return (
     <div className="category-container">
       <div className="category-header">
-        {backBtn()}
+        {BackBtn()}
         {IconTitle("RESUME", Journal, "left")}
       </div>
       {
         width > 768 ?
-        <div className="resume">
-          <iframe
-            src={resumeSrc}
-            title="Resume iframe"
-            width="100%"
-            height="48rem"
-          /> 
-        </div>
-        :
-        <div className="mobile-resume">
+          <div className="resume">
+            <iframe
+              src={resumeSrc}
+              title="Resume iframe"
+              width="100%"
+              height="48rem"
+            />
+          </div>
+          :
+          <div className="mobile-resume">
             <a href={resumeSrc} target="_blank">VIEW</a>
             <a href={resumeSrc} download="Joshua_Diehl_Resume">DOWNLOAD</a>
-        </div>
+          </div>
       }
     </div>
   );

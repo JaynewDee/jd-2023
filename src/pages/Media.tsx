@@ -1,13 +1,12 @@
-import React from 'react'
-import { DisplayProps } from '../../Portal'
-import IconTitle from '../IconTitle'
+import IconTitle from '../components/IconTitle'
 import { TiMediaRewindOutline as MediaIcon } from 'react-icons/ti'
+import BackBtn from '../components/BackBtn'
 
-const Media: React.FC<DisplayProps> = ({ backBtn }) => {
+const Media = () => {
     return (
         <div className="category-container">
             <div className="category-header">
-                {backBtn()}
+                {BackBtn()}
                 {IconTitle("MEDIA", MediaIcon, "left")}
             </div>
             <div style={{ marginTop: "3rem" }}>

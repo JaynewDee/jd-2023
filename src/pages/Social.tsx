@@ -1,15 +1,14 @@
-import React from "react";
-import { useNewTab } from "../../hooks/useNewTab";
+import { useNewTab } from "../hooks/useNewTab";
 import { BsFacebook, BsLinkedin, BsGithub } from "react-icons/bs";
 import { TbHeartHandshake as HeartShake } from "react-icons/tb";
 
 import { IconType } from "react-icons";
-import { DisplayProps } from "../../Portal";
-import IconTitle from "../IconTitle";
+import IconTitle from "../components/IconTitle";
+import BackBtn from "../components/BackBtn";
 
 //
 
-const Social: React.FC<DisplayProps> = ({ backBtn }) => {
+const Social = () => {
   const visitGh = () => useNewTab("https://github.com/JaynewDee");
   const visitLi = () => useNewTab("https://www.linkedin.com/in/jaynewd73/");
   const visitFb = () => useNewTab("https://www.facebook.com/jndiehl");
@@ -39,7 +38,7 @@ const Social: React.FC<DisplayProps> = ({ backBtn }) => {
   return (
     <div className="category-container" style={{ justifyContent: "center" }}>
       <div className="category-header">
-        {backBtn()}
+        {BackBtn()}
         {IconTitle("SOCIAL", HeartShake, "right")}
       </div>
       <div className="social-container">

@@ -1,4 +1,5 @@
 import { Dispatch, SetStateAction, useEffect } from "react";
+import { useNavigate } from 'react-router-dom'
 import Nameplate from "./components/Nameplate";
 
 type DisplayDispatch = Dispatch<SetStateAction<string>>;
@@ -24,7 +25,6 @@ const keyTable: { [key: string]: string } = {
   m: "media",
   p: "projects",
   r: "resume",
-  t: "media",
   e: "etc",
   w: "who",
   s: "social",
@@ -32,17 +32,17 @@ const keyTable: { [key: string]: string } = {
   a: "accolades",
 };
 
-function MenuGrid({ setDisplay }: { setDisplay: DisplayDispatch }) {
+function MenuGrid() {
+  const navigate = useNavigate()
   const handleCategorySwitch = (e: any) =>
-    setDisplay(e?.target?.dataset.category);
+    navigate("/" + e?.target?.dataset.category);
 
   useEffect(() => {
     const handleKeyEvent = (e: KeyboardEvent) => {
       const key = e.key.toLowerCase();
-      const included = key !== "t";
 
-      if (key in keyTable && included) {
-        setDisplay(keyTable[e.key]);
+      if (key in keyTable) {
+        navigate("/" + keyTable[e.key]);
       }
     };
 
@@ -63,6 +63,8 @@ function MenuGrid({ setDisplay }: { setDisplay: DisplayDispatch }) {
   ];
 
   const MenuCategory = ({ id, name }: { id: number, name: string }) => {
+
+    console.log(name)
 
     return (
       <div

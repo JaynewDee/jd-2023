@@ -1,16 +1,16 @@
 import { Dispatch, SetStateAction, useState, memo, useMemo } from "react";
 import { createPortal } from "react-dom";
-import { DisplayProps } from "../../../Portal";
-import IconTitle from "../../IconTitle";
-import { Tool } from "./Tool";
-import { LinkMap, projects, ProjectType, aggregatedTagFilters } from "./data";
-import { useNewTab, useImgViewer, useClipboard } from "../../../hooks";
+import IconTitle from "../components/IconTitle";
+import { Tool } from "../components/Tool";
+import { LinkMap, projects, ProjectType, aggregatedTagFilters } from "../components/data";
+import { useNewTab, useImgViewer, useClipboard } from "../hooks";
 import { AiOutlineArrowUp as Arrow } from "react-icons/ai";
 import { VscTools as Abstract } from 'react-icons/vsc'
 //
-import "./Projects.css";
-import { ScrollOverlay } from "../../Scroll";
-import { useScrollDetection } from "../../../hooks/useScrollDetection";
+import "../styles/Projects.css";
+import { ScrollOverlay } from "../components/Scroll";
+import { useScrollDetection } from "../hooks/useScrollDetection";
+import BackBtn from "../components/BackBtn";
 //
 
 const ProjectName = (name: string) => (
@@ -243,7 +243,7 @@ const ProjectFilters = ({
   );
 };
 
-function Projects({ backBtn }: DisplayProps) {
+function Projects() {
   const [filterState, setFilterState] = useState({
     active: [],
     inactive: aggregatedTagFilters,
@@ -309,7 +309,7 @@ function Projects({ backBtn }: DisplayProps) {
       </header>
       <article className="category-container">
         <div className="category-header">
-          {backBtn()}
+          {BackBtn()}
           {IconTitle("PROJECTS", Abstract)}
         </div>
         {filters}

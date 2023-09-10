@@ -1,6 +1,6 @@
 import { Sparkles } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
-import "./sparkles.css"
+import "../styles/sparkles.css"
 import { createPortal } from 'react-dom'
 
 export default function SparkleField() {

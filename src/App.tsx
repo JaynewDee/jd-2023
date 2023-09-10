@@ -1,5 +1,5 @@
-import "./App.css";
-import Portal from "./Portal";
+import "./styles/App.css";
+import { Outlet } from 'react-router-dom'
 import Footnote from "./components/Footnote";
 import SparkleField from "./components/SparkleField";
 
@@ -9,7 +9,8 @@ function App() {
   return (
     <div className="App">
       <SparkleField />
-      <Portal />
+      <Outlet />
+      {/* <Portal /> */}
       <Footnote />
     </div>
   );

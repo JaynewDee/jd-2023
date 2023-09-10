@@ -1,13 +1,12 @@
-import React from "react";
-import { DisplayProps } from "../../Portal";
+import BackBtn from "../components/BackBtn";
 
 //
 
-const About: React.FC<DisplayProps> = ({ backBtn }) => {
+const About = () => {
   return (
     <div className="category-container">
       <div className="category-header">
-        {backBtn()}
+        {BackBtn()}
         <div className="category-title-cell">
           <h4 className="category-title">WHO AM I?</h4>
         </div>
