@@ -4,11 +4,11 @@ import { TbBrandGolang as Go } from 'react-icons/tb'
 
 export default function Badges({ languages }: { languages: string[] }) {
     const badgeTable: { [key: string]: JSX.Element } = {
-        "JavaScript": <JS color="#f7df1e" />,
-        "TypeScript": <TS size="1em" />,
-        "Rust": <Rust />,
-        "Go": <Go />,
-        "Python": <Python />
+        "JavaScript": <JS color="#f7df1e" size=".8em" />,
+        "TypeScript": <TS size=".8em" />,
+        "Rust": <Rust size=".9em" />,
+        "Go": <Go size=".9em" style={{ background: "white", color: "rgb(0, 173, 216)" }} />,
+        "Python": <Python size=".7em" />
     }
 
     const shieldTable: { [key: string]: string } = {
@@ -20,18 +20,19 @@ export default function Badges({ languages }: { languages: string[] }) {
     }
 
     const shieldStyles: { [key: string]: CSSProperties } = {
-        "JavaScript": { height: "1.3em", width: "5em" },
-        "TypeScript": { height: "1.1em", width: "5em" },
-        "Rust": { height: "1.1em", width: "3em" },
-        "Go": { height: "1.1em", width: "3.5em" },
-        "Python": { height: "1.1em", width: "4em" },
+        "JavaScript": { height: ".8em", width: "3.5em" },
+        "TypeScript": { height: ".8em", width: "3.5em" },
+        "Rust": { height: "1em", width: "3em" },
+        "Go": { height: ".9em", width: "2.2em" },
+        "Python": { height: ".9em", width: "3em" },
     }
 
     return languages.map(lang => {
-
-        return <div style={{ display: "flex", justifyContent: "center", alignItems: "center", marginTop: "1em" }}>
-            {badgeTable[lang]}
-            {<img src={shieldTable[lang]} style={shieldStyles[lang] || {}} />}
+        return <div style={{ marginTop: ".5em" }}>
+            <div style={{ borderRadius: "8px" }} className='lang-badge'>
+                {badgeTable[lang]}
+                {<img src={shieldTable[lang]} style={shieldStyles[lang] || {}} />}
+            </div>
         </div>
     })
 }

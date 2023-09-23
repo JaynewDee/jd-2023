@@ -162,7 +162,7 @@
 }
 
 .filter-btn-active {
-  border: 1px solid white;
+  border: 1px solid var(--cordovan);
 }
 
 .filter-btn:hover {
@@ -220,6 +220,14 @@
   justify-content: center;
   max-width: 66%;
   margin: 0 auto;
+}
+
+.lang-badge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px
+  border: 1px solid white;
 }
 
 .project-lang-badges {

@@ -107,6 +107,22 @@ export const projects: ProjectType[] = [
     languages: ["Rust", "TypeScript"]
   },
   {
+    name: "Undermine",
+    description:
+      "Set an alarm reminder from the terminal",
+    story: "My first Go program! : The user inputs two arguments at the terminal, a text reminder and a duration in minutes. : The terminal displays updated time, and when time is up, an alert sound is played through default audio, and a alert dialog dialog is triggered to display on the user's desktop. : Undermine comes in handy each class period at break time!",
+    tools: [
+    ],
+    id: 18,
+    images: ["/undermine1.png", "/undermine2.png"],
+    gitLinks: {
+      deployment: "",
+      clone: "",
+      repo: "",
+    },
+    languages: ["Go"]
+  },
+  {
     name: "Cheep",
     description: "Cheap cheats from the charitable!",
     story:
@@ -333,24 +349,7 @@ export const projects: ProjectType[] = [
       repo: "",
     },
     languages: ["TypeScript", "Rust"]
-  },
-  {
-    name: "Undermine",
-    description:
-      "Set an alarm reminder from the terminal",
-    story: "My first Go program! : The user inputs two arguments at the terminal, a text reminder and a duration in minutes. : The terminal displays updated time, and when time is up, an alert sound is played through default audio, and a alert dialog dialog is triggered to display on the user's desktop. : Undermine comes in handy each class period at break time!",
-    tools: [
-    ],
-    id: 18,
-    images: ["/undermine1.png", "/undermine2.png"],
-    gitLinks: {
-      deployment: "",
-      clone: "",
-      repo: "",
-    },
-    languages: ["Go"]
-  }
-];
+  }];
 
 const aggregateTags = (projectsData: ProjectType[]): string[] => {
   const tools = projectsData.map((project) => project.tools);
@@ -369,7 +368,7 @@ const aggregateLangs = (projectsData: ProjectType[]): any[] => {
 
   const uniques = new Set(langs.flat())
 
-  return Array.from(uniques).sort()
+  return Array.from(uniques)
 }
 
 export const aggregatedTagFilters = aggregateTags(projects);

@@ -6,7 +6,7 @@ import { VscTools as Abstract } from 'react-icons/vsc'
 import BackBtn from "../components/BackBtn";
 import IconTitle from "../components/IconTitle";
 import { Tool } from "../components/Tool";
-import { LinkMap, projects, ProjectType, aggregatedTagFilters } from "../components/data";
+import { LinkMap, projects, ProjectType, aggregatedTagFilters, aggregatedLangFilters } from "../components/data";
 import { ScrollOverlay } from "../components/Scroll";
 import { useNewTab, useImgViewer, useClipboard, useScrollDetection } from "../hooks";
 import { LazyLoadImage } from 'react-lazy-load-image-component'
@@ -227,10 +227,6 @@ const ProjectFilters = ({
           </button>
         ))}
       </div>
-      <section style={{ marginTop: "1em" }}>
-        <h4 className="tooltags-header">LangFilter</h4>
-        <h6 className="tooltags-subheader">Filter by programming language</h6>
-      </section>
       <hr className="hr-md" />
       <div className="active-filters">
         <h5 className="active-header">Active :::</h5>
@@ -250,6 +246,16 @@ const ProjectFilters = ({
       <button className="clear-filters-btn" type="button" onClick={reset}>
         CLEAR
       </button>
+      <section style={{ marginTop: "1em" }}>
+        <h4 className="tooltags-header">LangFilter</h4>
+        <h6 className="tooltags-subheader">Filter by programming language</h6>
+        <Badges languages={aggregatedLangFilters} />
+        {/* Need to completely overhaul filtering
+          Context at the page level makes sense?
+          Need all filters and their dependencies centrallized
+          to apply them together
+      */}
+      </section>
     </div>
   );
 };
