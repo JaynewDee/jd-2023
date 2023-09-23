@@ -3,6 +3,8 @@ export type ToolType = {
   url: string;
 };
 
+type BadgeLanguage = "JavaScript" | "TypeScript" | "Rust" | "Python" | "Go"
+
 export type ProjectType = {
   name: string;
   description: string;
@@ -12,6 +14,7 @@ export type ProjectType = {
   images?: string[];
   productionSrc?: string;
   gitLinks: LinkMap;
+  languages?: BadgeLanguage[]
 };
 
 export type LinkMap = {
@@ -28,7 +31,6 @@ export const projects: ProjectType[] = [
     story:
       "Roomy defines my first meaningful foray into the world of websocket communication.  Socket.io provides the application with a clean and consistent API for establishing communication between the server and potentially many clients. : Built with a keen interest in scalability, the server is designed to support both WebSocket and traditional HTTP protocols.  It persists all messages on the back-end through MongoDB, providing the user with a reliable and responsive full-stack chat experience.",
     tools: [
-      { name: "TypeScript", url: "https://www.typescriptlang.org/" },
       { name: "React", url: "https://react.dev/" },
       { name: "Node", url: "https://nodejs.dev/en/about/" },
       { name: "Express", url: "https://expressjs.com/" },
@@ -43,6 +45,7 @@ export const projects: ProjectType[] = [
       clone: "git@github.com:JaynewDee/jd-2023.git",
       repo: "https://github.com/JaynewDee/jd-2023",
     },
+    languages: ["TypeScript"]
   },
   {
     name: "Portfolio 2022",
@@ -51,7 +54,6 @@ export const projects: ProjectType[] = [
     story:
       "I went in with a coat full of footguns on this one, but it was a rewarding experience to set myself fully free to experiment with technologies I was excited about, to build the full stack myself according to my very own decisions, and learn by doing. : Unfortunately, this also led to some silly beginner mistakes, such as failing to properly accomodate mobile viewports! : Finally, this project represents my first attempt to host a full-stack application on an AWS EC2 instance with a custom domain name, and it was a smashing success!",
     tools: [
-      { name: "JavaScript", url: "" },
       { name: "Express", url: "https://expressjs.com/" },
       { name: "AWS", url: "https://aws.amazon.com/pm/ec2/" },
     ],
@@ -66,6 +68,7 @@ export const projects: ProjectType[] = [
       clone: "git@github.com:JaynewDee/jaynewd_.git",
       repo: "https://github.com/JaynewDee/jaynewd_",
     },
+    languages: ["JavaScript"]
   },
   {
     name: "Grouperjs",
@@ -74,7 +77,6 @@ export const projects: ProjectType[] = [
     story:
       "As a junior developer and teaching assistant faced for the first time with the problem of assigning students to appropriate groups, I wondered if this was a problem in any way fit for a program.  I wondered if the Python code representation would play out straightforwardly as it did in my head. : It didn't. : But the program worked!  One could read an entirely unformatted csv gradebook file and receive randomly assigned student groups as json output! I realized then that the same algorithm could be augmented with a way to ensure that students are grouped based on an even distribution of grade point averages. : I rewrote the script as a Node.js package using Commander.js and implemented an iterative solution that would measure each output against a target standard deviation until the target had been met.",
     tools: [
-      { name: "TypeScript", url: "https://www.typescriptlang.org/" },
       { name: "Node", url: "https://nodejs.dev/en/about/" },
     ],
     id: 2,
@@ -84,6 +86,7 @@ export const projects: ProjectType[] = [
       clone: "git@github.com:JaynewDee/grouper-js.git",
       repo: "https://github.com/JaynewDee/grouper-js",
     },
+    languages: ["TypeScript"]
   },
   {
     name: "Spider",
@@ -92,9 +95,7 @@ export const projects: ProjectType[] = [
     story:
       "This Tauri-based desktop application offers two primary functionalities - Web Scraping and Domain Monitoring.  Currently supported scraping sources include HackerNews and Reddit, results filtered by input of key terms. Domain monitoring pings the user's personally-hosted web domains to report the health status of each remote server.",
     tools: [
-      { name: "Rust", url: "" },
       { name: "Tauri", url: "https://tauri.app/" },
-      { name: "TypeScript", url: "https://www.typescriptlang.org/" },
     ],
     id: 3,
     images: ["/spider2.png", "/spider1.png", "/spider3.png"],
@@ -103,6 +104,7 @@ export const projects: ProjectType[] = [
       clone: "git@github.com:JaynewDee/spider.git",
       repo: "https://github.com/JaynewDee/spider",
     },
+    languages: ["Rust", "TypeScript"]
   },
   {
     name: "Cheep",
@@ -120,6 +122,7 @@ export const projects: ProjectType[] = [
       clone: "git@github.com:JaynewDee/cheep.git",
       repo: "https://github.com/JaynewDee/cheep",
     },
+    languages: ["TypeScript"]
   },
   {
     name: "Imagent",
@@ -127,7 +130,7 @@ export const projects: ProjectType[] = [
       "Generate an entire range of application-appropriate thumbnail sizes from any image with a single command.",
     story:
       "With each web project, I wondered how best to produce the array of thumbnail sizes that the web manifest requires in order to accomodate all platforms.  While recently writing a chrome extension, I realized finally that I could easily write a program to handle this myself. :  Imagent takes a single image file as input and produces many common app thumbnail sizes as output in just a few seconds.",
-    tools: [{ name: "Python", url: "" }],
+    tools: [],
     id: 5,
     images: ["/imagent1.png", "/imagent2.png"],
     gitLinks: {
@@ -135,6 +138,7 @@ export const projects: ProjectType[] = [
       clone: "git@github.com:JaynewDee/imagent.git",
       repo: "https://github.com/JaynewDee/imagent",
     },
+    languages: ["Python"]
   },
   {
     name: "Synthbrain",
@@ -142,7 +146,6 @@ export const projects: ProjectType[] = [
     story:
       "Synthbrain utilizes OpenAI's powerful, highly-trained machine learning models to generate text completions, produce images from text prompts, and convert speech audio into text.",
     tools: [
-      { name: "Rust", url: "" },
       { name: "OpenAI", url: "" },
     ],
     id: 6,
@@ -152,6 +155,7 @@ export const projects: ProjectType[] = [
       clone: "git@github.com:JaynewDee/jd-2023.git",
       repo: "https://github.com/JaynewDee/synth-brain",
     },
+    languages: ["Rust"]
   },
   {
     name: "Catch-Flow",
@@ -160,7 +164,6 @@ export const projects: ProjectType[] = [
     story:
       "Inspired by the Functional programming paradigm for some time, my journey led me to explore the concepts of decorators and closures.  This tiny library is a slice of that experimentation, and the full code is available to the world through NPM.",
     tools: [
-      { name: "TypeScript", url: "https://www.typescriptlang.org/" },
       { name: "Node", url: "https://nodejs.dev/en/about/" },
     ],
     id: 7,
@@ -170,6 +173,7 @@ export const projects: ProjectType[] = [
       clone: "git@github.com:JaynewDee/jd-2023.git",
       repo: "https://github.com/JaynewDee/jd-2023",
     },
+    languages: ["JavaScript"]
   },
   {
     name: "Read-Gen",
@@ -177,7 +181,7 @@ export const projects: ProjectType[] = [
       "Pass command-line options to generate an attractive README file for any new project.",
     story:
       "This program is a Rust re-write of an early bootcamp project originally written in JavaScript.  A single command will generate a default README in a matter of seconds, and a `prompt` option allows for more user-friendly control.  And of course it's ~blazingly fast~! ",
-    tools: [{ name: "Rust", url: "" }],
+    tools: [],
     id: 8,
     images: ["/readgen1.png", "/readgen2.png", "/readgen3.png"],
     gitLinks: {
@@ -185,6 +189,7 @@ export const projects: ProjectType[] = [
       clone: "git@github.com:JaynewDee/readme_generator.git",
       repo: "https://github.com/JaynewDee/readme_generator",
     },
+    languages: ["Rust"]
   },
   {
     name: "Present",
@@ -192,7 +197,6 @@ export const projects: ProjectType[] = [
     story:
       "I built Present as a way to save time during class periods, optimizing away the need to individually click boxes.  The extension uses Chrome APIs, most notably `chrome.debugger` to acquire programmatic access to a foreign iframe without Cross-Origin permissions.",
     tools: [
-      { name: "JavaScript", url: "" },
       {
         name: "Chrome API",
         url: "https://developer.chrome.com/docs/extensions/reference/",
@@ -201,6 +205,7 @@ export const projects: ProjectType[] = [
     id: 9,
     images: ["/present1.png", "/present2.png"],
     gitLinks: { deployment: "", clone: "", repo: "" },
+    languages: ["JavaScript"]
   },
   {
     name: "Termkey.js",
@@ -208,7 +213,6 @@ export const projects: ProjectType[] = [
     story:
       "This program started as an exploration of encryption when I decided through experimentation to write myself a program to encrypt my files. :  I also used this experience as an opportunity to explore specific topics related to encryption, such as various encryption standards and their relative levels of security. : Termkey uses the AES-256-CBC SSL encryption standard along with a password-based key derivation function (PBKDF2) to encrypt and decrypt sensitive text information.",
     tools: [
-      { name: "TypeScript", url: "https://www.typescriptlang.org/" },
       { name: "Node", url: "https://nodejs.dev/en/about/" },
     ],
     id: 10,
@@ -218,14 +222,13 @@ export const projects: ProjectType[] = [
       clone: "git@github.com:JaynewDee/termkey-js.git",
       repo: "https://github.com/JaynewDee/termkey-js",
     },
+    languages: ["TypeScript"]
   },
   {
     name: "Bord",
     description: "Bord? make sounds.",
     story: "The inspiration to create Bord came from encounters with other developers using soundboards in virtual meetings. : I found the idea of a soundboard to be fun and novel, but most importantly, I realized a perfect opportunity to explore low-level audio manipulation in software. :  Bord instantly saves audio samples to the user's temp directory as they are dropped onto the window.  Those samples can then be assigned to a 'pad' on the user's virtual soundboard.",
     tools: [
-      { name: "TypeScript", url: "https://www.typescriptlang.org/" },
-      { name: "Rust", url: "" },
       { name: "React", url: "https://react.dev/" },
       { name: "Vite", url: "https://vitejs.dev/" },
       { name: "Tauri", url: "https://tauri.app" },
@@ -238,25 +241,7 @@ export const projects: ProjectType[] = [
       clone: "git@github.com:JaynewDee/bord.git",
       repo: "https://github.com/JaynewDee/bord",
     },
-  },
-  {
-    name: "Keyper",
-    description: "Log keypresses live on screen",
-    story: "The inspiration for this simple application came from a content creator I admire, who often displays key presses to viewers as they work through a problem.  I felt this could prove useful to me as a teacher, so I set out to build my own. : The app's functionality is deceptively simple, as in order to register key presses while the window is inactive, the application must hook into the user's OS to monitor low-level SYSCALLS.",
-    tools: [
-      { name: "TypeScript", url: "https://www.typescriptlang.org/" },
-      { name: "Rust", url: "" },
-      { name: "React", url: "https://react.dev/" },
-      { name: "Vite", url: "https://vitejs.dev/" },
-      { name: "Tauri", url: "https://tauri.app" },
-    ],
-    id: 12,
-    images: ["/keyper1.png"],
-    gitLinks: {
-      deployment: "",
-      clone: "",
-      repo: "https://github.com/JaynewDee/keyper",
-    },
+    languages: ["TypeScript", "Rust"]
   },
   {
     name: "Atomic Slush",
@@ -264,7 +249,6 @@ export const projects: ProjectType[] = [
       "Offical website of Dallas-Fort Worth frozen beverages company Atomic Slush",
     story: "Atomic Slush is a brand new family business operating within the DFW, Texas metroplex and specializing in the rental and delivery of frozen beverage machines for special events. : The wonderful folks running the enterprise, with 20 + years’ experience in the hospitality industry, are passionate about freshness and transparency, promising delicious frozen refreshments of the highest quality.",
     tools: [
-      { name: "TypeScript", url: "https://www.typescriptlang.org/" },
       { name: "React", url: "https://react.dev/" },
       { name: "Vite", url: "https://vitejs.dev/" },
     ],
@@ -275,6 +259,7 @@ export const projects: ProjectType[] = [
       clone: "git@github.com:JaynewDee/atomic-slush.git",
       repo: "https://github.com/JaynewDee/atomic-slush",
     },
+    languages: ["TypeScript"]
   },
   {
     name: "Synthetic Rain",
@@ -282,7 +267,6 @@ export const projects: ProjectType[] = [
       "Some words I wrote, creatively.",
     story: "I chose to name my poetry page Synthetic Rain because I am fascinated by the contrast between the artificial and the natural.  If the human being is an extension of the natural world, how are the microchip, the motherboard, and the mainframe not expressions of that same underlying force?",
     tools: [
-      { name: "TypeScript", url: "https://www.typescriptlang.org/" },
       { name: "Solid", url: "https://www.solidjs.com/" },
       { name: "Vite", url: "https://vitejs.dev/" },
     ],
@@ -293,6 +277,7 @@ export const projects: ProjectType[] = [
       clone: "git@github.com:JaynewDee/synthetic_rain.git",
       repo: "https://github.com/JaynewDee/synthetic_rain",
     },
+    languages: ["TypeScript"]
   },
   {
     name: "React-iceburger",
@@ -301,7 +286,6 @@ export const projects: ProjectType[] = [
     story: "React-iceburger offers simple, accessible, customizable menu components such as an animated burger menu icon and hiding sliding drawer. : A quick package install lets you quickly prototype a groovy interactive menu in a matter of minutes. : -> `npm install react-iceburger` to try it now!",
     tools: [
       { name: "React", url: "https://react.dev/" },
-      { name: "TypeScript", url: "https://www.typescriptlang.org/" },
       { name: "Vite", url: "https://vitejs.dev/" },
     ],
     id: 15,
@@ -311,6 +295,7 @@ export const projects: ProjectType[] = [
       clone: "git@github.com:JaynewDee/react-iceburger.git",
       repo: "https://github.com/JaynewDee/react-iceburger",
     },
+    languages: ["TypeScript"]
   },
   {
     name: "WMP Retro",
@@ -319,7 +304,6 @@ export const projects: ProjectType[] = [
     story: "I began this project out of a desire to create a personalized location from which to share my music on the web, and emerged from the experience with a deep appreciation for the incredible Web Audio API. : The player features volume control, track seeking, a toggleable audio visualization, and several tracks which I created myself using the Reaper Digital Audio Workstation. : The design of the player is inspired by the Windows Media Player designs beloved throughout my childhood.",
     tools: [
       { name: "React", url: "https://react.dev/" },
-      { name: "TypeScript", url: "https://www.typescriptlang.org/" },
       { name: "Vite", url: "https://vitejs.dev/" },
       { name: "Web Audio API", url: "https://css-tricks.com/introduction-web-audio-api/" }
     ],
@@ -330,6 +314,41 @@ export const projects: ProjectType[] = [
       clone: "",
       repo: "",
     },
+    languages: ["TypeScript"]
+  },
+  {
+    name: "Grouper Desktop",
+    description:
+      "Auto-generate student groups from a graphical user interface",
+    story: "",
+    tools: [
+      { name: "React", url: "https://react.dev/" },
+      { name: "Tauri", url: "https://tauri.app" },
+    ],
+    id: 17,
+    images: ["/grouper-desktop1.png", "/grouper-desktop2.png"],
+    gitLinks: {
+      deployment: "",
+      clone: "",
+      repo: "",
+    },
+    languages: ["TypeScript", "Rust"]
+  },
+  {
+    name: "Undermine",
+    description:
+      "Set an alarm reminder from the terminal",
+    story: "My first Go program! : The user inputs two arguments at the terminal, a text reminder and a duration in minutes. : The terminal displays updated time, and when time is up, an alert sound is played through default audio, and a alert dialog dialog is triggered to display on the user's desktop. : Undermine comes in handy each class period at break time!",
+    tools: [
+    ],
+    id: 18,
+    images: ["/undermine1.png", "/undermine2.png"],
+    gitLinks: {
+      deployment: "",
+      clone: "",
+      repo: "",
+    },
+    languages: ["Go"]
   }
 ];
 
@@ -345,4 +364,14 @@ const aggregateTags = (projectsData: ProjectType[]): string[] => {
   return Array.from(uniques).sort();
 };
 
+const aggregateLangs = (projectsData: ProjectType[]): any[] => {
+  const langs = projectsData.map(project => project.languages)
+
+  const uniques = new Set(langs.flat())
+
+  return Array.from(uniques).sort()
+}
+
 export const aggregatedTagFilters = aggregateTags(projects);
+
+export const aggregatedLangFilters = aggregateLangs(projects)

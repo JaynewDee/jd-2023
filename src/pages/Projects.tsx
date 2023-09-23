@@ -9,8 +9,11 @@ import { Tool } from "../components/Tool";
 import { LinkMap, projects, ProjectType, aggregatedTagFilters } from "../components/data";
 import { ScrollOverlay } from "../components/Scroll";
 import { useNewTab, useImgViewer, useClipboard, useScrollDetection } from "../hooks";
+import { LazyLoadImage } from 'react-lazy-load-image-component'
+
 //
 import "../styles/Projects.css";
+import Badges from "../components/LangBadge";
 //
 
 const ProjectName = (name: string) => (
@@ -41,12 +44,12 @@ const ProjectImage = ({
   };
 
   return (
-    <img
+    <LazyLoadImage
+      src={src}
       key={src}
       className="project-image"
       onClick={handleActiveSrcChange}
-      src={src}
-    ></img>
+    />
   );
 };
 
@@ -109,7 +112,7 @@ const ProjectTools = (
 );
 
 const Project = (
-  { name, description, story, tools, id, images, gitLinks }: ProjectType,
+  { name, description, story, tools, id, images, gitLinks, languages }: ProjectType,
   setModalState: Dispatch<SetStateAction<string>>,
   setActiveImageSrc: Dispatch<SetStateAction<string>>,
   activeImageSrc: string,
@@ -155,8 +158,12 @@ const Project = (
           <hr className="hr-md" />
           <section className="project-story">{storyWithDelims}</section>
           <hr className="hr-sm" />
-          <h5 className="tools-label">Tools</h5>
-          {ProjectTools(tools, setModalState, setActiveImageSrc)}
+          {languages && <Badges languages={languages} />}
+          {
+            tools.length ? <> <h5 className="tools-label">Tools</h5>
+              {ProjectTools(tools, setModalState, setActiveImageSrc)}
+            </> : <></>
+          }
         </div>
       </article>
     </>
@@ -220,6 +227,10 @@ const ProjectFilters = ({
           </button>
         ))}
       </div>
+      <section style={{ marginTop: "1em" }}>
+        <h4 className="tooltags-header">LangFilter</h4>
+        <h6 className="tooltags-subheader">Filter by programming language</h6>
+      </section>
       <hr className="hr-md" />
       <div className="active-filters">
         <h5 className="active-header">Active :::</h5>
