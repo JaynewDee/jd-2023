@@ -250,9 +250,8 @@ cursor: pointer;
 }
 
 .lang-badge:hover {
-  outline: 2px solid white;
+  outline: 1px solid white;
 }
-
 
 .project-lang-badges {
   display: flex;
