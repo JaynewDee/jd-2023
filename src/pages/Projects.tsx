@@ -9,6 +9,8 @@ import { Tool } from "../components/Tool";
 import { LinkMap, projects, ProjectType, aggregatedTagFilters, aggregatedLangFilters } from "../components/data";
 import { ScrollOverlay } from "../components/Scroll";
 import { useNewTab, useImgViewer, useClipboard, useScrollDetection } from "../hooks";
+// bastard is either working great or not working at all ... must investigate later
+// @ts-ignore
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 
 //
@@ -250,7 +252,7 @@ const ProjectFilters = ({
         <h4 className="tooltags-header">LangFilter</h4>
         <h6 className="tooltags-subheader">Filter by programming language</h6>
         <Badges languages={aggregatedLangFilters} />
-        {/* Need to completely overhaul filtering
+        {/* Need to completely overhaul filtering.
           Context at the page level makes sense?
           Need all filters and their dependencies centrallized
           to apply them together
