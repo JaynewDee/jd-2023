@@ -162,9 +162,13 @@ const Project = (
           <hr className="hr-sm" />
           {languages && <Badges languages={languages} />}
           {
-            tools.length ? <> <h5 className="tools-label">Tools</h5>
-              {ProjectTools(tools, setModalState, setActiveImageSrc)}
-            </> : <></>
+            tools.length ?
+              <>
+                <h5 className="tech-label">
+                  Tools
+                </h5>
+                {ProjectTools(tools, setModalState, setActiveImageSrc)}
+              </> : <></>
           }
         </div>
       </article>
@@ -229,7 +233,6 @@ const ProjectFilters = ({
           </button>
         ))}
       </div>
-      <hr className="hr-md" />
       <div className="active-filters">
         <h5 className="active-header">Active :::</h5>
         <div>
@@ -248,6 +251,7 @@ const ProjectFilters = ({
       <button className="clear-filters-btn" type="button" onClick={reset}>
         CLEAR
       </button>
+      <hr className="hr-md" />
       <section style={{ marginTop: "1em" }}>
         <h4 className="tooltags-header">LangFilter</h4>
         <h6 className="tooltags-subheader">Filter by programming language</h6>

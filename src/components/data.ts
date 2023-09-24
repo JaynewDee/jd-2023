@@ -23,7 +23,7 @@ export type LinkMap = {
   repo: string;
 };
 
-export const projects: ProjectType[] = [
+export const projects: readonly ProjectType[] = [
   {
     name: "Roomy",
     description:
@@ -371,6 +371,6 @@ const aggregateLangs = (projectsData: ProjectType[]): any[] => {
   return Array.from(uniques)
 }
 
-export const aggregatedTagFilters = aggregateTags(projects);
+export const aggregatedTagFilters = aggregateTags(projects.slice());
 
-export const aggregatedLangFilters = aggregateLangs(projects)
+export const aggregatedLangFilters = aggregateLangs(projects.slice())
