@@ -1,8 +1,10 @@
-import { CSSProperties } from 'react'
+import { CSSProperties, useState } from 'react'
 import { SiRust as Rust, SiTypescript as TS, SiJavascript as JS, SiPython as Python } from 'react-icons/si'
 import { TbBrandGolang as Go } from 'react-icons/tb'
 
 export default function Badges({ languages }: { languages: string[] }) {
+
+
     const badgeTable: { [key: string]: JSX.Element } = {
         "JavaScript": <JS size=".8em" color="#f7df1e" />,
         "TypeScript": <TS size=".8em" color="white" />,
@@ -28,15 +30,12 @@ export default function Badges({ languages }: { languages: string[] }) {
     }
 
     return <>
-        <h5 className="tech-label" style={{ margin: "1em auto" }}>Languages</h5>
-        <div style={{ overflowY: "scroll" }}>
-            {languages.map(lang => {
-                return <div style={{ marginTop: ".5em" }}>
-                    <button className="lang-badge">{badgeTable[lang]}
-                        {<img src={shieldTable[lang]} style={shieldStyles[lang] || {}} />}
-                    </button>
-                </div>
-            })}
-        </div>
+        {languages.map(lang => {
+            return <div style={{ marginTop: ".5em" }}>
+                <button className="lang-badge">{badgeTable[lang]}
+                    {<img src={shieldTable[lang]} style={shieldStyles[lang] || {}} />}
+                </button>
+            </div>
+        })}
     </>
 }

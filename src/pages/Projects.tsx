@@ -2,6 +2,7 @@ import { Dispatch, SetStateAction, useState, memo } from "react";
 import { createPortal } from "react-dom";
 import { AiOutlineArrowUp as Arrow } from "react-icons/ai";
 import { VscTools as Abstract } from 'react-icons/vsc'
+import { FaAngleRight as Right, FaAngleLeft as Left } from 'react-icons/fa'
 //
 import BackBtn from "../components/BackBtn";
 import IconTitle from "../components/IconTitle";
@@ -160,6 +161,7 @@ const Project = (
           <hr className="hr-md" />
           <section className="project-story">{storyWithDelims}</section>
           <hr className="hr-sm" />
+
           {languages && <Badges languages={languages} />}
           {
             tools.length ?
@@ -217,50 +219,68 @@ const ProjectFilters = ({
     }));
   };
 
+  const [langsExpanded, setLangsExpanded] = useState(false)
+  const [toolsExpanded, setToolsExpanded] = useState(false)
+
   return (
     <div className="project-filters-container">
-      <h4 className="tooltags-header">ToolTags</h4>
-      <h6 className="tooltags-subheader">Filter by associated technology</h6>
-      <div className="inactive-filters">
-        {filterState.inactive?.map((tag: string) => (
-          <button
-            key={tag}
-            onClick={handleClickActive(tag)}
-            className="filter-btn"
-            type="button"
-          >
-            {tag}
-          </button>
-        ))}
-      </div>
-      <div className="active-filters">
-        <h5 className="active-header">Active :::</h5>
-        <div>
-          {filterState.active?.map((tag: string) => (
-            <button
-              key={tag}
-              onClick={handleClickInactive(tag)}
-              className="filter-btn-active"
-              type="button"
-            >
-              {tag}
-            </button>
-          ))}
-        </div>
-      </div>
-      <button className="clear-filters-btn" type="button" onClick={reset}>
-        CLEAR
-      </button>
-      <hr className="hr-md" />
       <section style={{ marginTop: "1em" }} >
-        <h4 className="tooltags-header">LangFilter</h4>
+        <header className="filters-header" onClick={() => setLangsExpanded(prev => !prev)}>
+          <Left style={langsExpanded ? { transform: "rotate(-90deg)", transition: "all 1s" } : { transform: "rotate(0deg", transition: "all 1s" }} />
+          <h4 className="tooltags-header" >Languages</h4>
+          <Right style={langsExpanded ? { transform: "rotate(90deg)", transition: "all 1s" } : { transform: "rotate(0deg", transition: "all 1s" }} />
+        </header>
         <h6 className="tooltags-subheader">Filter by programming language</h6>
-        <Badges languages={aggregatedLangFilters} />
+
+        <div style={{ overflowY: "scroll" }} className={langsExpanded ? "badge-scroll-container" : "badge-scroll-container collapsed"}>
+          <Badges languages={aggregatedLangFilters} />
+        </div>
         {/* Need to completely overhaul filtering.
           Context at the page level makes sense?
           Need all filters and their dependencies centrallized
           to apply them together
-      */}
+        */}
+      </section>
+      <hr className="hr-md" />
+      <section>
+        <header className="filters-header" onClick={() => setToolsExpanded(prev => !prev)}>
+          <Left style={toolsExpanded ? { transform: "rotate(-90deg)", transition: "all 1s" } : { transform: "rotate(0deg", transition: "all 1s" }} />
+          <h4 className="tooltags-header">Tools</h4>
+          <Right style={toolsExpanded ? { transform: "rotate(90deg)", transition: "all 1s" } : { transform: "rotate(0deg", transition: "all 1s" }} />
+        </header>
+        <h6 className="tooltags-subheader">Filter by associated technology</h6>
+        <div className={toolsExpanded ? "tools-filter-container" : "tools-filter-container collapsed"}>
+          <div className="inactive-filters">
+            {filterState.inactive?.map((tag: string) => (
+              <button
+                key={tag}
+                onClick={handleClickActive(tag)}
+                className="filter-btn"
+                type="button"
+              >
+                {tag}
+              </button>
+            ))}
+          </div>
+          <div className="active-filters">
+            <h5 className="active-header">Active :::</h5>
+            <div>
+              {filterState.active?.map((tag: string) => (
+                <button
+                  key={tag}
+                  onClick={handleClickInactive(tag)}
+                  className="filter-btn-active"
+                  type="button"
+                >
+                  {tag}
+                </button>
+              ))}
+            </div>
+          </div>
+          <button className="clear-filters-btn" type="button" onClick={reset}>
+            CLEAR
+          </button>
+        </div>
       </section>
     </div>
   );
@@ -349,6 +369,7 @@ function Projects() {
             })}
           </span>
         </div>
+        {/* main projects list, including any filter/sort */}
         <article>{filteredSortedProjects.length && filteredSortedProjects}</article>
       </article>
       <ScrollOverlay />
