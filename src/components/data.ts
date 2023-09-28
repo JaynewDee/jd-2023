@@ -168,7 +168,7 @@ export const projects: ProjectType[] = [
     images: ["/synth1.png"],
     gitLinks: {
       deployment: "",
-      clone: "git@github.com:JaynewDee/jd-2023.git",
+      clone: "git@github.com:JaynewDee/synth-brain.git",
       repo: "https://github.com/JaynewDee/synth-brain",
     },
     languages: ["Rust"]
@@ -186,8 +186,8 @@ export const projects: ProjectType[] = [
     images: ["/catchflow1.png", "/catchflow2.png"],
     gitLinks: {
       deployment: "https://www.npmjs.com/package/catch-flow",
-      clone: "git@github.com:JaynewDee/jd-2023.git",
-      repo: "https://github.com/JaynewDee/jd-2023",
+      clone: "git@github.com:JaynewDee/catch-flow.git",
+      repo: "https://github.com/JaynewDee/catch-flow",
     },
     languages: ["JavaScript"]
   },
