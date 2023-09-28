@@ -29,12 +29,14 @@ export default function Badges({ languages }: { languages: string[] }) {
 
     return <>
         <h5 className="tech-label" style={{ margin: "1em auto" }}>Languages</h5>
-        {languages.map(lang => {
-            return <div style={{ marginTop: ".5em" }}>
-                <button className="lang-badge">{badgeTable[lang]}
-                    {<img src={shieldTable[lang]} style={shieldStyles[lang] || {}} />}
-                </button>
-            </div>
-        })}
+        <div style={{ overflowY: "scroll" }}>
+            {languages.map(lang => {
+                return <div style={{ marginTop: ".5em" }}>
+                    <button className="lang-badge">{badgeTable[lang]}
+                        {<img src={shieldTable[lang]} style={shieldStyles[lang] || {}} />}
+                    </button>
+                </div>
+            })}
+        </div>
     </>
 }

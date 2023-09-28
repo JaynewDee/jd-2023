@@ -252,7 +252,7 @@ const ProjectFilters = ({
         CLEAR
       </button>
       <hr className="hr-md" />
-      <section style={{ marginTop: "1em" }}>
+      <section style={{ marginTop: "1em" }} >
         <h4 className="tooltags-header">LangFilter</h4>
         <h6 className="tooltags-subheader">Filter by programming language</h6>
         <Badges languages={aggregatedLangFilters} />
